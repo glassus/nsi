@@ -1,6 +1,8 @@
 ## Cours de NSI 
-par Gilles Lassus 
-Lycée François Mauriac / Bordeaux
+par Gilles Lassus  
+
+Lycée François Mauriac / Bordeaux  
+
 gilles.lassus [at] ac-bordeaux.fr
 
 
