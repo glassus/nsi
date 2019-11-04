@@ -1,3 +1,3 @@
-a = 3
-b = 5
-c = a + b
+alphabet = []
+for i in range(97,123):
+    alphabet.append(chr(i))
