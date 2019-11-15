@@ -1,2 +1,2 @@
 jupyter contrib nbextension install --user
-jupyter nbextension enable collapsible_headings/exercise2/main
+jupyter nbextension enable exercise2/main
