@@ -1,0 +1,12 @@
+.pos 0
+    mrmovl a, %eax
+    mrmovl b, %ebx
+    addl %eax, %ebx
+    rmmovl %ebx, c
+    halt
+
+.align 4
+a:  .long 3
+b:  .long 5
+c:  .long
+    
