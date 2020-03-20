@@ -9,4 +9,9 @@ Pour la consultation simple des fichiers Jupyter Notebook de ce dépôt, il est 
 https://nbviewer.jupyter.org/github/glassus/nsi/tree/master/
 
 Pour une utilisation interactive des fichiers Jupyter Notebook de ce dépôt :
+
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/glassus/nsi/master)
+
+ou
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
