@@ -16,8 +16,8 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="dessin2.svg"
-   inkscape:export-filename="/home/gilles/Dropbox/Mauriac2019/NSI/Synchro_GitHub/nsi/Premiere/Theme07_Interactions_Homme_Machine_Web/data/stat.png"
+   sodipodi:docname="dessin3.svg"
+   inkscape:export-filename="/home/gilles/Dropbox/Mauriac2019/NSI/Synchro_GitHub/nsi/Premiere/Theme07_Interactions_Homme_Machine_Web/data/dynclient.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -94,7 +94,7 @@
      inkscape:cx="156.04793"
      inkscape:cy="-0.64299841"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g4125"
      showgrid="false"
      objecttolerance="1"
      guidetolerance="1"
@@ -528,30 +528,42 @@ SSKiFAxJIqIUDEkiohQMSSKiFAxJIqIU/x+NlGCysuLKHAAAAABJRU5ErkJggg==
            x="68.203667"
            id="tspan2983-9"
            sodipodi:role="line">page <tspan
-   id="tspan3974"
-   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'">statique</tspan></tspan></text>
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold'"
+   id="tspan4146">dynamique</tspan></tspan></text>
       <text
          id="text3978"
-         y="35.476765"
-         x="77.664604"
+         y="34.508461"
+         x="77.882576"
          style="font-style:normal;font-weight:normal;font-size:4.23333311px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
          xml:space="preserve"><tspan
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Courier;-inkscape-font-specification:'Courier Bold';fill:#005500;stroke-width:0.26458332"
-           y="35.476765"
-           x="77.664604"
+           y="34.508461"
+           x="77.882576"
            id="tspan3976"
            sodipodi:role="line">html</tspan></text>
       <text
          id="text3978-1"
-         y="38.843143"
-         x="78.607193"
+         y="37.197029"
+         x="78.716179"
          style="font-style:normal;font-weight:normal;font-size:4.23333311px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
          xml:space="preserve"><tspan
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Courier;-inkscape-font-specification:'Courier Bold';fill:#005500;stroke-width:0.26458332"
-           y="38.843143"
-           x="78.607193"
+           y="37.197029"
+           x="78.716179"
            id="tspan3976-7"
            sodipodi:role="line">css</tspan></text>
+      <text
+         id="text3978-6"
+         y="37.011829"
+         x="82.148094"
+         style="font-style:normal;font-weight:normal;font-size:2.89772296px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.18110768"
+         xml:space="preserve"
+         transform="scale(0.91246147,1.0959367)"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Courier;-inkscape-font-specification:'Courier Bold';fill:#005500;stroke-width:0.18110768"
+           y="37.011829"
+           x="82.148094"
+           id="tspan3976-9"
+           sodipodi:role="line">javascript</tspan></text>
     </g>
   </g>
 </svg>
