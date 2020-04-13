@@ -212,7 +212,9 @@ Les langages serveurs, parmi lesquels PHP (présent sur environ 80% des serveurs
 Lors d'une requête d'un client vers un serveur, si le client demande la page ```index.html```, une **copie exacte** du fichier ```index.html``` est transmise au client sur sa machine.  
 
 **Exemple :** la page http://glassus1.free.fr/interesting.html que vous avez déjà consultée se trouve **telle quelle** sur le serveur mis à disposition par Free pour l'hébergement des pages personnelles :
+
 ![](data/extraitfree1.png)
+
 Depuis votre navigateur, l'affichage du code-source (par Ctrl-U) vous donnera le fichier html tel qu'il était stocké sur le serveur.
 
 #### 3.2  Page dynamique (côté serveur) :
