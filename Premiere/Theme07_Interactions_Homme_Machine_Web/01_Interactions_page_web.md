@@ -61,7 +61,7 @@ Lors de la création de votre page sur Repl.it, vous avez pu voir dans l'explora
 L'acronyme CSS signifie _Cascading Style Sheets_. L'idée est de regrouper dans un seul fichier toutes les informations relatives à la mise en forme des éléments de la page html. 
 De manière très simplifiée, on peut dire que le fichier ```html``` s'occupe _du fond_ tandis que le fichier ```css``` s'occupe de la _forme_.
 
-Le fichier CSS (souvent nommé ```style.css```) doit être appelé au début du fichier ```html``` , au sein de la balise ```<head>```.
+Le fichier CSS (souvent nommé ```style.css```) doit être référencé au début du fichier ```html``` , au sein de la balise ```<head>```.
 
 **Exemple minimal de couple html / css** :
 
@@ -109,26 +109,26 @@ Vous pouvez contempler à l'adresse [https://exemplehtmlcss--g-lassus.repl.co](h
 Reprenez votre page de l'exercice 1 et rajoutez une feuille de style.
 
 ##### Exercice 3
-- Allez sur le site sudouest.fr, et affichez l'inspecteur d'élement de votre navigateur (généralement accessible en appuyant sur ```F12``` )
+- Allez sur le site http://sudouest.fr, et affichez l'inspecteur d'élement de votre navigateur (généralement accessible en appuyant sur ```F12``` )
 - Modifiez le plus possible les attributs de style de la page.
 
 
 
 
 
-### 2. Quand le client peut agir sur sa page : exemple avec Javascript
+### 2. Quand le client peut agir sur sa page : exemple avec JavaScript
 ![](data/dynclient.png)
 
 Jusqu'à présent, la page web envoyée par le serveur est :
 1. identique quel que soit le client.
 2. statique après réception sur l'ordinateur du client.
 
-Le Javascript va venir régler le problème n°2 : il est possible de fabriquer une page sur laquelle le client va pouvoir agir **localement**, sans avoir à redemander une nouvelle page au serveur.
+Le JavaScript va venir régler le problème n°2 : il est possible de fabriquer une page sur laquelle le client va pouvoir agir **localement**, sans avoir à redemander une nouvelle page au serveur.
 
-Inventé en 1995 par [Brendan Eich](https://fr.wikipedia.org/wiki/Brendan_Eich) pour le navigateur Netscape, le langage Javascript s'est imposé comme la norme auprès de tous les navigateurs pour apporter de l'interactivité aux pages web.
+Inventé en 1995 par [Brendan Eich](https://fr.wikipedia.org/wiki/Brendan_Eich) pour le navigateur Netscape, le langage JavaScript s'est imposé comme la norme auprès de tous les navigateurs pour apporter de l'interactivité aux pages web.
 
 **Exemple minimal de couple html / javascript** :
-Notre fichier ```index.html``` fait référence, au sein d'une balise ```<script>```, à un fichier externe ```script.js``` qui contiendra notre code Javascript.   
+Notre fichier ```index.html``` fait référence, au sein d'une balise ```<script>```, à un fichier externe ```script.js``` qui contiendra notre code JavaScript.   
 
 - fichier ```index.html``` : 
 ```html
@@ -156,7 +156,7 @@ Notre fichier ```index.html``` fait référence, au sein d'une balise ```<script
     </div>
     <div>
       <p>
-      En Javascript, le nom de la couleur choisie est :
+      En JavaScript, le nom de la couleur choisie est :
       </p>
       <p id="resultat"></p>
     </div>
@@ -178,19 +178,19 @@ Le résultat de cette page peut être consulté à l'adresse [https://exemplejs.
 
 **Commentaires**
 
-- Au sein du bouton déclaré par la balise ```button```, le paramètre ```onclick``` reçoit le nom d'une fonction déclarée à l'intérieur du fichier ```script.js```, ici la fonction ```choix()```.
+- Au sein du bouton déclaré par la balise ```button```, l'attribut  ```onclick``` reçoit le nom d'une fonction déclarée à l'intérieur du fichier ```script.js```, ici la fonction ```choix()```.
 - Cette fonction nous permet de modifier à la fois l'aspect esthétique de la page (changement de la couleur de background) mais aussi le contenu de cette page, en faisant afficher le nom de la couleur.
 
-La puissance du Javascript permet de réaliser aujourd'hui des interfaces utilisateurs très complexes au sein d'un navigateur, équivalentes à celles produites par des logiciels externes (pensez à Discord, par ex.). Bien sûr, dans ces cas complexes, le serveur est aussi sollicité pour modifier la page, comme nous le verrons en partie 3.
+La puissance du JavaScript permet de réaliser aujourd'hui des interfaces utilisateurs très complexes au sein d'un navigateur, équivalentes à celles produites par des logiciels externes (pensez à Discord, par ex.). Bien sûr, dans ces cas complexes, le serveur est aussi sollicité pour modifier la page, comme nous le verrons en partie 3.
 
 
 **En savoir plus** 
-- le guide Javascript de la fondation Mozilla : https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide
+- le guide JavaScript de la fondation Mozilla : https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide
 - le cours d'OpenClassrooms : https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript
 
 
 ##### Exercice 4
-- Reprenez votre page créée sur repl<i></i>.it aux exercices précédents et rajoutez du Javascript pour la rendre dynamique. Faites ce que vous voulez !
+- Reprenez votre page créée sur repl<i></i>.it aux exercices précédents et rajoutez du JavaScript pour la rendre dynamique. Faites ce que vous voulez !
 
 
 
@@ -202,7 +202,7 @@ La puissance du Javascript permet de réaliser aujourd'hui des interfaces utilis
 ![](data/dynserveur.png)
 
 Rappelons que toutes les pages que nous avons créées jusqu'à présent sont uniformément envoyées par le serveur au client. Aucune «préparation» de la page en amont n'a lieu sur le serveur, aucun dialogue n'a lieu avec le serveur une fois que la page a été livrée. 
-Évidemment, si l'internet était comme ceci, il ne serait qu'une gigantesque bibliothèque en consultation seule (ce qui ne serait déjà pas si mal).
+Évidemment, si le web était comme ceci, il ne serait qu'une gigantesque bibliothèque en consultation seule (ce fut le cas pendant longtemps, et ce qui n'était déjà pas si mal).
 
 Les langages serveurs, parmi lesquels PHP (présent sur environ 80% des serveurs), Python (via le framework Django), Java, Ruby, C#, permettent de rajouter de l'interactivité côté serveur.
 
@@ -216,16 +216,20 @@ Lors d'une requête d'un client vers un serveur, si le client demande la page ``
 Depuis votre navigateur, l'affichage du code-source (par Ctrl-U) vous donnera le fichier html tel qu'il était stocké sur le serveur.
 
 #### 3.2  Page dynamique (côté serveur) :
-Lors d'une requête d'un client vers un serveur, si le client demande la page ```test.php```, une code html est généré à partir  du fichier ```test.php```  puis est transmise au client sur sa machine. Le fichier transmis ne contient plus de balises ```php```, il ne comporte que des balises ```html``` classiques.  
+Lors d'une requête d'un client vers un serveur, si le client demande la page ```test.php```, un code html est généré à partir  du fichier ```test.php```  puis est transmise au client sur sa machine. Le fichier transmis ne contient plus de balises ```php```, il ne comporte que des balises ```html``` classiques.  
 
 **Exemple :** la consultation de la page http://glassus1.free.fr/test.php va renvoyer la page suivante :
+
 ![](data/php1.png)
+
 dont le code-source est :
+
 ![](data/php2.png)
 
 Notez bien que ce code-source ne contient que du ```html```.
 
 Allons regarder cette page **du côté du serveur** :
+
 ![](data/php3.png)
  
 Le contenu de cette page est :
