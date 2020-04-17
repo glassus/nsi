@@ -269,6 +269,7 @@ Nous sommes le 13-04-2020
 
 Voilà comment un serveur peut adapter la page qu'il renvoie, suivant l'utilisateur qui la demande. Nous verrons prochainement comment par des requêtes le client peut envoyer des paramètres au serveur, et comment celui-ci modifie sa réponse en conséquence.
 
+**En savoir plus :** https://www.php.net/manual/fr/tutorial.firstpage.php
 
 ##### Exercice 5
 - Allez sur https://repl.it/ , et créez un nouveau repl.it en choisissant PHP Web Server.
