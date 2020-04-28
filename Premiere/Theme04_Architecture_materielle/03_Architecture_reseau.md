@@ -41,7 +41,7 @@ Un site comme https://www.macvendorlookup.com/ vous permet de retrouver le fabri
 
 #### 1.3 Un deuxième sous-réseau
 
-Rajoutons un deuxième sous-réseau de la manière suivante (penser à bien renommer les switchs)
+Rajoutons un deuxième sous-réseau de la manière suivante (penser à bien renommer les switchs).
 
 ![](data/f2.png)
 
@@ -56,6 +56,7 @@ Une réponse pas si bête : avec un cable entre les deux switchs !
 <p>
 
 ![](data/ft2.png)
+
 Cela ne marche pas. Les paquets sont perdus.
 </p>
 </details>
@@ -68,6 +69,7 @@ Cela ne marche pas. Les paquets sont perdus.
 <p>
 
 ![](data/ft3.png)
+
 Cela marche. Les paquets sont bien acheminés.
 </p>
 </details>
@@ -79,4 +81,31 @@ Cela marche. Les paquets sont bien acheminés.
 
 #### 1.4 Notion de masque de sous-réseau
 
-Dans Filius, lors de l'attribution de l'adresse IP à une machine, une ligne nous permet de spécifier le *masque de sous-réseau*.
+Dans Filius, lors de l'attribution de l'adresse IP à une machine, une ligne nous permet de spécifier le **masque de sous-réseau** (appelé simplement « Masque » dans Filius). C'est ce masque qui va permettre de déterminer si une machine appartient à un sous-réseau ou non, en fonction de son adresse IP.
+
+![](data/f4.png)
+
+##### 1.4.1 Explication basique
+- Si le masque est ```255.255.255.0```, toutes les machines partageant les mêmes **trois** premiers nombres de leur adresse IP appartiendront au même sous-réseau. Comme ceci est le réglage par défaut de Filius, cela explique pourquoi  ```192.168.0.33``` et ```192.168.0.1``` sont sur le même sous-réseau, et pourquoi  ```192.168.1.2``` et ```192.168.0.1``` ne sont pas sur le même sous-réseau.
+
+Dans cette configuration, 256 machines peuvent donc appartenir au même sous-réseau.
+
+- Si le masque est ```255.255.0.0```, toutes les machines partageant les mêmes **deux** premiers nombres de leur adresse IP appartiendront au même sous-réseau.
+Dans cette configuration, 65536 machines peuvent être dans le même sous-réseau. (car $256^2=65536$)
+
+
+**Exercice**
+- Renommons ```192.168.0.33``` en ```192.168.1.2``` et modifions son masque en ```255.255.0.0```.
+- Modifions aussi le masque de ```192.168.0.1``` en ```255.255.0.0```.
+- Testons le ping de ```192.168.0.1``` vers ```192.168.1.2```.
+
+<details><summary> Résultat </summary>
+<p>
+
+![](data/ft4.png)
+
+Cela marche. Les deux machines appartiennent maintenant au même sous-réseau.
+</p>
+</details>
+
+<br>
