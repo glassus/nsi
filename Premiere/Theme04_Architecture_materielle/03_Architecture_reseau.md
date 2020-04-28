@@ -120,6 +120,6 @@ Quelle opération permet de distinguer cette appartenance à un même sous-rése
 
 Appelons ```IP_A``` et ```IP_B``` les adresses IP respectives des machines A et B. Appelons ```M``` le masque de sous-réseau.
 
->! A et B appartiennent au même sous-réseau $\iff$ ```IP_A AND M = IP_B AND M```
+A et B appartiennent au même sous-réseau $\iff$ ```IP_A AND M = IP_B AND M```
 
 ### 3. Un vrai réseau contenant deux sous-réseaux distincts : la nécessité d'un routeur
