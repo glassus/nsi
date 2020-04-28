@@ -112,5 +112,14 @@ Cela marche. Les deux machines appartiennent maintenant au même sous-réseau.
 
 ##### 2.1.2 Explication avancée
 
+Lorsqu'une machine A veut envoyer un message à une machine B, elle doit déterminer si cette machine :
+- appartient au même sous-réseau : auquel cas le message est envoyé directement via un ou plusieurs switchs.
+- n'appartient pas au même sous-réseau : auquel cas le message doit d'abord transiter par un routeur (voir 3.)
+
+Quelle opération permet de distinguer cette appartenance à un même sous-réseau ?
+
+Appelons ```IP_A``` et ```IP_B``` les adresses IP respectives des machines A et B. Appelons ```M``` le masque de sous-réseau.
+
+>! A et B appartiennent au même sous-réseau $\iff$ ```IP_A AND M = IP_B AND M```
 
 ### 3. Un vrai réseau contenant deux sous-réseaux distincts : la nécessité d'un routeur
