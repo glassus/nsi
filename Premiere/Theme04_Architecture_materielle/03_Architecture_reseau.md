@@ -122,4 +122,9 @@ Appelons ```IP_A``` et ```IP_B``` les adresses IP respectives des machines A et 
 
 A et B appartiennent au même sous-réseau $\iff$ ```IP_A AND M = IP_B AND M```
 
+```maths
+\frac{1}{2}
+```
+
+
 ### 3. Un vrai réseau contenant deux sous-réseaux distincts : la nécessité d'un routeur
