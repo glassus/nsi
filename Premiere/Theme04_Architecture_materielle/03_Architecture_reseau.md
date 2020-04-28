@@ -9,6 +9,16 @@ Au sein du logiciel [Filius](https://www.lernsoftware-filius.de/Herunterladen), 
 
 Testons le ```ping``` de la machine ```192.168.0.1```  vers la machine ```192.168.0.3```.
 
+<details><summary> Résultat </summary>
+<p>
+
+![](data/ft1.png)
+</p>
+</details>
+
+<br>
+
+
 Quels sont les différents composants et protocoles qui interviennent dans cette configuration ?
 
 #### 1.1 La carte réseau et son adresse MAC
@@ -44,6 +54,8 @@ Une réponse pas si bête : avec un cable entre les deux switchs !
 1. Testons cette hypothèse en essayant de pinger la machine ```192.168.1.2``` depuis la machine ```192.168.0.1```. 
 <details><summary> Résultat </summary>
 <p>
+
+![](data/ft2.png)
 Cela ne marche pas. Les paquets sont perdus.
 </p>
 </details>
@@ -54,6 +66,8 @@ Cela ne marche pas. Les paquets sont perdus.
 
 <details><summary> Résultat </summary>
 <p>
+
+![](data/ft3.png)
 Cela marche. Les paquets sont bien acheminés.
 </p>
 </details>
