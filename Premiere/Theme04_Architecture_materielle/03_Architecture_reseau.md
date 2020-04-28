@@ -118,13 +118,42 @@ Lorsqu'une machine A veut envoyer un message à une machine B, elle doit déterm
 
 Quelle opération permet de distinguer cette appartenance à un même sous-réseau ?
 
-Appelons ```IP_A``` et ```IP_B``` les adresses IP respectives des machines A et B. Appelons ```M``` le masque de sous-réseau.
+Appelons ```IP_A``` et ```IP_B``` les adresses IP respectives des machines A et B.  
+Appelons ```M``` le masque de sous-réseau.  
+Nommons ```&``` l'opérateur de conjonction entre nombres binaires (voir [ici](https://github.com/glassus/nsi/blob/master/Premiere/Theme03_Representation_des_donnees/05_Operateurs_booleens.ipynb)): 
 
-A et B appartiennent au même sous-réseau $\iff$ ```IP_A AND M = IP_B AND M```
+**Propriété :** A et B appartiennent au même sous-réseau ⇔ ```IP_A & M = IP_B & M```
 
-```maths
-\frac{1}{2}
-```
+Exemple : considérons trois machines A, B, C d'IP respectives ```192.168.129.10```, ```192.168.135.200``` et ```192.168.145.1```, configurées avec un masque de sous-réseau égal à ```255.255.248.0```.  
+
+|        | machine A      | machine B       | machine C     |
+|--------|----------------|-----------------|---------------|
+| IP     | 192.168.129.10 | 192.168.135.200 | 192.168.145.1 |
+| M      | 255.255.248.0  |  255.255.248.0  | 255.255.248.0 |
+| IP & M | 192.168.128.0  |  192.168.128.0  | 192.168.144.0 |
+
+rappel des règles de calcul :
+- pour tout octet ```x```, ```x & 255 = x```  et ```x & 0 = 0```.
+- ```129 & 248``` s'écrit en binaire ```10000001 & 11111000``` qui vaut ```10000000```, soit ```128``` en décimal.
+
+Conclusion : les machines A et B sont sous le même sous-réseau, mais pas la machine C.
+
+##### 2.1.3 Cohérence entre les deux explications
+Lorsqu'un masque de sous-réseau est égal à ```255.255.255.0```, l'opération de conjonction ```&``` avec chaque IP ne laissera intacts que les 3 premiers octets, le dernier sera égal à 0. Donc si deux adresses s'écrivent ```A.B.C.X``` et   ```A.B.C.Y```, elles appartiendront forcément au même sous-réseau (typiquement, c'est le cas de ```192.168.0.33``` et ```192.168.0.1```).
+
+#### 2.2 Écriture des masques de sous-réseau : notation CIDR
+
+D'après ce qui précède, 2 informations sont nécessaires pour déterminer le sous-réseau auquel appartient une machine : son IP et le masque de sous-réseau. 
+Une convention de notation permet d'écrire simplement ces deux renseignements : la notation CIDR.
+
+**Exemple** : Une machine d'IP ```192.168.0.33``` avec un masque de sous-réseau ```255.255.255.0``` sera désignée par ```192.168.0.33 / 8``` en notation CIDR.
+
+Le préfixe ```/ 8``` signifie que le masque de sous-réseau finit par 8 zéros consécutifs : le reste des bits est à 1.  
+Autrement dit, ce masque vaut ```11111111.11111111.11111111.00000000``` , soit ```255.255.255.0```.  
+De la même manière, le préfixe ```/ 16``` donnera un masque de ```11111111.11111111.00000000.00000000``` , soit ```255.255.0.0```.  
+Ou encore , un préfixe ```/ 11``` donnera un masque de ```11111111.11111111.11111000.00000000``` , soit ```255.255.248.0```. 
+
+
 
 
 ### 3. Un vrai réseau contenant deux sous-réseaux distincts : la nécessité d'un routeur
