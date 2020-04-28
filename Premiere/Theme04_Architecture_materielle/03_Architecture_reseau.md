@@ -151,9 +151,19 @@ Une convention de notation permet d'écrire simplement ces deux renseignements :
 Le préfixe ```/ 8``` signifie que le masque de sous-réseau finit par 8 zéros consécutifs : le reste des bits est à 1.  
 Autrement dit, ce masque vaut ```11111111.11111111.11111111.00000000``` , soit ```255.255.255.0```.  
 De la même manière, le préfixe ```/ 16``` donnera un masque de ```11111111.11111111.00000000.00000000``` , soit ```255.255.0.0```.  
-Ou encore , un préfixe ```/ 11``` donnera un masque de ```11111111.11111111.11111000.00000000``` , soit ```255.255.248.0```. 
+Ou encore, un préfixe ```/ 11``` donnera un masque de ```11111111.11111111.11111000.00000000``` , soit ```255.255.248.0```. 
 
 
 
 
 ### 3. Un vrai réseau contenant deux sous-réseaux distincts : la nécessité d'un routeur
+
+Notre solution initiale (relier les deux switchs par un cable pour unifier les deux sous-réseaux) n'est pas viable à l'échelle d'un réseau planétaire.
+
+Pour que les machines de deux réseaux différents puissent être connectées, on va utiliser un dispositif équipé de **deux cartes réseaux**, situé à cheval entre les deux sous-réseaux. Ce équipement de réseau est appelé **routeur** ou **passerelle**.
+
+![](data/routeur.png)
+
+
+
+![](data/f5.png)
