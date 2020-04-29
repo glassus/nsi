@@ -146,12 +146,12 @@ Lorsqu'un masque de sous-réseau est égal à ```255.255.255.0```, l'opération 
 D'après ce qui précède, 2 informations sont nécessaires pour déterminer le sous-réseau auquel appartient une machine : son IP et le masque de sous-réseau. 
 Une convention de notation permet d'écrire simplement ces deux renseignements : la notation CIDR.
 
-**Exemple** : Une machine d'IP ```192.168.0.33``` avec un masque de sous-réseau ```255.255.255.0``` sera désignée par ```192.168.0.33 / 8``` en notation CIDR.
+**Exemple** : Une machine d'IP ```192.168.0.33``` avec un masque de sous-réseau ```255.255.255.0``` sera désignée par ```192.168.0.33 / 24``` en notation CIDR.
 
-Le préfixe ```/ 8``` signifie que le masque de sous-réseau finit par 8 zéros consécutifs : le reste des bits est à 1.  
+Le préfixe ```/ 24``` signifie que le masque de sous-réseau commence par  24 bits consécutifs de valeur 1 : le reste des bits (donc 8 bits) est à mis à 0.  
 Autrement dit, ce masque vaut ```11111111.11111111.11111111.00000000``` , soit ```255.255.255.0```.  
-De la même manière, le préfixe ```/ 16``` donnera un masque de ```11111111.11111111.00000000.00000000``` , soit ```255.255.0.0```.  
-Ou encore, un préfixe ```/ 11``` donnera un masque de ```11111111.11111111.11111000.00000000``` , soit ```255.255.248.0```. 
+De la même manière, le préfixe ```/ 32``` donnera un masque de ```11111111.11111111.00000000.00000000``` , soit ```255.255.0.0```.  
+Ou encore, un préfixe ```/ 21``` donnera un masque de ```11111111.11111111.11111000.00000000``` , soit ```255.255.248.0```. 
 
 
 
@@ -164,6 +164,9 @@ Pour que les machines de deux réseaux différents puissent être connectées, o
 
 ![](data/routeur.png)
 
-
+#### 3.1 Principe de fonctionnement
+Imaginons que la machine ```192.168.0.1 / 24``` veuille communiquer avec la machine  ```172.16.52.3 / 24```.  
+L'observation du masque de sous-réseau de la machine ```192.168.0.1 / 24``` nous apprend qu'elle ne peut communiquer qu'avec les adresses de la forme ```192.168.0.X / 24```, où ```X``` est un nombre entre 0 et 255. 
+- lorsque
 
 ![](data/f5.png)
