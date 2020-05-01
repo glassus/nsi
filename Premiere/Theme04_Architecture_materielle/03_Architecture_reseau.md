@@ -185,5 +185,6 @@ L'observation du masque de sous-réseau de la machine ```192.168.0.1 / 24``` nou
 
 G.Lassus, Lycée François Mauriac --  Bordeaux  
 
-- [a] fdjfs
-- [b] sdjfmlks
+- [ ] fekf
+- [ ] fekf
+- [ ] fekf
