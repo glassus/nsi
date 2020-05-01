@@ -168,23 +168,68 @@ Pour que les machines de deux réseaux différents puissent être connectées, o
 Imaginons que la machine ```192.168.0.1 / 24``` veuille communiquer avec la machine  ```172.16.52.3 / 24```.  
 L'observation du masque de sous-réseau de la machine ```192.168.0.1 / 24``` nous apprend qu'elle ne peut communiquer qu'avec les adresses de la forme ```192.168.0.X / 24```, où ```X``` est un nombre entre 0 et 255. 
 - lorsque
+> À FAIRE
 
+
+
+#### 3.2 Illustration avec Filius
+
+- rajoutons un routeur entre le SwitchA et le SwitchB.
 ![](data/f5.png)
 
+- configuration du routeur :
+     L'interface reliée au Switch A doit avoir une adresse du sous-réseau A. On donne souvent une adresse finissant par ```254```, qui est en quelque sorte la dernière adresse du réseau (en effet l'adresse en ```255``` est appelée adresse de **broadcast**, utilisée pour pinger une seule fois l'intégralité d'un sous-réseau).  
+     On donne donc l'adresse ```192.168.0.254``` pour l'interface reliée au Switch A, et ```192.168.1.254``` pour l'interface reliée au Switch B.  
+     ![](data/flsrouteur.png)  
+     Dans l'onglet général, sélectionner « Routage automatique ».  
+     Ainsi configuré notre routeur peut jouer le rôle de **passerelle** entre les deux sous-réseaux.
+<br>
+- test du ping entre ```192.168.0.1``` et ```192.168.1.2```.  
+<details><summary> Résultat </summary>
+<p>
+
+![](data/ft2.png)
+
+Cela ne marche pas. Les paquets sont perdus.
+</p>
+</details>
+
+<br>
+
+Pourquoi cet échec ? Parce que nous devons dire à chaque machine qu'une passerelle est maintenant disponible pour pouvoir sortir de son propre sous-réseau. Il faut donc sur la machine ```192.168.0.1``` et lui donner l'adresse de sa passerelle, qui est ```192.168.0.254```.
+
+![](data/passerelle.png)
+
+Attention, il faut faire de même pour ```192.168.1.2``` (avec la bonne passerelle...)  
+Testons à nouveau le ping... Cette fois cela marche.
+
+Plus intéressant : effectuons un ```traceroute``` entre  ```192.168.0.1``` et ```192.168.1.2```.
+
+![](data/traceroute.png)
+
+On y aperçoit que la machine ```192.168.1.2``` est atteignable en deux sauts depuis ```192.168.0.1```, en passant par la passerelle ```192.168.0.254```
 
 
+**Cas d'un réseau domestique**
+Chez vous, la box de votre opérateur joue simultanément le rôle de switch et de routeur :
+- switch car elle répartit la connexion entre les différents dispositifs (ordinateurs branchés en ethernet, smartphone en wifi, tv connectée...)
+- routeur car elle fait le lien entre ce sous-réseau domestique (les appareils de votre maison) et le réseau internet.
 
+L'image ci-dessous présente le résultat de la commande ```ipconfig``` sous Windows. On y retrouve l'adresse IP locale ```192.168.9.103```, le masque de sous-réseau ```255.255.255.0``` et l'adresse de la passerelle ```192.168.9.1```.  
+![](data/imgpasserelle.jpg)
+
+#### 3.3 Annexe : rajout d'un serveur DNS
+
+> à faire
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 ---
 **Bibliographie**
 - Numérique et Sciences Informatiques, 1re, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.
-- OpenClassrooms : https://openclassrooms.com/fr/courses/1561696-les-reseaux-de-zero/3607286-ladressage-cidr
+- Cours d'OpenClassrooms : https://openclassrooms.com/fr/courses/1561696-les-reseaux-de-zero/3607286-ladressage-cidr
 
 
 ---
-![](data/ccbysa.png)
+![](data/ccbysa.png "image")
 
 G.Lassus, Lycée François Mauriac --  Bordeaux  
-
-- [ ] fekf
-- [ ] fekf
-- [ ] fekf
