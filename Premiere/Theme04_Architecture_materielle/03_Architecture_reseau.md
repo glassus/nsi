@@ -88,10 +88,10 @@ Dans Filius, lors de l'attribution de l'adresse IP à une machine, une ligne nou
 ##### 2.1.1 Explication basique
 - Si le masque est ```255.255.255.0```, toutes les machines partageant les mêmes **trois** premiers nombres de leur adresse IP appartiendront au même sous-réseau. Comme ceci est le réglage par défaut de Filius, cela explique pourquoi  ```192.168.0.33``` et ```192.168.0.1``` sont sur le même sous-réseau, et pourquoi  ```192.168.1.2``` et ```192.168.0.1``` ne sont pas sur le même sous-réseau.
 
-Dans cette configuration, 256 machines peuvent donc appartenir au même sous-réseau.
+Dans cette configuration, 256 machines peuvent donc appartenir au même sous-réseau (ce n'est pas tout à fait le cas car des adresses finissant par 0 ou par 255 sont réservées).
 
 - Si le masque est ```255.255.0.0```, toutes les machines partageant les mêmes **deux** premiers nombres de leur adresse IP appartiendront au même sous-réseau.  
-Dans cette configuration, 65536 machines peuvent être dans le même sous-réseau. (car $256^2=65536$)
+Dans cette configuration, 65536 machines peuvent être dans le même sous-réseau. (car 256^2=65536)
 
 
 **Exercice**
@@ -150,7 +150,7 @@ Une convention de notation permet d'écrire simplement ces deux renseignements :
 
 Le préfixe ```/ 24``` signifie que le masque de sous-réseau commence par  24 bits consécutifs de valeur 1 : le reste des bits (donc 8 bits) est à mis à 0.  
 Autrement dit, ce masque vaut ```11111111.11111111.11111111.00000000``` , soit ```255.255.255.0```.  
-De la même manière, le préfixe ```/ 32``` donnera un masque de ```11111111.11111111.00000000.00000000``` , soit ```255.255.0.0```.  
+De la même manière, le préfixe ```/ 16``` donnera un masque de ```11111111.11111111.00000000.00000000``` , soit ```255.255.0.0```.  
 Ou encore, un préfixe ```/ 21``` donnera un masque de ```11111111.11111111.11111000.00000000``` , soit ```255.255.248.0```. 
 
 
@@ -170,3 +170,20 @@ L'observation du masque de sous-réseau de la machine ```192.168.0.1 / 24``` nou
 - lorsque
 
 ![](data/f5.png)
+
+
+
+
+---
+**Bibliographie**
+- Numérique et Sciences Informatiques, 1re, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.
+- OpenClassrooms : https://openclassrooms.com/fr/courses/1561696-les-reseaux-de-zero/3607286-ladressage-cidr
+
+
+---
+![](data/ccbysa.png)
+
+G.Lassus, Lycée François Mauriac --  Bordeaux  
+
+- [a] fdjfs
+- [b] sdjfmlks
