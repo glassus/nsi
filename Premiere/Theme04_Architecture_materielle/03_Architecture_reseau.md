@@ -1,5 +1,6 @@
 ## Architecture d'un réseau
 
+Ce cours a pour but de présenter la constitution classique d'un réseau, et les équipements associés. La partie relative aux protocoles utilisés lors des échanges entre deux machines est détaillée dans le cours [04_Protocoles_de_communication](https://github.com/glassus/nsi/blob/master/Premiere/Theme04_Architecture_materielle/04_Protocoles_de_communication.md).
 
 ### 1. Premier réseau local
 
@@ -19,7 +20,6 @@ Testons le ```ping``` de la machine ```192.168.0.1```  vers la machine ```192.16
 <br>
 
 
-Quels sont les différents composants et protocoles qui interviennent dans cette configuration ?
 
 #### 1.1. La carte réseau et son adresse MAC
 Chaque ordinateur sur le réseau dispose d'une adresse MAC, qui une valeur **unique** attribuée à sa carte réseau (Ethernet, Wifi, 4G, 5G, ...) lors de sa fabrication en usine.
@@ -178,10 +178,10 @@ Dans notre exemple, l'adresse ```172.16.52.3``` n'est pas dans le sous-réseau d
 
 #### 3.2 Illustration avec Filius
 
-- rajoutons un routeur entre le SwitchA et le SwitchB.
+- Rajoutons un routeur entre le SwitchA et le SwitchB.
 ![](data/f5.png)
 
-- configuration du routeur :
+- Configuration du routeur :
      L'interface reliée au Switch A doit avoir une adresse du sous-réseau A. On donne souvent une adresse finissant par ```254```, qui est en quelque sorte la dernière adresse du réseau (en effet l'adresse en ```255``` est appelée adresse de **broadcast**, utilisée pour pinger en une seule fois l'intégralité d'un sous-réseau).  
      On donne donc l'adresse ```192.168.0.254``` pour l'interface reliée au Switch A, et ```192.168.1.254``` pour l'interface reliée au Switch B.  
      ![](data/flsrouteur.png)  
@@ -189,7 +189,7 @@ Dans notre exemple, l'adresse ```172.16.52.3``` n'est pas dans le sous-réseau d
      Ainsi configuré notre routeur peut jouer le rôle de **passerelle** entre les deux sous-réseaux.
 <br>
 
-- test du ping entre ```192.168.0.1``` et ```192.168.1.2``` : 
+- Test du ping entre ```192.168.0.1``` et ```192.168.1.2``` : 
 <details><summary> Résultat </summary>
 <p>
 
@@ -220,6 +220,8 @@ On y aperçoit que la machine ```192.168.1.2``` est atteignable en deux sauts de
 Chez vous, la box de votre opérateur joue simultanément le rôle de switch et de routeur :
 - switch car elle répartit la connexion entre les différents dispositifs (ordinateurs branchés en ethernet, smartphone en wifi, tv connectée...)
 - routeur car elle fait le lien entre ce sous-réseau domestique (les appareils de votre maison) et le réseau internet.
+
+![](data/boxmaison.png) 
 
 L'image ci-dessous présente le résultat de la commande ```ipconfig``` sous Windows. On y retrouve l'adresse IP locale ```192.168.9.103```, le masque de sous-réseau ```255.255.255.0``` et l'adresse de la passerelle ```192.168.9.1```.  
 ![](data/imgpasserelle.jpg)
