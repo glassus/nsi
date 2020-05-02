@@ -258,9 +258,9 @@ La machine qui assure ce rôle d'annuaire entre les serveurs web et leur adresse
 
 
 
-------
 
 <br>
+
 ---
 **Bibliographie**
 - Numérique et Sciences Informatiques, 1re, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.
