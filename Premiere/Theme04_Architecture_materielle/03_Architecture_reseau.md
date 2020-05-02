@@ -178,13 +178,14 @@ L'observation du masque de sous-réseau de la machine ```192.168.0.1 / 24``` nou
 ![](data/f5.png)
 
 - configuration du routeur :
-     L'interface reliée au Switch A doit avoir une adresse du sous-réseau A. On donne souvent une adresse finissant par ```254```, qui est en quelque sorte la dernière adresse du réseau (en effet l'adresse en ```255``` est appelée adresse de **broadcast**, utilisée pour pinger une seule fois l'intégralité d'un sous-réseau).  
+     L'interface reliée au Switch A doit avoir une adresse du sous-réseau A. On donne souvent une adresse finissant par ```254```, qui est en quelque sorte la dernière adresse du réseau (en effet l'adresse en ```255``` est appelée adresse de **broadcast**, utilisée pour pinger en une seule fois l'intégralité d'un sous-réseau).  
      On donne donc l'adresse ```192.168.0.254``` pour l'interface reliée au Switch A, et ```192.168.1.254``` pour l'interface reliée au Switch B.  
      ![](data/flsrouteur.png)  
      Dans l'onglet général, sélectionner « Routage automatique ».  
      Ainsi configuré notre routeur peut jouer le rôle de **passerelle** entre les deux sous-réseaux.
 <br>
-- test du ping entre ```192.168.0.1``` et ```192.168.1.2```.  
+
+- test du ping entre ```192.168.0.1``` et ```192.168.1.2``` : 
 <details><summary> Résultat </summary>
 <p>
 
@@ -196,7 +197,7 @@ Cela ne marche pas. Les paquets sont perdus.
 
 <br>
 
-Pourquoi cet échec ? Parce que nous devons dire à chaque machine qu'une passerelle est maintenant disponible pour pouvoir sortir de son propre sous-réseau. Il faut donc sur la machine ```192.168.0.1``` et lui donner l'adresse de sa passerelle, qui est ```192.168.0.254```.
+Pourquoi cet échec ? Parce que nous devons dire à chaque machine qu'une passerelle est maintenant disponible pour pouvoir sortir de son propre sous-réseau. Il faut donc aller sur la machine ```192.168.0.1``` et lui donner l'adresse de sa passerelle, qui est ```192.168.0.254```.
 
 ![](data/passerelle.png)
 
@@ -210,7 +211,8 @@ Plus intéressant : effectuons un ```traceroute``` entre  ```192.168.0.1``` et `
 On y aperçoit que la machine ```192.168.1.2``` est atteignable en deux sauts depuis ```192.168.0.1```, en passant par la passerelle ```192.168.0.254```
 
 
-**Cas d'un réseau domestique**
+**Cas d'un réseau domestique**  
+
 Chez vous, la box de votre opérateur joue simultanément le rôle de switch et de routeur :
 - switch car elle répartit la connexion entre les différents dispositifs (ordinateurs branchés en ethernet, smartphone en wifi, tv connectée...)
 - routeur car elle fait le lien entre ce sous-réseau domestique (les appareils de votre maison) et le réseau internet.
@@ -220,7 +222,62 @@ L'image ci-dessous présente le résultat de la commande ```ipconfig``` sous Win
 
 #### 3.3 Annexe : rajout d'un serveur DNS
 
-> à faire
+##### 3.3.1 Rajout d'un serveur web
+- Connectons un ordinateur au SwitchB, sur l'adresse ```192.168.1.30``` et installons dessus un Serveur web et démarrons-le. 
+![](data/serveurweb.png) 
+
+- Sur la machine ```192.168.0.1```, rajoutons un Navigateur Web. En tapant dans la barre d'adresse l'adresse IP du Serveur web, la page d'accueil de Filius s'affiche.  
+![](data/nav1.png)
+
+Lors d'une utilisation classique d'un navigateur web, c'est une url mémorisable qui s'affiche, et non une adresse IP : on retient en effet plus facilement https://www.google.com/ que http://216.58.213.131, qui renvoient pourtant à la même adresse. 
+La machine qui assure ce rôle d'annuaire entre les serveurs web et leur adresse IP s'appelle un **serveur DNS**. Pour pouvoir indexer la totalité des sites internet, son rôle est structuré de manière hiérarchique. Vous trouverez des détails ici : https://openclassrooms.com/fr/courses/857447-apprenez-le-fonctionnement-des-reseaux-tcp-ip/857163-le-service-dns
+
+##### 3.3.1 Rajout d'un serveur DNS
+- Rajoutons un serveur DNS minimal, qui n'aura dans son annuaire d'un seul site. Il faut pour cela raccorder une nouvelle machine (mais une machine déjà sur le réseau aurait très bien pu jouer ce rôle), et installer dessus un serveur DNS.  
+![](data/dns.png) 
+- Sur ce serveur DNS, associons l'adresse ```http://www.vivelansi.fr```  à l'adresse IP ```192.168.1.30```.  
+![](data/vivelansi.png) 
+
+- De retour sur notre machine ```192.168.0.1```, spécifions maintenant l'adresse du serveur DNS :  
+![](data/specdns.png)
+
+- Depuis le navigateur web de la machine ```192.168.0.1```, le site ```http://www.vivelansi.fr``` est maintenant accessible.  
+![](data/dnsex.png) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 ---
