@@ -231,7 +231,7 @@ Vous allez vous appuyer sur un leak (*fuite*) très célèbre de mots de passe ,
 Lorsque le site a été piraté (par une injection SQL, voir le cours de Terminale), ces 32 millions de mots de passe se sont retrouvés dans la nature. Ils sont aujourd'hui téléchargeables librement, et constituent un dictionnaire de 14 341 564 mots de passe différents (car parmi les 32 millions d'utilisateurs, beaucoup utilisaient des mots de passe identiques).
 Ce fichier est téléchargeable [ici](https://www.kaggle.com/wjburns/common-password-list-rockyoutxt), mais attention il pèse 134 Mo.
 
-Nous allons utiliser un fichier beaucoup plus léger ne contenant que les 1000 premiers mots de passe : vous le trouverez à l'adresse glassus1.free.fr/extraitrockyou.txt .
+Nous allons utiliser un fichier beaucoup plus léger ne contenant que les 1000 premiers mots de passe : vous le trouverez à l'adresse http://glassus1.free.fr/extraitrockyou.txt .
 
 L'un de ces mots de passe est le mot de passe demandé à la page  http://glassus1.free.fr/exoBF.html .
 
