@@ -16,37 +16,37 @@
    inkscape:version="1.0 (6e3e5246a0, 2020-05-07)"
    id="svg8"
    version="1.1"
-   viewBox="0 0 210 297"
-   height="297mm"
-   width="210mm">
+   viewBox="0 0 207.28574 88.324509"
+   height="88.324509mm"
+   width="207.28574mm">
   <defs
      id="defs2">
     <marker
        inkscape:isstock="true"
-       style="overflow:visible;"
+       style="overflow:visible"
        id="Arrow1Send"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="Arrow1Send">
       <path
-         transform="scale(0.2) rotate(180) translate(6,0)"
-         style="fill-rule:evenodd;stroke:#4bdbff;stroke-width:1pt;stroke-opacity:0.732964;fill:#55ddff;fill-opacity:0.998953"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:#55ddff;fill-opacity:0.998953;fill-rule:evenodd;stroke:#4bdbff;stroke-width:1pt;stroke-opacity:0.732964"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path4313" />
     </marker>
     <marker
        inkscape:isstock="true"
-       style="overflow:visible;"
+       style="overflow:visible"
        id="Arrow1Mend"
-       refX="0.0"
-       refY="0.0"
+       refX="0"
+       refY="0"
        orient="auto"
        inkscape:stockid="Arrow1Mend">
       <path
-         transform="scale(0.4) rotate(180) translate(10,0)"
-         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
-         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path4307" />
     </marker>
     <pattern
@@ -93,14 +93,14 @@
     <rect
        id="rect1031"
        height="113.77083"
-       width="74.083333"
+       width="74.083336"
        y="169.33333"
        x="121.70833" />
     <filter
        height="1.0111506"
-       y="-0.0055753177"
+       y="-0.0055753179"
        width="1.0015205"
-       x="-0.00076027087"
+       x="-0.00076027086"
        id="filter4171"
        style="color-interpolation-filters:sRGB"
        inkscape:collect="always">
@@ -125,6 +125,10 @@
     </marker>
   </defs>
   <sodipodi:namedview
+     fit-margin-right="2"
+     fit-margin-bottom="2"
+     fit-margin-left="2"
+     fit-margin-top="2"
      inkscape:window-maximized="1"
      inkscape:window-y="0"
      inkscape:window-x="40"
@@ -134,8 +138,8 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="254.27073"
-     inkscape:cx="368.18681"
+     inkscape:cy="299.32348"
+     inkscape:cx="217.33685"
      inkscape:zoom="1.4"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
@@ -144,6 +148,8 @@
      pagecolor="#ffffff"
      id="base">
     <inkscape:grid
+       originy="-52.778232"
+       originx="-0.82136438"
        id="grid28"
        type="xygrid" />
   </sodipodi:namedview>
@@ -160,6 +166,7 @@
     </rdf:RDF>
   </metadata>
   <g
+     transform="translate(-0.82136435,-52.778233)"
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Calque 1">
@@ -360,7 +367,7 @@
          id="tspan32-7-6-1-7-2"
          x="12.558801"
          y="113.38283"
-         style="fill:#ffffff;stroke-width:0.21011">internet</tspan></text>
+         style="fill:#ffffff;stroke-width:0.21011">réseau</tspan></text>
     <text
        id="text34-6-3-6-8-9-0"
        y="129.35023"
@@ -371,7 +378,7 @@
          y="129.35023"
          x="12.543096"
          id="tspan32-7-6-1-7-2-2"
-         sodipodi:role="line">réseau</tspan></text>
+         sodipodi:role="line">liaison</tspan></text>
     <text
        style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect1031);fill:#000000;fill-opacity:1;stroke:none;"
        id="text1029"
@@ -539,7 +546,7 @@
          x="21.883734"
          y="63.723"
          style="text-align:center;text-anchor:middle;fill:#003380;stroke-width:0.264583"
-         id="tspan1243-6">internet</tspan></text>
+         id="tspan1243-6">Internet</tspan></text>
     <text
        id="text1268"
        y="71.696426"
@@ -624,7 +631,7 @@
        height="7.9375"
        width="21.166666"
        id="rect1348"
-       style="fill:#b24496;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke" />
+       style="fill:#446db2;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke" />
     <rect
        ry="0.41659173"
        y="66.301476"
@@ -696,7 +703,7 @@
        id="rect1350-5-5"
        style="fill:#b24496;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke" />
     <rect
-       style="fill:#b24496;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke"
+       style="fill:#446db2;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke"
        id="rect1348-4"
        width="21.166666"
        height="7.9375"
@@ -748,7 +755,7 @@
        height="7.9375"
        width="21.166666"
        id="rect1348-4-3"
-       style="fill:#b24496;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke" />
+       style="fill:#446db2;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke" />
     <rect
        ry="0.41659173"
        y="87.46814"
@@ -796,7 +803,7 @@
        id="rect1350-5-5-6-9"
        style="fill:#b24496;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke" />
     <rect
-       style="fill:#b24496;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke"
+       style="fill:#446db2;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke"
        id="rect1348-4-3-8"
        width="21.166666"
        height="7.9375"
@@ -864,7 +871,7 @@
        height="7.9375"
        width="21.166666"
        id="rect1348-4-3-8-4"
-       style="fill:#b24496;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke" />
+       style="fill:#446db2;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke" />
     <rect
        ry="0.41659173"
        y="108.6348"
@@ -928,7 +935,7 @@
        id="rect1350-5-5-6-9-4-6"
        style="fill:#b24496;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke" />
     <rect
-       style="fill:#b24496;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke"
+       style="fill:#446db2;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke"
        id="rect1348-4-3-8-4-2"
        width="21.166666"
        height="7.9375"
@@ -1020,7 +1027,7 @@
        height="7.9375"
        width="21.166666"
        id="rect1348-4-3-8-4-2-5"
-       style="fill:#b24496;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke" />
+       style="fill:#446db2;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke" />
     <rect
        ry="0.41659173"
        y="129.80147"
@@ -1058,8 +1065,8 @@
        style="fill:#69b0f6;fill-opacity:1;stroke:#000000;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.546598;paint-order:fill markers stroke" />
     <rect
        ry="0.41659173"
-       y="129.80147"
-       x="99.908195"
+       y="129.91042"
+       x="100.0125"
        height="7.9375"
        width="58.208313"
        id="rect1237"
@@ -1100,45 +1107,45 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="170.65512"
-       y="103.33317"
+       x="168.17316"
+       y="103.1504"
        id="text1268-60"><tspan
          sodipodi:role="line"
          id="tspan1266-4"
-         x="170.65512"
-         y="103.33317"
+         x="168.17316"
+         y="103.1504"
          style="stroke-width:0.264583">TCP, UDP</tspan></text>
     <text
        id="text1268-60-8"
-       y="113.93742"
-       x="164.43922"
+       y="114.10761"
+       x="161.46944"
        style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
          style="stroke-width:0.264583"
-         y="113.93742"
-         x="164.43922"
+         y="114.10761"
+         x="161.46944"
          id="tspan1266-4-8"
          sodipodi:role="line">IPv4, IPv6, ICMP</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="167.89732"
-       y="124.08628"
+       x="163.79817"
+       y="124.35673"
        id="text1268-60-8-8"><tspan
          sodipodi:role="line"
          id="tspan1266-4-8-9"
-         x="167.89732"
-         y="124.08628"
+         x="163.79817"
+         y="124.35673"
          style="stroke-width:0.264583">ethernet, wifi</tspan></text>
     <text
        id="text1268-60-8-8-7"
-       y="134.74269"
-       x="167.90172"
+       y="135.07202"
+       x="160.99982"
        style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        xml:space="preserve"><tspan
          style="stroke-width:0.264583"
-         y="134.74269"
-         x="167.90172"
+         y="135.07202"
+         x="160.99982"
          id="tspan1266-4-8-9-7"
          sodipodi:role="line">ethernet,wifi, OTN</tspan></text>
     <path
