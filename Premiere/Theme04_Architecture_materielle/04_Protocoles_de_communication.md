@@ -43,7 +43,7 @@ C'est la couche où le message est transmis physiquement d'un point à un autre.
 
 
 Lors de son parcours, une trame peut être partiellement décapsulée et remonter à la couche 3, avant de redescendre et de continuer son chemin. C'est le cas notamment lors du passage dans un routeur. Mais jamais, lors de son acheminement, le contenu réel du message n'est ouvert : les paquets transmis sont acheminés de manière identique, qu'ils contiennent les éléments constitutifs d'une vidéo YouTube ou d'un email à votre cousin.  
-C'est ce qu'on appelle la **«neutralité du net»**.
+Ce principe fondateur, actuellement menacé par certains acteurs politiques et industriels, est connu sous l'expression **«la neutralité du net»**.
 
 
 
@@ -53,13 +53,21 @@ C'est ce qu'on appelle la **«neutralité du net»**.
 Vous pouvez télécharger le fichier [ping_switch.fls](data/ping_switch.fls).
 
 - Relions une machine ```192.168.0.10``` d'adresse MAC ```BC:81:81:42:9C:31```  à une machine ```192.168.0.11``` d'adresse MAC ```2A:AB:AC:27:D6:A7``` à travers un switch.  
-![](data/K1.png)
+ 
+![](data/K1.png) 
+
 - Observons la table SAT de notre switch : elle est vide, car aucune machine n'a encore cherché à communiquer.  
+
 ![](data/K2.png) 
-- Lançons un ping depuis ```192.168.0.10``` vers ```192.168.0.11``` et observons les données échangées :  
-![](data/K3.png) 
+
+- Lançons un ping depuis ```192.168.0.10``` vers ```192.168.0.11``` et observons les données échangées :   
+
+![](data/K3.png)  
+
 - Observons de plus près la première ligne de données échangées.  
-![](data/K4.png) 
+
+![](data/K4.png)   
+
 Cette première ligne est une requête **ARP**. ARP est un protocole qui s'interface entre la couche 3 / réseau (appelée dans la capture d'écran _Internet_)  et la couche 2 / liaison (appelée dans la capture d'écran _Réseau_). Comme indiqué dans le commentaire, elle consiste à un appel à tout le réseau : "Est-ce que quelqu'un ici possède l'IP ```192.168.0.11``` ?
 
 **Message 1 : « Qui possède l'IP ```192.168.0.11``` ? »**
@@ -181,6 +189,7 @@ En suivant le même principe, la machine ```192.168.1.1 ``` pourra envoyer son _
 ---
 **Bibliographie**
 - Numérique et Sciences Informatiques, 1re, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.
+- Prépabac NSI 1ère, C.ADOBET, G.CONNAN, G. ROZSAVOLGYI, L.SIGNAC, éditions Hatier.
 - Cours d'OpenClassrooms : 
     - https://openclassrooms.com/fr/courses/857447-apprenez-le-fonctionnement-des-reseaux-tcp-ip/854659-le-routage
     - https://openclassrooms.com/fr/courses/1561696-les-reseaux-de-zero/3607286-ladressage-cidr
