@@ -2,17 +2,50 @@
 
 ## I. Modèle OSI, modèle Internet
 
-![](data/OSI.png)
+
 
 Les bits transmis d'un ordinateur à un autre contiennent, en plus des données _utiles_ (le mot «bonjour» dans un email), une multitude de données (tout aussi utiles) qui vont aider à l'acheminement de ces bits au bon endroit, puis au bon ordinateur, puis au bon logiciel. 
 Les différents protocoles qui régissent cette transmission sont regroupés dans ce qui est appelé un **modèle**. Deux modèles synthétisent ces protocoles :
 - le **modèle Internet** (ou modèle **TCP/IP**, 1974), organisé en **4** couches : liaison, réseau, transport, application.
 - le **modèle OSI** (Open Systems Interconnection, 1984), organisé en **7** couches : physique, liaison, réseau, transport, session, présentation,application.
 
-Ces deux modèles coïncident suivant le schéma ci-dessus. Dans la suite de ce cours, nous évoquerons les couches par leur numéro dans le modèle OSI.
+Ces deux modèles coïncident suivant le schéma ci-dessus. Ce sont des modèles théoriques et d'une certaine rigidité. Leur utilisation dans la pratique est parfois plus floue, avec des protocoles à cheval sur plusieurs couches. Dans la suite de ce cours, nous évoquerons les couches par leur numéro dans le modèle OSI.
 
-Lors de la préparation d'un message à envoyer (une requête GET, par exemple), cette requête va successivement être **encapsulée** en descendant à travers chaque couche.  
-La trame qui est émise par l'ordinateur émetteur du message sera partiellement décapsulée au cours de son parcours sur le réseau, notamment lors du passage à travers les switchs (équipements de réseau travaillant sur la couche 2 / liaison, avec les adresses MAC), ou bien à travers les routeurs (équipements de réseau travaillant sur la couche 3 / réseau, avec les adresses IP), avant d'être totalement décapsulée lors de la réception par l'ordinateur destinataire.
+
+![](data/OSI.png)
+
+Lors de son émission, un message va subir successivement toutes les transformations effectuées par chaque couche, depuis sa création (couche 7) jusqu'à sa transmission physique (couche 1).  
+
+Lorsque ce même message sera réceptionné, les transformations seront effectuées dans l'ordre inverse, jusqu'à la présentation du message au destinataire.
+
+- **couches 7-6-5  — couches application-présentation-session :** 
+Ces couches (réunies dans le modèle Internet en une couche unique «application» ) regroupent les protocoles nécessaires à la bonne mise en forme d'un message (au sens large) avant sa transmission. Ces protocoles peuvent être de nature très différente : protocole HTTP pour la transmisson de pages web, protocole FTP pour le transfert de fichiers, protocoles POP ou IMAP pour le courrier électronique...
+</br>
+
+- **couche 4 — couche transport :**   
+Le protocole majeur de cette couche est le protocole TCP : il découpe en segments numérotés le message à transmettre, s'assure par SYN-ACK que l'ordinateur distant est prêt à recevoir le message.  
+Les éléments manipulés sont des **segments**.
+</br>
+
+- **couche 3 — couche réseau :** 
+C'est la couche où chaque segment est encapsulé dans un paquet qui, suivant le protocole IP, va contenir son adresse source et son adresse de destination. C'est à ce niveau que se décide si le message doit rester dans le réseau local ou être envoyé sur un autre réseau via la passerelle du routeur. 
+Les éléments transmis sont des **paquets**.
+</br>
+
+- **couche 2 — couche liaison :**  
+C'est l'«empaquetage» final du message. Suivant le protocole Ethernet, les informations sont transmises d'une carte réseau à une autre, grâce à leur adresse MAC (Media Access Controler). Les éléments transmis sont des **trames**.
+</br>
+
+- **couche 1 — couche physique :**  
+C'est la couche où le message est transmis physiquement d'un point à un autre. Par signal lumineux (fibre optique), par ondes (wifi), par courant électrique (Ethernet). Les éléments transmis sont les **bits**. 
+
+ 
+
+
+Lors de son parcours, une trame peut être partiellement décapsulée et remonter à la couche 3, avant de redescendre et de continuer son chemin. C'est le cas notamment lors du passage dans un routeur. Mais jamais, lors de son acheminement, le contenu réel du message n'est ouvert : les paquets transmis sont acheminés de manière identique, qu'ils contiennent les éléments constitutifs d'une vidéo YouTube ou d'un email à votre cousin.  
+C'est ce qu'on appelle la **«neutralité du net»**.
+
+
 
 ## II. Observation des trames avec Filius
 
@@ -101,12 +134,12 @@ Lors de l'observation des messages reçus ou émis par la machine ```192.168.0.1
 
 ![](data/K11.png) 
 
-On peut y distinguer les 4 couches du modèle internet. Le routeur, par ce message distribué à tous les éléments du sous-réseau A (il envoie un message équivalent sur son sous-réseau B), déclare sa présence, et le fait qu'il possède deux interfaces, une pour chaque réseau. Dans cette trame figure son adresse MAC, les membres de son sous-réseau pourront donc lui envoyer un message pour qu'il joue son rôle de passerelle.
+On peut y distinguer les 4 couches du modèle Internet. Le routeur, par ce message distribué à tous les éléments du sous-réseau A (il envoie un message équivalent sur son sous-réseau B), déclare sa présence, et le fait qu'il possède deux interfaces, une pour chaque réseau. Dans cette trame figure son adresse MAC, les membres de son sous-réseau pourront donc lui envoyer un message pour qu'il joue son rôle de passerelle.
 
 
 **Étape 1 : de ```192.168.0.1``` vers le routeur**
 
-La machine ```192.168.0.1 / 24``` calcule que la machine ```192.168.1.1 / 24``` avec laquelle elle veut communiquer n'est **pas** dans son sous-réseau (voir [ce cours)](https://github.com/glassus/nsi/blob/master/Premiere/Theme04_Architecture_materielle/03_Architecture_reseau.md).  
+La machine ```192.168.0.1 / 24``` calcule que la machine ```192.168.1.1 / 24``` avec laquelle elle veut communiquer n'est **pas** dans son sous-réseau (voir [ce cours)](../03_Architecture_reseau.md).  
 Elle va donc envoyer son message à sa passerelle, qui est l'adresse du routeur dans son sous-réseau. 
 
 Cette première trame est :
@@ -140,7 +173,7 @@ On peut observer dans Filius cette trame, en se positionnant sur l'interface ```
 En suivant le même principe, la machine ```192.168.1.1 ``` pourra envoyer son _pong_.
 
 
-
+## III. Protocole du bit alterné
 
 
 <br>
