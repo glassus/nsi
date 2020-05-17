@@ -42,7 +42,8 @@ La commande ```arp -a``` effectuée dans un terminal de la machine ```192.168.0.
 Constatant qu'elle ne sait pas quelle est l'adresse MAC de ```192.168.0.11```, la machine ```192.168.0.10``` commence donc par envoyer un message à **tout** le sous-réseau, par l'adresse MAC de broadcast ```FF:FF:FF:FF:FF:FF```. Le switch va lui aussi lui aussi relayer ce message à tous les équipements qui lui sont connectés (dans notre cas, un seul ordinateur) 
 
 
-**Message 2 : « Moi ! »**
+**Message 2 : « Moi ! »**  
+
 La machine ```192.168.0.11``` s'est reconnu dans le message de broadcast de la machine ```192.168.0.10```. Elle lui répond pour lui donner son adresse MAC.  
 
 ![](data/K6.png) 
@@ -56,7 +57,7 @@ Le switch, qui a vu passer sur ses ports 0 et 1 des messages venant des cartes M
 
 ![](data/K9.png) 
 
-Par la suite, il saura sur quel port rediriger les messages destinés à ces deux adresses MAC. Un switch est un équipement de réseau de la couche 2 du modèle OSI, il ne sait pas lire les adresses IP.
+Par la suite, il saura sur quel port rediriger les messages destinés à ces deux adresses MAC. Un switch est un équipement de réseau de la couche 2 du modèle OSI, il ne sait pas lire les adresses IP : il ne travaille qu'avec les adresses MAC.
 
 **Message 3 : le ping est envoyé**
 
@@ -95,6 +96,7 @@ Le routeur est configuré ainsi :
 
 
 **Étape 0 : le routeur signale sa présence**
+
 Lors de l'observation des messages reçus ou émis par la machine ```192.168.0.1```, on peut être intrigué par ce tout premier message reçu, de la part du routeur : 
 
 ![](data/K11.png) 
@@ -103,6 +105,7 @@ On peut y distinguer les 4 couches du modèle internet. Le routeur, par ce messa
 
 
 **Étape 1 : de ```192.168.0.1``` vers le routeur**
+
 La machine ```192.168.0.1 / 24``` calcule que la machine ```192.168.1.1 / 24``` avec laquelle elle veut communiquer n'est **pas** dans son sous-réseau (voir [ce cours)](https://github.com/glassus/nsi/blob/master/Premiere/Theme04_Architecture_materielle/03_Architecture_reseau.md).  
 Elle va donc envoyer son message à sa passerelle, qui est l'adresse du routeur dans son sous-réseau. 
 
@@ -113,17 +116,17 @@ Cette première trame est :
 
 **Étape 2 : le routeur décapsule la trame**
 
-Le routeur est un équipement de réseau de couche 3 (couche réseau). Il doit observer le contenu du paquet IP pour savoir, suivant le procédé de **routage** (voir cours de Terminale), où, acheminer ce paquet.
+Le routeur est un équipement de réseau de couche 3 (couche réseau). Il doit observer le contenu du paquet IP pour savoir, suivant le procédé de **routage** (voir cours de Terminale), où acheminer ce paquet.
 
 Dans notre cas, l'adresse IP ```192.168.1.1```de destination lui est accessible : elle fait partie de son sous-réseau.
 
-Le routeur va modifier la valeur du TTL (Time To Leave), en la décrémentant de 1. Si, après de multiples routage, cette valeur devenait égale à 0, ce paquet serait détruit. Ceci a pour but d'éviter l'encombrement des réseaux avec des paquets ne trouvant pas leur destination.
+Le routeur va modifier la valeur du TTL (Time To Leave), en la décrémentant de 1. Si, après de multiples routages, cette valeur devenait égale à 0, ce paquet serait détruit. Ceci a pour but d'éviter l'encombrement des réseaux avec des paquets ne trouvant pas leur destination.
 
-Dans notre cas, le routeur va laisser intacte l'adresse IP Source. Ce n'est pas toujours le cas. Dans le cas classique de la box qui relie votre domicile à internet, le routeur contenu dans celle-ci va remplacer l'adresse locale de votre ordinateur ou smartphone (ex ```192.168.0.26```) par son IP publique (celle apparaissant sur whatsmyip.com, par exemple). Elle effectue ce qu'on appelle une translation d'adresse (NAT). En affectant à chaque machine de votre domicile un port particulier, elle pourra ainsi rediriger le trafic entrant à la bonne machine.
+Dans notre cas, le routeur va laisser intacte l'adresse IP Source. Ce n'est pas toujours le cas. Dans le cas classique de la box qui relie votre domicile à internet, le routeur contenu dans celle-ci va remplacer l'adresse locale de votre ordinateur ou smartphone (ex ```192.168.0.26```) par son IP publique (celle apparaissant sur (whatsmyip.com)[whatsmyip.com], par exemple). Elle effectue ce qu'on appelle une translation d'adresse (NAT). En affectant à chaque machine de votre domicile un port particulier, elle pourra ainsi rediriger le trafic entrant à la bonne machine.
 
 Le routeur va ré-encapsuler le paquet IP modifié, et créer une nouvelle trame Ethernet en modifiant :
 - l'adresse MAC source : il va mettre l'adresse MAC de son interface dans le sous-réseau B.
-- l'adresse MAC de destination : il va mettre l'adresse MAC de ```192.168.1.1 ``` (qu'il aurait peut-être récupérée au préalable par le protocole ARP)
+- l'adresse MAC de destination : il va mettre l'adresse MAC de ```192.168.1.1 ``` (qu'il aura peut-être récupérée au préalable par le protocole ARP)
 
 Cette deuxième trame est donc :
 
