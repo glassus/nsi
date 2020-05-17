@@ -122,7 +122,7 @@ Dans notre cas, l'adresse IP ```192.168.1.1```de destination lui est accessible 
 
 Le routeur va modifier la valeur du TTL (Time To Leave), en la décrémentant de 1. Si, après de multiples routages, cette valeur devenait égale à 0, ce paquet serait détruit. Ceci a pour but d'éviter l'encombrement des réseaux avec des paquets ne trouvant pas leur destination.
 
-Dans notre cas, le routeur va laisser intacte l'adresse IP Source. Ce n'est pas toujours le cas. Dans le cas classique de la box qui relie votre domicile à internet, le routeur contenu dans celle-ci va remplacer l'adresse locale de votre ordinateur ou smartphone (ex ```192.168.0.26```) par son IP publique (celle apparaissant sur (whatsmyip.com)[whatsmyip.com], par exemple). Elle effectue ce qu'on appelle une translation d'adresse (NAT). En affectant à chaque machine de votre domicile un port particulier, elle pourra ainsi rediriger le trafic entrant à la bonne machine.
+Dans notre cas, le routeur va laisser intacte l'adresse IP Source. Ce n'est pas toujours le cas. Dans le cas classique de la box qui relie votre domicile à internet, le routeur contenu dans celle-ci va remplacer l'adresse locale de votre ordinateur ou smartphone (ex ```192.168.0.26```) par son IP publique (celle apparaissant sur [whatsmyip.com](http://whatsmyip.com), par exemple). Elle effectue ce qu'on appelle une translation d'adresse (NAT). En affectant à chaque machine de votre domicile un port particulier, elle pourra ainsi rediriger le trafic entrant à la bonne machine.
 
 Le routeur va ré-encapsuler le paquet IP modifié, et créer une nouvelle trame Ethernet en modifiant :
 - l'adresse MAC source : il va mettre l'adresse MAC de son interface dans le sous-réseau B.
@@ -138,3 +138,22 @@ On peut observer dans Filius cette trame, en se positionnant sur l'interface ```
 
 
 En suivant le même principe, la machine ```192.168.1.1 ``` pourra envoyer son _pong_.
+
+
+
+
+
+<br>
+
+---
+**Bibliographie**
+- Numérique et Sciences Informatiques, 1re, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.
+- Cours d'OpenClassrooms : 
+    - https://openclassrooms.com/fr/courses/857447-apprenez-le-fonctionnement-des-reseaux-tcp-ip/854659-le-routage
+    - https://openclassrooms.com/fr/courses/1561696-les-reseaux-de-zero/3607286-ladressage-cidr
+
+
+---
+![](data/ccbysa.png "image")
+
+G.Lassus, Lycée François Mauriac --  Bordeaux  
