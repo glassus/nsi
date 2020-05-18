@@ -24,18 +24,21 @@ Ces couches (réunies dans le modèle Internet en une couche unique «applicatio
 </br>
 
 - **couche 4 — couche transport :**   
-Le protocole majeur de cette couche est le protocole TCP : il découpe en segments numérotés le message à transmettre, s'assure par SYN-ACK que l'ordinateur distant est prêt à recevoir le message.  
-Les éléments transmis à la couche inférieure sont des **segments**.
+Le protocole majeur de cette couche est le protocole TCP :
+    - il s'assure par SYN-ACK que l'émetteur et le récepteur sont prêts à échanger des messages. 
+    - il découpe en segments numérotés le message à transmettre (côté émetteur) ou bien recompose le message total en remettant les segments dans l'ordre (côté récepteur)
+
+Les éléments échangés avec la couche inférieure sont des **segments**.
 </br>
 
 - **couche 3 — couche réseau :** 
-C'est la couche où chaque segment est encapsulé dans un paquet qui, suivant le protocole IP, va contenir son adresse source et son adresse de destination. C'est à ce niveau que se décide si le message doit rester dans le réseau local ou être envoyé sur un autre réseau via la passerelle du routeur.  
-Les éléments transmis  à la couche inférieure sont des **paquets**.
+C'est la couche où chaque segment numéroté est encapsulé dans un paquet qui, suivant le protocole IP, va contenir son adresse source et son adresse de destination. C'est à ce niveau que se décide si le message doit rester dans le réseau local ou être envoyé sur un autre réseau via la passerelle du routeur.  
+Les éléments échangés avec la couche inférieure sont des **paquets**.
 </br>
 
 - **couche 2 — couche liaison :**  
-C'est l'«empaquetage» final du message. Suivant le protocole Ethernet, les informations sont transmises d'une carte réseau à une autre, grâce à leur adresse MAC (Media Access Controler).  
-Les éléments transmis  à la couche inférieure sont des **trames**.
+C'est l'encapsulation finale du message. Suivant le protocole Ethernet, les informations sont transmises d'une carte réseau à une autre, grâce à leur adresse MAC (Media Access Controler).  
+Les éléments échangés avec la couche inférieure sont des **trames**.
 </br>
 
 - **couche 1 — couche physique :**  
@@ -189,7 +192,7 @@ En suivant le même principe, la machine ```192.168.1.1 ``` pourra envoyer son _
 
 
 ## III. Protocole du bit alterné
-
+à venir...
 
 <br>
 
