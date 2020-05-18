@@ -9,7 +9,8 @@ Les différents protocoles qui régissent cette transmission sont regroupés dan
 - le **modèle Internet** (ou modèle **TCP/IP**, 1974), organisé en **4** couches : liaison, réseau, transport, application.
 - le **modèle OSI** (Open Systems Interconnection, 1984), organisé en **7** couches : physique, liaison, réseau, transport, session, présentation,application.
 
-Ces deux modèles coïncident suivant le schéma ci-dessus. Ce sont des modèles théoriques et d'une certaine rigidité. Leur utilisation dans la pratique est parfois plus floue, avec des protocoles à cheval sur plusieurs couches. Dans la suite de ce cours, nous évoquerons les couches par leur numéro dans le modèle OSI.
+Ces deux modèles coïncident suivant le schéma ci-dessus. Ce sont des modèles théoriques et d'une certaine rigidité. Leur utilisation dans la pratique est parfois plus floue, avec des protocoles à cheval sur plusieurs couches.  
+Dans la suite de ce cours, nous évoquerons les couches par leur numéro dans le modèle OSI.
 
 
 ![](data/OSI.png)
@@ -24,20 +25,21 @@ Ces couches (réunies dans le modèle Internet en une couche unique «applicatio
 
 - **couche 4 — couche transport :**   
 Le protocole majeur de cette couche est le protocole TCP : il découpe en segments numérotés le message à transmettre, s'assure par SYN-ACK que l'ordinateur distant est prêt à recevoir le message.  
-Les éléments manipulés sont des **segments**.
+Les éléments transmis à la couche inférieure sont des **segments**.
 </br>
 
 - **couche 3 — couche réseau :** 
-C'est la couche où chaque segment est encapsulé dans un paquet qui, suivant le protocole IP, va contenir son adresse source et son adresse de destination. C'est à ce niveau que se décide si le message doit rester dans le réseau local ou être envoyé sur un autre réseau via la passerelle du routeur. 
-Les éléments transmis sont des **paquets**.
+C'est la couche où chaque segment est encapsulé dans un paquet qui, suivant le protocole IP, va contenir son adresse source et son adresse de destination. C'est à ce niveau que se décide si le message doit rester dans le réseau local ou être envoyé sur un autre réseau via la passerelle du routeur.  
+Les éléments transmis  à la couche inférieure sont des **paquets**.
 </br>
 
 - **couche 2 — couche liaison :**  
-C'est l'«empaquetage» final du message. Suivant le protocole Ethernet, les informations sont transmises d'une carte réseau à une autre, grâce à leur adresse MAC (Media Access Controler). Les éléments transmis sont des **trames**.
+C'est l'«empaquetage» final du message. Suivant le protocole Ethernet, les informations sont transmises d'une carte réseau à une autre, grâce à leur adresse MAC (Media Access Controler).  
+Les éléments transmis  à la couche inférieure sont des **trames**.
 </br>
 
 - **couche 1 — couche physique :**  
-C'est la couche où le message est transmis physiquement d'un point à un autre. Par signal lumineux (fibre optique), par ondes (wifi), par courant électrique (Ethernet). Les éléments transmis sont les **bits**. 
+C'est la couche où le message est transmis physiquement d'un point à un autre. Par signal lumineux (fibre optique), par ondes (wifi), par courant électrique (Ethernet)... Les éléments transmis sont les **bits**. 
 
  
 
@@ -72,7 +74,7 @@ Cette première ligne est une requête **ARP**. ARP est un protocole qui s'inter
 
 **Message 1 : « Qui possède l'IP ```192.168.0.11``` ? »**
 
-Il faut comprendre à cette étape que l'adresse IP est totalement inutile pour répérer un ordinateur dans un sous-réseau. Ce sont les adresses MAC qui permettent de se repérer dans un sous-réseau. Les adresses IP, elles, permettent d'acheminer le message jusqu'au bon sous-réseau (elles n'intéressent donc que les routeurs).
+Il faut comprendre à cette étape que l'adresse IP est totalement inutile pour répérer un ordinateur dans un sous-réseau. Ce sont les adresses MAC qui permettent de se repérer dans un sous-réseau. Les adresses IP, elles, permettront éventuellement d'acheminer le message jusqu'au bon sous-réseau (elles n'intéressent donc que les routeurs).
 
 
 Revenons à notre ping vers ```192.168.0.11```.
@@ -89,7 +91,7 @@ La machine ```192.168.0.11``` s'est reconnu dans le message de broadcast de la m
 
 ![](data/K6.png) 
 
-À partir de ce moment, la machine ```192.168.0.10``` sait comment communiquer avec ```192.168.0.11```. Elle l'écrit dans sa table ```arp``` :  
+À partir de ce moment, la machine ```192.168.0.10``` sait comment communiquer avec ```192.168.0.11```. Elle l'écrit dans sa table ```arp```, afin de ne plus avoir à émettre le message n°1 :  
 
 ![](data/K7.png) 
 
@@ -138,11 +140,13 @@ Le routeur est configuré ainsi :
 
 **Étape 0 : le routeur signale sa présence**
 
-Lors de l'observation des messages reçus ou émis par la machine ```192.168.0.1```, on peut être intrigué par ce tout premier message reçu, de la part du routeur : 
+Lors de l'observation des messages reçus ou émis par la machine ```192.168.0.1```, on peut être intrigué par ce tout premier message reçu, émis par le routeur : 
 
 ![](data/K11.png) 
 
-On peut y distinguer les 4 couches du modèle Internet. Le routeur, par ce message distribué à tous les éléments du sous-réseau A (il envoie un message équivalent sur son sous-réseau B), déclare sa présence, et le fait qu'il possède deux interfaces, une pour chaque réseau. Dans cette trame figure son adresse MAC, les membres de son sous-réseau pourront donc lui envoyer un message pour qu'il joue son rôle de passerelle.
+On peut y distinguer les 4 couches du modèle Internet. Le routeur, par ce message distribué à tous les éléments du sous-réseau A (il envoie un message équivalent sur son sous-réseau B), déclare sa présence, et le fait qu'il possède deux interfaces, une pour chaque réseau. 
+Il se positionne ainsi comme une passerelle : «c'est par moi qu'il faudra passer si vous voulez sortir de votre sous-réseau». 
+Dans cette trame envoyée figure son adresse MAC, de sorte que tous les membres de son sous-réseau pourront donc communiquer avec lui.
 
 
 **Étape 1 : de ```192.168.0.1``` vers le routeur**
@@ -159,9 +163,9 @@ Cette première trame est :
 
 Le routeur est un équipement de réseau de couche 3 (couche réseau). Il doit observer le contenu du paquet IP (sans remonter jusqu'au contenu du message) pour savoir, suivant le procédé de **routage** (voir cours de Terminale), où acheminer ce paquet.
 
-Dans notre cas, l'adresse IP ```192.168.1.1```de destination lui est accessible : elle fait partie de son sous-réseau.
+Dans notre cas, l'adresse IP ```192.168.1.1```de destination lui est accessible : elle fait partie de son sous-réseau B.
 
-Le routeur va modifier la valeur du TTL (Time To Leave), en la décrémentant de 1. Si, après de multiples routages, cette valeur devenait égale à 0, ce paquet serait détruit. Ceci a pour but d'éviter l'encombrement des réseaux avec des paquets ne trouvant pas leur destination.
+Le routeur va modifier la valeur du TTL (Time To Live), en la décrémentant de 1. Si, après de multiples routages, cette valeur devenait égale à 0, ce paquet serait détruit. Ceci a pour but d'éviter l'encombrement des réseaux avec des paquets ne trouvant pas leur destination.
 
 Remarque : 
     Dans notre cas, le routeur va laisser intacte l'adresse IP Source. Ce n'est pas toujours le cas. Dans le cas classique de la box qui relie votre domicile à internet, le routeur contenu dans celle-ci va remplacer l'adresse locale de votre ordinateur ou smartphone (ex ```192.168.0.26```) par son IP publique (celle apparaissant sur [whatsmyip.com](http://whatsmyip.com), par exemple). Elle effectue ce qu'on appelle une translation d'adresse (NAT). 
