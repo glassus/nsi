@@ -26,8 +26,7 @@ Ces couches (réunies dans le modèle Internet en une couche unique «applicatio
 - **couche 4 — couche transport :**   
 Le protocole majeur de cette couche est le protocole TCP :
     - il s'assure par SYN-ACK que l'émetteur et le récepteur sont prêts à échanger des messages. 
-    - il découpe en segments numérotés le message à transmettre (côté émetteur) ou bien recompose le message total en remettant les segments dans l'ordre (côté récepteur)
-
+    - il découpe en segments numérotés le message à transmettre (côté émetteur) ou bien recompose le message total en remettant les segments dans l'ordre (côté récepteur).    
 Les éléments échangés avec la couche inférieure sont des **segments**.
 </br>
 
