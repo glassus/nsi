@@ -68,6 +68,8 @@
      inkscape:groupmode="layer"
      inkscape:label="Calque 1">
     <image
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
        id="image843"
        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAvYAAAFRCAYAAAAfEOnrAAAABHNCSVQICAgIfAhkiAAAIABJREFU
 eJzsvWmQZNV55/07d8u1Kmvrru7qql6pbmjcQki0ULcB0QJJCAkveCwjKWw54pUnLH/xxCjCE8Og
@@ -1448,6 +1450,8 @@ qAvgwJ6IiIiIqAvgwJ6IiIiIqAvgwJ6IiIiIqAv4P1GEMCZv3toMAAAAAElFTkSuQmCC
        x="6.6691451"
        y="40.191788" />
     <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
        y="40.18034"
        x="6.6576977"
        height="87.438477"
@@ -1455,6 +1459,8 @@ qAvgwJ6IiIiIqAvgwJ6IiIiIqAvgwJ6IiIiIqAv4P1GEMCZv3toMAAAAAElFTkSuQmCC
        id="rect847"
        style="opacity:0.98;fill:none;stroke:#1b44cd;stroke-width:1.84711;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.550691;paint-order:fill markers stroke" />
     <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
        style="opacity:0.98;fill:none;stroke:#e9480d;stroke-width:1.84711;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.550691;paint-order:fill markers stroke"
        id="rect847-3"
        width="97.727364"
@@ -1462,6 +1468,8 @@ qAvgwJ6IiIiIqAvgwJ6IiIiIqAvgwJ6IiIiIqAv4P1GEMCZv3toMAAAAAElFTkSuQmCC
        x="107.04912"
        y="40.310966" />
     <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
        transform="scale(0.87313964,1.1452922)"
        id="text866"
        y="40.223148"
@@ -1474,6 +1482,8 @@ qAvgwJ6IiIiIqAvgwJ6IiIiIqAvgwJ6IiIiIqAv4P1GEMCZv3toMAAAAAElFTkSuQmCC
          id="tspan864"
          sodipodi:role="line">sous-réseau A</tspan></text>
     <text
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:4.10435px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f08762;fill-opacity:0.827451;stroke:none;stroke-width:0.256522"
        x="199.33264"
@@ -1486,6 +1496,8 @@ qAvgwJ6IiIiIqAvgwJ6IiIiIqAvgwJ6IiIiIqAv4P1GEMCZv3toMAAAAAElFTkSuQmCC
          y="40.589203"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#f08762;fill-opacity:0.827451;stroke-width:0.256522">sous-réseau B</tspan></text>
     <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
        sodipodi:nodetypes="ccccc"
        id="path886"
        d="m 57.813104,61.484568 c 13.289288,4.025497 18.0644,8.369644 24.692381,19.897354 9.848425,6.718194 18.651805,14.523651 23.497285,26.446908 4.22161,-12.218576 11.85492,-20.413161 20.50302,-27.410825 8.82086,-14.698077 10.40903,-15.930348 20.40924,-21.366448"
