@@ -199,9 +199,14 @@ En suivant le même principe, la machine ```192.168.1.1 ``` pourra envoyer son _
 
 ![](data/ideale.png) 
 
+Dans cette situation, les sous-messages arrivent tous à destination dans le bon ordre. La transmission est correcte.
 
+### 3. Situation réeele
+Mais parfois (attention je vais passer sous un tunnel), les choses ne se passent pas aussi bien :
 
+![](data/realite.png) 
 
+Le sous-message M0 est arrivé après le M1, le message M2 n'est jamais arrivé...
 
 
 
