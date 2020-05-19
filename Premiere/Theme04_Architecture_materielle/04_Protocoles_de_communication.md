@@ -30,7 +30,7 @@ Le protocole majeur de cette couche est le protocole TCP :
 Les éléments échangés avec la couche inférieure sont des **segments**.
 </br>
 
-- **couche 3 — couche réseau :** 
+- **couche 3 — couche réseau :**  
 C'est la couche où chaque segment numéroté est encapsulé dans un paquet qui, suivant le protocole IP, va contenir son adresse source et son adresse de destination. C'est à ce niveau que se décide si le message doit rester dans le réseau local ou être envoyé sur un autre réseau via la passerelle du routeur.  
 Les éléments échangés avec la couche inférieure sont des **paquets**.
 </br>
@@ -191,7 +191,24 @@ En suivant le même principe, la machine ```192.168.1.1 ``` pourra envoyer son _
 
 
 ## III. Protocole du bit alterné
-à venir...
+### 1. Contexte
+- Alice veut envoyer à Bob un message M, qu'elle a prédécoupé en sous-messages M0, M1, M2,...
+- Alice envoie ses sous-messages à une cadence Δt fixée.
+
+### 2. Situation idéale
+
+![](data/ideale.png) 
+
+
+
+
+
+
+
+
+
+
+
 
 <br>
 
