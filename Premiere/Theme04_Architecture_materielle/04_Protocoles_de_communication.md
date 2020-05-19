@@ -197,7 +197,7 @@ En suivant le même principe, la machine ```192.168.1.1 ``` pourra envoyer son _
 
 ### 2. Situation idéale
 
-![](data/ideale.png) 
+![](data/ideale2.png) 
 
 
 
