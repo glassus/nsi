@@ -193,7 +193,7 @@ En suivant le même principe, la machine ```192.168.1.1 ``` pourra envoyer son _
 ## III. Protocole du bit alterné
 ### 1. Contexte
 - Alice veut envoyer à Bob un message M, qu'elle a prédécoupé en sous-messages M0, M1, M2,...
-- Alice envoie ses sous-messages à une cadence Δt fixée.
+- Alice envoie ses sous-messages à une cadence Δt fixée (en pratique, les sous-messages partent quand leur acquittement a été reçu ou qu'on a attendu celui-ci trop longtemps : on parle de _timeout_)
 
 ### 2. Situation idéale
 
@@ -201,19 +201,50 @@ En suivant le même principe, la machine ```192.168.1.1 ``` pourra envoyer son _
 
 Dans cette situation, les sous-messages arrivent tous à destination dans le bon ordre. La transmission est correcte.
 
-### 3. Situation réeele
-Mais parfois (attention je vais passer sous un tunnel), les choses ne se passent pas aussi bien :
+### 3. Situation réelle
+Mais parfois , les choses ne se passent pas toujours aussi bien. Car si on maîtrise parfaitement le timing de l'envoi des sous-messages d'Alice (à la cadence Δt), on ne sait pas combien de temps vont mettre ces sous-messages pour arriver, ni même (« attention je vais passer sous un tunnel ») s'ils ne vont pas être détruits en route.
 
 ![](data/realite.png) 
 
 Le sous-message M0 est arrivé après le M1, le message M2 n'est jamais arrivé...
 
+Que faire ?
 
+Écartons l'idée de numéroter les sous-messages, afin que Bob puisse remettre dans l'ordre les messages arrivés, ou même redemander spécifiquement des sous-messages perdus. C'est ce que réalise le protocole TCP (couche 4 — transport), c'est très efficace, mais cher en ressources. Essayons de trouver une solution plus basique.
 
+### 3. Solution naïve...
 
+Pourquoi ne pas demander à Bob d'envoyer un signal pour dire à Alice qu'il vient bien de recevoir son sous-message ?
+Nous appelerons ce signal ACK (comme _acknowledgement_, traduisible par «accusé de réception)».
+Ce signal ACK permettra à Alice de renvoyer un message qu'elle considérera comme perdu :
 
+![](data/naive.png) 
 
+N'ayant pas reçu le ACK consécutif à son message M1, Alice suppose (avec raison) que ce message n'est pas parvenu jusqu'à Bob, et donc renvoie le message M1.
 
+### 4. Mais peu efficace...
+
+![](data/naivebad.png) 
+
+Le deuxième ACK de Bob a mis trop de temps pour arriver (ou s'est perdu en route) et donc Alice a supposé que son sous-message M1 n'était pas arrivé. Elle l'a donc renvoyé, et Bob se retrouve avec deux fois le sous-message M1. La transmission est incorrecte. 
+En faisant transiter un message entre Bob et Alice, nous multiplions par 2 la probabilité que des problèmes techniques de transmission interviennent. Et pour l'instant rien ne nous permet de les détecter.
+
+### 5. Bob prend le contrôle
+
+Bob va maintenant intégrer une méthode de validation du sous-message reçu. Il pourra décider de le garder ou l'écarter. Le but est d'éviter les doublons.
+
+Pour réaliser ceci, Alice va rajouter à chacun de ces sous-messages un bit de contrôle, que nous appelerons FLAG (drapeau). Au départ, ce FLAG vaut 0. 
+Quand Bob reçoit un FLAG, il envoie un ACK égal à l'inverse (binaire) de ce FLAG. 0 donnera 1, 1 donnera 0, on dit qu'on «alterne» le bit, ce qui donne le nom à ce protocole.  
+Alice se contentera ensuite de renvoyer un FLAG toujours égal au dernier ACK reçu. Lorsqu'aucun ACK n'est reçu à temps, elle envoie le même sous-message que le précédent.
+
+C'est donc Bob qui va contrôler la validité de ce qu'il reçoit : il ne gardera que les sous-messages dont le FLAG est égal à son dernier ACK.
+
+##### Cas où le sous-message est perdu
+
+![](data/alt1.png) 
+
+##### Cas où le ACK  est perdu
+![](data/alt2.png) 
 
 <br>
 
