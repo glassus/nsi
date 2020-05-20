@@ -241,9 +241,8 @@ Quand Bob reçoit un FLAG, il renvoie un ACK **égal au FLAG reçu**.
 
 Alice va attendre ce ACK contenant le même bit que son dernier FLAG envoyé :
 - tant qu'elle ne l'aura pas reçu, elle continuera à envoyer **le même sous-message, avec le même FLAG**.
-- dès qu'elle l'a reçu, elle peut envoyer un nouveau sous-message en **inversant** («alternant») **le bit de son dernier FLAG** (d'où le nom de ce protocole)
+- dès qu'elle l'a reçu, elle peut envoyer un nouveau sous-message en **inversant** («alternant») **le bit de son dernier FLAG** (d'où le nom de ce protocole).
 
-Quand elle aura reçu ce ACK contenant le même bit que son dernier FLAG envoyé
 
 Bob, de son côté, va contrôler la validité de ce qu'il reçoit : il ne gardera que **les sous-messages dont le FLAG est égal à son dernier ACK**. C'est cette méthode qui lui permettra d'écarter les doublons.
 
@@ -271,15 +270,11 @@ Le protocole a bien détecté le doublon du sous-message M1... mais que se passe
 Le protocole du bit alterné a longtemps été utilisé au sein de la couche 2 du modèle OSI (distribution des trames Ethernet). Simple et léger, il peut toutefois être facilement mis en défaut, ce qui explique qu'il ait été remplacé par des protocoles plus performants.
 
 
-
+</br>
 ---
 **Bibliographie**
 - Numérique et Sciences Informatiques, 1re, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.
 - Prépabac NSI 1ère, C.ADOBET, G.CONNAN, G. ROZSAVOLGYI, L.SIGNAC, éditions Hatier.
-- Cours d'OpenClassrooms : 
-    - https://openclassrooms.com/fr/courses/857447-apprenez-le-fonctionnement-des-reseaux-tcp-ip/854659-le-routage
-    - https://openclassrooms.com/fr/courses/1561696-les-reseaux-de-zero/3607286-ladressage-cidr
-
 
 ---
 ![](data/ccbysa.png "image")
