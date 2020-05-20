@@ -218,7 +218,7 @@ Que faire ?
 ### 3. Solution naïve...
 
 Pourquoi ne pas demander à Bob d'envoyer un signal pour dire à Alice qu'il vient bien de recevoir son sous-message ?
-Nous appelerons ce signal ACK (comme _acknowledgement_, traduisible par «accusé de réception)».
+Nous appelerons ce signal ACK (comme _acknowledgement_, traduisible par «accusé de réception»).
 Ce signal ACK permettra à Alice de renvoyer un message qu'elle considérera comme perdu :
 
 ![](data/naive.png) 
