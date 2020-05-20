@@ -271,6 +271,7 @@ Le protocole du bit alterné a longtemps été utilisé au sein de la couche 2 d
 
 
 </br>
+
 ---
 **Bibliographie**
 - Numérique et Sciences Informatiques, 1re, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.
