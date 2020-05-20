@@ -191,9 +191,12 @@ En suivant le même principe, la machine ```192.168.1.1 ``` pourra envoyer son _
 
 
 ## III. Protocole du bit alterné
+
+Ce protocole est un exemple simple de fiabilisation du transfert de données. 
+
 ### 1. Contexte
 - Alice veut envoyer à Bob un message M, qu'elle a prédécoupé en sous-messages M0, M1, M2,...
-- Alice envoie ses sous-messages à une cadence Δt fixée (en pratique, les sous-messages partent quand leur acquittement a été reçu ou qu'on a attendu celui-ci trop longtemps : on parle de _timeout_)
+- Alice envoie ses sous-messages à une cadence Δt fixée (en pratique, les sous-messages partent quand leur acquittement a été reçu ou qu'on a attendu celui-ci trop longtemps : on parle alors de _timeout_)
 
 ### 2. Situation idéale
 
@@ -202,7 +205,7 @@ En suivant le même principe, la machine ```192.168.1.1 ``` pourra envoyer son _
 Dans cette situation, les sous-messages arrivent tous à destination dans le bon ordre. La transmission est correcte.
 
 ### 3. Situation réelle
-Mais parfois , les choses ne se passent pas toujours aussi bien. Car si on maîtrise parfaitement le timing de l'envoi des sous-messages d'Alice (à la cadence Δt), on ne sait pas combien de temps vont mettre ces sous-messages pour arriver, ni même (« attention je vais passer sous un tunnel ») s'ils ne vont pas être détruits en route.
+Mais parfois, les choses ne se passent pas toujours aussi bien. Car si on maîtrise parfaitement le timing de l'envoi des sous-messages d'Alice, on ne sait pas combien de temps vont mettre ces sous-messages pour arriver, ni même (attention je vais passer dans un tunnel) s'ils ne vont pas être détruits en route.
 
 ![](data/realite.png) 
 
@@ -231,22 +234,43 @@ En faisant transiter un message entre Bob et Alice, nous multiplions par 2 la pr
 
 ### 5. Bob prend le contrôle
 
-Bob va maintenant intégrer une méthode de validation du sous-message reçu. Il pourra décider de le garder ou l'écarter. Le but est d'éviter les doublons.
+Bob va maintenant intégrer une méthode de validation du sous-message reçu. Il pourra décider de le garder ou de l'écarter. Le but est d'éviter les doublons.
 
-Pour réaliser ceci, Alice va rajouter à chacun de ces sous-messages un bit de contrôle, que nous appelerons FLAG (drapeau). Au départ, ce FLAG vaut 0. 
-Quand Bob reçoit un FLAG, il envoie un ACK égal à l'inverse (binaire) de ce FLAG. 0 donnera 1, 1 donnera 0, on dit qu'on «alterne» le bit, ce qui donne le nom à ce protocole.  
-Alice se contentera ensuite de renvoyer un FLAG toujours égal au dernier ACK reçu. Lorsqu'aucun ACK n'est reçu à temps, elle envoie le même sous-message que le précédent.
+Pour réaliser ceci, Alice va rajouter à chacun de ses sous-messages un bit de contrôle, que nous appelerons FLAG (drapeau). Au départ, ce FLAG vaut 0. 
+Quand Bob reçoit un FLAG, il renvoie un ACK **égal au FLAG reçu**.
 
-C'est donc Bob qui va contrôler la validité de ce qu'il reçoit : il ne gardera que les sous-messages dont le FLAG est égal à son dernier ACK.
+Alice va attendre ce ACK contenant le même bit que son dernier FLAG envoyé :
+- tant qu'elle ne l'aura pas reçu, elle continuera à envoyer **le même sous-message, avec le même FLAG**.
+- dès qu'elle l'a reçu, elle peut envoyer un nouveau sous-message en **inversant** («alternant») **le bit de son dernier FLAG** (d'où le nom de ce protocole)
 
-##### Cas où le sous-message est perdu
+Quand elle aura reçu ce ACK contenant le même bit que son dernier FLAG envoyé
 
-![](data/alt1.png) 
+Bob, de son côté, va contrôler la validité de ce qu'il reçoit : il ne gardera que **les sous-messages dont le FLAG est égal à son dernier ACK**. C'est cette méthode qui lui permettra d'écarter les doublons.
 
-##### Cas où le ACK  est perdu
+Observons ce protocole dans plusieurs cas :
+
+##### 5.1 Cas où le sous-message est perdu
+
 ![](data/alt2.png) 
 
-<br>
+
+
+##### 5.2 Cas où le ACK  est perdu
+![](data/alt1.png) 
+
+Le protocole a bien détecté le doublon du sous-message M1.
+
+##### 5.3 Cas où un sous-message est en retard
+
+![](data/alt3.png) 
+
+Le protocole a bien détecté le doublon du sous-message M1... mais que se passerait-il si notre premier sous-message M1 était _encore plus_ en retard ?
+
+
+### 6. Conclusion
+Le protocole du bit alterné a longtemps été utilisé au sein de la couche 2 du modèle OSI (distribution des trames Ethernet). Simple et léger, il peut toutefois être facilement mis en défaut, ce qui explique qu'il ait été remplacé par des protocoles plus performants.
+
+
 
 ---
 **Bibliographie**
