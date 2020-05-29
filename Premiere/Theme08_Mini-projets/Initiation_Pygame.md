@@ -7,11 +7,18 @@ Pygame est un package de Python facilitant la création de jeux basés une inter
 
 ## 1. Préparation de la scène du jeu
 
-```
+```python
 import pygame, sys
 from pygame.locals import *
+
 pygame.init()
+
 fenetre = pygame.display.set_mode((640, 480))
+
 fenetre.fill([10,186,181])
+
 pygame.display.flip()
+
+while True :
+  pass
 ``` 
