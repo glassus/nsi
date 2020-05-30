@@ -22,3 +22,16 @@ pygame.display.flip()
 while True :
   pass
 ``` 
+
+Ce code devrait vous donner ceci :
+
+<p align="center">
+  <img src="data/f1.png"
+  />
+</p>
+
+
+**Commentaires**
+
+- Le package ```sys``` permettra de fermer le programme au niveau de l'OS par la commande ```sys.exit()``` 
+- la ligne ```from pygame.locals import *``` permettra d'utiliser des variables locales déjà définies par ```pygame```, comme ```MOUSEBUTTONDOWN```, par exemple.
