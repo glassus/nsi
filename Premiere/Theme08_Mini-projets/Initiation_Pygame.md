@@ -79,7 +79,7 @@ Pour afficher cette image, nous allons venir le superposer aux éléments graphi
 fenetre.blit(perso, position_perso)
 ```
 
-**récapitulatif du code**
+**▸ récapitulatif du code**
 
 ```python
 import pygame, sys
@@ -106,4 +106,22 @@ while True :
 <p align="center">
 <img src="data/f2.png" /> 
 </p>
+
+## 3. Gestion des évènements
+Lorsqu'un programme ```pygame``` est lancé, la variable interne ```pygame.event.get()``` reçoit en continu les évènements des périphériques du système d'exploitation.  
+Nous allons nous intéresser aux évènements de type ```KEYDOWN``` (touche de clavier appuyée) ou de type ```MOUSEBUTTONDOWN``` (boutons de souris appuyé).
+
+### 3.1 Évènements clavier
+
+La structure de code pour détecter l'appui sur une touche de clavier est :
+
+```python
+    for event in pygame.event.get():   
+        if event.type == KEYDOWN:
+            if event.key == K_RIGHT:
+                print("flèche droite appuyée")
+```
+La touche (en anglais _key_) ici détectée est la touche Flèche Droite, appelée ```K_RIGHT``` par ```pygame```. 
+
+Le nom de toutes les touches peut être retrouvé à l'adresse https://www.pygame.org/docs/ref/key.html.
 
