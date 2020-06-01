@@ -189,7 +189,7 @@ Vous pourrez utiliser les instructions :
 - ```pygame.time.delay(1000)``` afin de ne bouger le personnage que toutes les 1000 millisecondes.
 - ```randint(a,b)``` du package ```random```, qui renvoie un entier pseudo-aléatoire entre ```a```  et ```b```.
 
-<details><summary> Correction (cliquer pour faire apparaître)</summary>
+<details><summary> Proposition de correction (cliquer pour faire apparaître)</summary>
 <p>
 
 ```python
@@ -235,7 +235,7 @@ Réaliser un contrôle au clavier du personnage, comme dans l'animation ci-desso
 <img src="data/exo2.gif" /> 
 </p>
 
-<details><summary> Correction (cliquer pour faire apparaître)</summary>
+<details><summary> Proposition de correction (cliquer pour faire apparaître)</summary>
 <p>
 
 ```python
@@ -284,3 +284,57 @@ while True :
 </details>
 
 <br>
+
+
+## 5. À vous !
+
+Fabriquez le jeu que vous souhaitez à partir des informations ci-dessus.
+Bien d'autres aides peuvent être trouvées dans les liens citées dans la partie Bibliographie.
+
+**Exemple** de réalisation possible : un clicker avec un temps qui diminue à progressivement, et comptage des points.
+
+<p align="center">
+<img src="data/exo3.gif" /> 
+</p>
+
+**Quelques aides :**
+
+- **écrire du texte :**  
+```python
+font = pygame.font.Font(pygame.font.get_default_font(), 36)
+text = font.render("Game Over", True, (255, 0, 0))
+fenetre.blit(text, dest=(550,40))
+```
+
+- **dessiner un rectangle :**  
+```python
+pygame.draw.rect(fenetre,(0,255,0),(500,20,100,10))
+```
+dessine un rectangle vert de 100 pixels sur 10 pixels, dont le coin en haut à gauche est à la position (500,20).
+
+
+- **gérer le temps:**
+```python
+import time
+topchrono = time.time()
+delai = 5
+sortir = False
+while sortir == False :
+  if time.time() - topchrono > delai :
+    print("5 secondes se sont écoulées")
+    sortir = True
+```
+
+
+</br>
+
+---
+**Bibliographie**
+
+- Documentation officielle de Pygame, https://www.pygame.org/docs/
+- Cours d'OpenClassrooms, https://openclassrooms.com/fr/courses/1399541-interface-graphique-pygame-pour-python/1399813-premieres-fenetres.
+
+---
+![](data/ccbysa.png "image")
+
+G.Lassus, Lycée François Mauriac --  Bordeaux  
