@@ -185,6 +185,39 @@ Réaliser une déplacement aléatoire, comme l'animation ci-dessous.
 <img src="data/exo1.gif" /> 
 </p>
 
-Vous pourrez utiliser l'instruction ```pygame.time.delay(1000)``` afin de ne bouger le personnage que toutes les 1000 millisecondes.
+Vous pourrez utiliser les instructions :
+- ```pygame.time.delay(1000)``` afin de ne bouger le personnage que toutes les 1000 millisecondes.
+- ```randint(a,b)``` du package ```random```, qui renvoie un entier pseudo-aléatoire entre ```a```  et ```b```.
+
+<details><summary> Correction </summary>
+<p>
+
+```python
+import pygame, sys
+from pygame.locals import *
+from random import randint
+
+pygame.init()
+
+fenetre = pygame.display.set_mode((640, 480))
+
+perso = pygame.image.load("perso.png").convert_alpha()
+
+position_perso = perso.get_rect()
+
+while True :
+    fenetre.fill([10,186,181])
+    position_perso.topleft = (randint(0,540),randint(0,380))
+    fenetre.blit(perso, position_perso)
+    pygame.display.flip()
+    pygame.time.delay(1000)
+
+```
+
+
+</p>
+</details>
+
+<br>
 
 
