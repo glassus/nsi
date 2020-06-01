@@ -126,6 +126,11 @@ La touche (en anglais _key_) «Flèche Droite» est appelée ```K_RIGHT``` par `
 
 Le nom de toutes les touches peut être retrouvé à l'adresse https://www.pygame.org/docs/ref/key.html.
 
+**Remarque :** c'est grâce à la ligne initiale
+```python
+from pygame.locals import *
+```
+que la variable ```K_RIGHT``` (et toutes les autres) est reconnue.
 
 #### 3.1.2. Problème de la rémanence
 
@@ -167,3 +172,19 @@ Ce déplacement pourra être :
 - relatif : on indique de combien le personnage doit se décaler par rapport à sa position initiale.
 
 ### 4.1. Déplacement absolu
+
+Pour afficher le personnage à la position ```(100,200)```, on écrira :
+```python
+position_perso.topleft = (100,200)
+```
+où ```position_perso``` est l'objet de type ```rect```  contenant les coordonnées.
+
+**Exercice :**
+Réaliser une déplacement aléatoire, comme l'animation ci-dessous.
+<p align="center">
+<img src="data/exo1.gif" /> 
+</p>
+
+Vous pourrez utiliser l'instruction ```pygame.time.delay(1000)``` afin de ne bouger le personnage que toutes les 1000 millisecondes.
+
+
