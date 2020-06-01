@@ -179,8 +179,8 @@ position_perso.topleft = (100,200)
 ```
 où ```position_perso``` est l'objet de type ```rect```  contenant les coordonnées.
 
-**Exercice :**
-Réaliser une déplacement aléatoire, comme l'animation ci-dessous.
+**Exercice 1 :**
+Réaliser un déplacement aléatoire, comme l'animation ci-dessous.
 <p align="center">
 <img src="data/exo1.gif" /> 
 </p>
@@ -189,7 +189,7 @@ Vous pourrez utiliser les instructions :
 - ```pygame.time.delay(1000)``` afin de ne bouger le personnage que toutes les 1000 millisecondes.
 - ```randint(a,b)``` du package ```random```, qui renvoie un entier pseudo-aléatoire entre ```a```  et ```b```.
 
-<details><summary> Correction </summary>
+<details><summary> Correction (cliquer pour faire apparaître)</summary>
 <p>
 
 ```python
@@ -221,3 +221,66 @@ while True :
 <br>
 
 
+### 4.2. Déplacement relatif
+
+Pour déplacer le personnage de 15 pixels vers la droite et de 10 pixels vers le haut par rapport à sa position précédente, on écrira :
+```python
+position_perso.move(15,-10)
+```
+où ```position_perso``` est l'objet de type ```rect```  contenant les coordonnées.
+
+**Exercice 2 :**  
+Réaliser un contrôle au clavier du personnage, comme dans l'animation ci-dessous.
+<p align="center">
+<img src="data/exo2.gif" /> 
+</p>
+
+<details><summary> Correction (cliquer pour faire apparaître)</summary>
+<p>
+
+```python
+import pygame, sys
+from pygame.locals import *
+
+pygame.init()
+pygame.key.set_repeat(50)
+
+fenetre = pygame.display.set_mode((640, 480))
+
+perso = pygame.image.load("perso.png").convert_alpha()
+
+position_perso = perso.get_rect()
+
+pas_deplacement = 15 
+
+while True :
+    
+    for event in pygame.event.get() :    
+        if event.type == KEYDOWN:
+            
+            if event.key == K_DOWN : 
+                position_perso = position_perso.move(0,pas_deplacement)
+                
+            if event.key == K_UP :
+                position_perso = position_perso.move(0,-pas_deplacement)
+                
+            if event.key == K_RIGHT : 
+                position_perso = position_perso.move(pas_deplacement,0)
+                
+            if event.key == K_LEFT : 
+                position_perso = position_perso.move(-pas_deplacement,0)   
+    
+    fenetre.fill([10,186,181])
+    fenetre.blit(perso, position_perso)
+    pygame.display.flip()
+
+
+
+
+```
+
+
+</p>
+</details>
+
+<br>
