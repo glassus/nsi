@@ -15,3 +15,8 @@ Pour une utilisation interactive des fichiers Jupyter Notebook de ce dépôt :
 ou
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github.com/glassus/nsi/)
+
+
+L'ensemble des documents disponibles est publié sous licence CC-BY-SA.
+
+![](https://github.com/glassus/nsi/blob/master/Premiere/Theme08_Mini-projets/data/ccbysa.png)
