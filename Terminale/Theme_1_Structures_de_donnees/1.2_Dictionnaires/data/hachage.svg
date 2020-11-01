@@ -171,20 +171,30 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
+       style="opacity:0.931187;fill:#e7b1b1;fill-opacity:0.732007;stroke:none;stroke-width:0.545;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.811765;paint-order:fill markers stroke"
+       id="rect1066"
+       width="60.854164"
+       height="71.437492"
+       x="105.83333"
+       y="119.0625"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="opacity:0.931187;fill:#ffffff;fill-opacity:0.82734;stroke:#100807;stroke-width:0.625175;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.811765;paint-order:fill markers stroke"
+       id="rect985"
+       width="105.83334"
+       height="71.4375"
+       x="60.854168"
+       y="119.0625"
+       ry="0"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
        style="opacity:0.931187;fill:#92cfb4;fill-opacity:1;stroke:none;stroke-width:0.465;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.984314;paint-order:fill markers stroke"
        id="rect1806"
        width="105.83333"
        height="7.9375"
        x="60.854164"
-       y="119.0625"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <rect
-       style="opacity:0.931187;fill:#e7b1b1;fill-opacity:0.732007;stroke:none;stroke-width:0.406219;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.811765;paint-order:fill markers stroke"
-       id="rect1066"
-       width="60.854164"
-       height="39.687496"
-       x="105.83333"
        y="119.0625"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
@@ -836,16 +846,6 @@
          x="151.04247"
          y="97.619179"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:'DejaVu Sans Mono';-inkscape-font-specification:'DejaVu Sans Mono';fill:#000080;stroke-width:0.264583">taille : 128 bits</tspan></text>
-    <rect
-       style="opacity:0.931187;fill:#ffffff;fill-opacity:0.82734;stroke:#100807;stroke-width:0.625175;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.811765;paint-order:fill markers stroke"
-       id="rect985"
-       width="105.83334"
-       height="71.4375"
-       x="60.854168"
-       y="119.0625"
-       ry="0"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.300546px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 60.854166,127 H 166.6875"
@@ -962,7 +962,9 @@
          style="stroke-width:0.264583">2</tspan></text>
     <g
        id="g1289"
-       transform="translate(1.0172526e-5,23.812495)">
+       transform="translate(1.0172526e-5,23.812495)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <text
          xml:space="preserve"
          style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
@@ -1231,7 +1233,9 @@
        inkscape:export-ydpi="90" />
     <g
        id="g1324"
-       transform="translate(-0.7522094,-0.0794843)">
+       transform="translate(-0.7522094,-0.0794843)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <text
          xml:space="preserve"
          style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
@@ -1280,7 +1284,9 @@
     </g>
     <g
        id="g1324-6"
-       transform="translate(-0.61150894,15.838272)">
+       transform="translate(-0.61150894,15.838272)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <text
          xml:space="preserve"
          style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
@@ -1329,7 +1335,9 @@
     </g>
     <g
        id="g1324-0"
-       transform="translate(-0.54765659,23.850234)">
+       transform="translate(-0.54765659,23.850234)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <text
          xml:space="preserve"
          style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
@@ -1417,7 +1425,9 @@
          style="stroke-width:0.264583">6</tspan></text>
     <g
        id="g1324-0-5"
-       transform="translate(-0.68899353,39.704939)">
+       transform="translate(-0.68899353,39.704939)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <text
          xml:space="preserve"
          style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
@@ -1472,7 +1482,9 @@
        inkscape:export-ydpi="90" />
     <g
        id="g1324-0-5-4"
-       transform="translate(-0.72746758,55.517978)">
+       transform="translate(-0.72746758,55.517978)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <text
          xml:space="preserve"
          style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
