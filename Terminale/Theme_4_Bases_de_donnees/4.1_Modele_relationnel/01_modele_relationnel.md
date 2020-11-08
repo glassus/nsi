@@ -38,7 +38,7 @@ Les principes de bases du modèle relationnel sont :
 
 
 
-Un modèle relationnel est donc basé sur des **relations** :
+Un modèle relationnel est donc basé sur des... **relations**...
 
 Prenons l'exemple d'une bibliothèque dont la base de données possède une relation «livres» :
 ![](data/rel_livres.png
