@@ -29,8 +29,18 @@ Théorisé en 1970 par le Britannique Edgard J. Codd, le modèle relationnel est
 
 ![codd](data/codd.jpg)
 
-Un modèle relationnel est basé sur des... **relations** :
 
+Les principes de bases du modèle relationnel sont :
+
+- Les données sont regroupées dans différentes **tables** (qu'on appellera plutôt **relations** et qui donnent son nom au modèle). Chaque relation contient des éléments directement en lien avec le sujet général de la table.
+- Autant que possible, des données ne doivent se trouver dans des tables différentes : on évite la **redondance** des données.
+- Les données ne doivent pas contenir elles-mêmes d'autres données : on parle d'**atomicité** des données.
+
+
+
+Un modèle relationnel est donc basé sur des **relations** :
+
+Prenons l'exemple d'une bibliothèque dont la base de données possède une relation «livres» :
 ![](data/rel_livres.png
 )
 
