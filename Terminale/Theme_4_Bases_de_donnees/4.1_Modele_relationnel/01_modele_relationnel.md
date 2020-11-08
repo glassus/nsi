@@ -31,7 +31,7 @@ Théorisé en 1970 par le Britannique Edgard J. Codd, le modèle relationnel est
 
 Un modèle relationnel est basé sur des... **relations** :
 
-![](data/rel_livres.png
+![](data/rel_livres2.png
 )
 
 
