@@ -76,3 +76,13 @@ Il peut arriver aussi que deux livres aient le même titre : l'attribut «Titre�
 
 Par définition, l'attribut «ISBN» sera toujours une clé primaire.
 Quant à l'attribut «Code», il s'agit sans doute d'un code «maison» correspondant à une étiquette collée sur la tranche des livres : c'est sans doute aussi une clé primaire.
+
+#### 1.3 Une deuxième relation
+
+Considérons maintenant la relation «Emprunts» ci-dessous :
+
+| id_emprunteur | Nom    | Prénom | titre             | auteur          | code |
+|---------------|--------|--------|-------------------|-----------------|------|
+| 845           | DURAND | Michel | Au revoir là-haut | Pierre LEMAITRE | 942  |
+| 125           | MARTIN | Jean   | Pas pleurer       | Lydie SALVAYRE  | 1023 |
+| 452           | MARTIN | Jean   | Boussole          | Mathias ENARD   | 486  |
