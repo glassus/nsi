@@ -51,7 +51,8 @@ Prenons l'exemple d'une bibliothèque dont la base de données possède une rela
 - **relation** , ou **table** : c'est l'endroit où sont rangées les données. L'ordre des lignes (que l'on appelera des enregistrements) n'a pas d'importance.
 
 - **enregistrement**, ou **tuple**, ou **n-uplet**, ou **t-uplet**, ou **vecteur** : cela correspond à une ligne du tableau, et donc un ensemble de valeurs liées entre elles : l'auteur «Eric VUILLARD» a bien écrit le livre «L'Ordre du jour». 
-Il est **interdit** que des enregistrements soient totalement identiques.
+Il est **interdit** que des enregistrements soient totalement identiques. 
+Le nombre d'enregistrement d'une relation s'appelle son **cardinal**.
 
 - **attribut** : c'est l'équivalent d'une colonne. Il y a dans notre relation un attribut «code», un attribut «Titre», etc.
 
@@ -74,4 +75,4 @@ Alors, quelle clé primaire choisir ? Il faut pour cela réfléchir à ce que de
 Il peut arriver aussi que deux livres aient le même titre : l'attribut «Titre» n'est donc pas une bonne clé primaire.
 
 Par définition, l'attribut «ISBN» sera toujours une clé primaire.
-Quand à l'attribut «Code», il s'agit sans doute d'un code «maison» correspondant à une étiquette collée sur la tranche des livres : c'est sans doute aussi une clé primaire.
+Quant à l'attribut «Code», il s'agit sans doute d'un code «maison» correspondant à une étiquette collée sur la tranche des livres : c'est sans doute aussi une clé primaire.
