@@ -56,7 +56,7 @@ Le nombre d'enregistrement d'une relation s'appelle son **cardinal**.
 
 - **attribut** : c'est l'équivalent d'une colonne. Il y a dans notre relation un attribut «code», un attribut «Titre», etc.
 
-- **domaine** : le domaine désigne «le type» (au sens type ```Int```, ```Float```, ```String```. L'attribut «Éditeur» est une chaîne de caractères, par contre l'attribut «ISBN» est un nombre de 13 chiffres, commençant manifestement par 978. 
+- **domaine** : le domaine désigne «le type» (au sens type ```Int```, ```Float```, ```String```). L'attribut «Éditeur» est une chaîne de caractères, par contre l'attribut «ISBN» est un nombre de 13 chiffres, commençant manifestement par 978. 
 
 - **schéma** : le schéma d'une relation est le regroupement de tous les attributs et de leur domaine respectif. Ici notre schéma serait ```((Code, Entier), (Titre, Chaîne de caractères), (Auteur, Chaîne de caractères), (Éditeur, Chaîne de caractères), (ISBN, Entier))``` 
 
@@ -79,7 +79,7 @@ Quant à l'attribut «Code», il s'agit sans doute d'un code «maison» correspo
 
 #### 1.3 D'autres relations
 
-Ajoutons maintenant les relationsci-dessous :
+Ajoutons maintenant les relations ci-dessous :
 
  **Relation «Emprunts»** 
 | id_emprunteur | date       | Nom    | Prénom | titre             | auteur          | code |
@@ -95,11 +95,13 @@ Ajoutons maintenant les relationsci-dessous :
 | 845           | DURAND | Michel |
 | 125           | MARTIN | Jean   |
 
-L'attribut «id_emprunteur» est une clé primaire de la relation «Emprunteurs»/
+L'attribut «id_emprunteur» est une clé primaire de la relation «Emprunteurs».
 
-**Clé primaire et clé étrangère**
+
+**Notion de clé étrangère**
 Y-a-t-il une clé primaire dans la relation «Emprunts» ? 
-«id_emprunteur» est bien une clé primaire (d'«Emprunteurs») mais ne peut pas être une clé primaire d'«Emprunts», car une personne peut prendre plusieurs livres à la fois : on dit que c'est une **clé étrangère**.
+«id_emprunteur» est bien une clé primaire (d'«Emprunteurs») mais ne peut pas être une clé primaire d'«Emprunts», car une personne peut prendre plusieurs livres à la fois : on dit que c'est une **clé étrangère**.  
+
 «code» est aussi une clé étrangère : c'est une clé primaire (de la relation «livres») mais elle ne peut pas jouer le rôle de clé primaire pour la relation emprunt, car un même livre pourra être pris à différentes dates.
 
 Une clé primaire pourrait alors être la combinaison («date», «code»). En effet, aucun livre ne pouvant être emprunté deux fois le même jour, la connaissance de «date» et «code» suffit à identifier n'importe quel enregistrement.
