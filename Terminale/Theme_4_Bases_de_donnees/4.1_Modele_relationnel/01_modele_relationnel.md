@@ -40,6 +40,8 @@ Les principes de bases du modèle relationnel sont :
 
 Un modèle relationnel est donc basé sur des... **relations**.
 
+#### 1.1 Première relation
+
 Prenons l'exemple d'une bibliothèque dont la base de données possède une relation «livres» :
 ![](data/rel_livres.png
 )
@@ -48,7 +50,8 @@ Prenons l'exemple d'une bibliothèque dont la base de données possède une rela
 
 - **relation** , ou **table** : c'est l'endroit où sont rangées les données. L'ordre des lignes (que l'on appelera des enregistrements) n'a pas d'importance.
 
-- **enregistrement**, ou **tuple**, ou **n-uplet**, ou **t-uplet**, ou **vecteur** : cela correspond à une ligne du tableau, et donc un ensemble de valeurs liées entre elles : l'auteur «Eric VUILLARD» a bien écrit le livre «L'Ordre du jour».
+- **enregistrement**, ou **tuple**, ou **n-uplet**, ou **t-uplet**, ou **vecteur** : cela correspond à une ligne du tableau, et donc un ensemble de valeurs liées entre elles : l'auteur «Eric VUILLARD» a bien écrit le livre «L'Ordre du jour». 
+Il est **interdit** que des enregistrements soient totalement identiques.
 
 - **attribut** : c'est l'équivalent d'une colonne. Il y a dans notre relation un attribut «code», un attribut «Titre», etc.
 
@@ -58,3 +61,17 @@ Prenons l'exemple d'une bibliothèque dont la base de données possède une rela
 
 
 
+#### 1.2 Clé Primaire
+Une clé primaire est un attribut (ou une réunion d'attributs) dont la connaissance suffit à identifier avec certitude un unique enregistrement. Observons, dans notre relation précédente, ce qui peut être une clé primaire et ce qui ne peut pas l'être.
+
+- Titre : cet attribut pourrait jouer le rôle de clé primaire. En effet, notre table ne contient pas deux livres ayant le même titre.
+- Auteur : cet attribut pourrait jouer le rôle de clé primaire. En effet, notre table ne contient pas deux livres ayant le même auteur.
+- Éditeur : cet attribut ne peut **pas** jouer le rôle de clé primaire. En effet, la donnée de l'attribut «Actes Sud» renvoie vers 4 livres différents.
+- ISBN : (International Standard Book Number) cet attribut est un numéro unique spécifique à chaque livre : il peut jouer le rôle de clé primaire.
+- Code : cet attribut pourrait jouer le rôle de clé primaire. En effet, notre table ne contient pas deux livres ayant le même code.
+
+Alors, quelle clé primaire choisir ? Il faut pour cela réfléchir à ce que deviendrait notre relation si elle contenait 1000 livres au lieu de 10. Il est fort probable que deux livres aient alors le même auteur : l'attribut «Auteur» ne serait donc plus une clé primaire. 
+Il peut arriver aussi que deux livres aient le même titre : l'attribut «Titre» n'est donc pas une bonne clé primaire.
+
+Par définition, l'attribut «ISBN» sera toujours une clé primaire.
+Quand à l'attribut «Code», il s'agit sans doute d'un code «maison» correspondant à une étiquette collée sur la tranche des livres : c'est sans doute aussi une clé primaire.
