@@ -77,12 +77,42 @@ Il peut arriver aussi que deux livres aient le même titre : l'attribut «Titre�
 Par définition, l'attribut «ISBN» sera toujours une clé primaire.
 Quant à l'attribut «Code», il s'agit sans doute d'un code «maison» correspondant à une étiquette collée sur la tranche des livres : c'est sans doute aussi une clé primaire.
 
-#### 1.3 Une deuxième relation
+#### 1.3 D'autres relations
 
-Considérons maintenant la relation «Emprunts» ci-dessous :
+Ajoutons maintenant les relationsci-dessous :
 
-| id_emprunteur | Nom    | Prénom | titre             | auteur          | code |
-|---------------|--------|--------|-------------------|-----------------|------|
-| 845           | DURAND | Michel | Au revoir là-haut | Pierre LEMAITRE | 942  |
-| 125           | MARTIN | Jean   | Pas pleurer       | Lydie SALVAYRE  | 1023 |
-| 452           | MARTIN | Jean   | Boussole          | Mathias ENARD   | 486  |
+ **Relation «Emprunts»** 
+| id_emprunteur | date       | Nom    | Prénom | titre             | auteur          | code |
+|---------------|------------|--------|--------|-------------------|-----------------|------|
+| 845           | 12/10/2020 | DURAND | Michel | Au revoir là-haut | Pierre LEMAITRE | 942  |
+| 125           | 13/10/2020 | MARTIN | Jean   | Pas pleurer       | Lydie SALVAYRE  | 1023 |
+| 125           | 13/10/2020 | MARTIN | Jean   | Boussole          | Mathias ENARD   | 486  |
+
+ **Relation «Emprunteurs»** 
+| id_emprunteur | Nom    | Prénom | 
+|---------------|--------|--------|
+| 129           | DULAC | Marcel  | 
+| 845           | DURAND | Michel |
+| 125           | MARTIN | Jean   |
+
+L'attribut «id_emprunteur» est une clé primaire de la relation «Emprunteurs»/
+
+**Clé primaire et clé étrangère**
+Y-a-t-il une clé primaire dans la relation «Emprunts» ? 
+«id_emprunteur» est bien une clé primaire (d'«Emprunteurs») mais ne peut pas être une clé primaire d'«Emprunts», car une personne peut prendre plusieurs livres à la fois : on dit que c'est une **clé étrangère**.
+«code» est aussi une clé étrangère : c'est une clé primaire (de la relation «livres») mais elle ne peut pas jouer le rôle de clé primaire pour la relation emprunt, car un même livre pourra être pris à différentes dates.
+
+Une clé primaire pourrait alors être la combinaison («date», «code»). En effet, aucun livre ne pouvant être emprunté deux fois le même jour, la connaissance de «date» et «code» suffit à identifier n'importe quel enregistrement.
+
+#### 1.4 Redondance des données
+
+La relation «Emprunts» contient des informations qui sont déjà disponibles dans d'autres relations : on dit qu'elle est **redondante**, et c'est quelque chose qu'il faut éviter. À la fois pour des raisons d'espace de stockage mais aussi de cohérence : si une modification doit être faite (un emprunteur change de prénom), cette modification ne doit être faite qu'à un seul endroit de notre base de données.
+
+Une version non-redondante de la relation «Emprunteurs» serait donc celle-ci :
+
+**Relation «Emprunts»** 
+| id_emprunteur | date       | code |
+|---------------|------------|------|
+| 845           | 12/10/2020 | 942  |
+| 125           | 13/10/2020 | 1023 |
+| 125           | 13/10/2020 | 486  |
