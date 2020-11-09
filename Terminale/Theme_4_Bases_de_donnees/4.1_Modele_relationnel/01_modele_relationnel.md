@@ -38,11 +38,23 @@ Les principes de bases du modèle relationnel sont :
 
 
 
-Un modèle relationnel est donc basé sur des... **relations**...
+Un modèle relationnel est donc basé sur des... **relations**.
 
 Prenons l'exemple d'une bibliothèque dont la base de données possède une relation «livres» :
 ![](data/rel_livres.png
 )
+
+**Vocabulaire** ♥
+
+- **relation** , ou **table** : c'est l'endroit où sont rangées les données. L'ordre des lignes (que l'on appelera des enregistrements) n'a pas d'importance.
+
+- **enregistrement**, ou **tuple**, ou **n-uplet**, ou **t-uplet**, ou **vecteur** : cela correspond à une ligne du tableau, et donc un ensemble de valeurs liées entre elles : l'auteur «Eric VUILLARD» a bien écrit le livre «L'Ordre du jour».
+
+- **attribut** : c'est l'équivalent d'une colonne. Il y a dans notre relation un attribut «code», un attribut «Titre», etc.
+
+- **domaine** : le domaine désigne «le type» (au sens type ```Int```, ```Float```, ```String```. L'attribut «Éditeur» est une chaîne de caractères, par contre l'attribut «ISBN» est un nombre de 13 chiffres, commençant manifestement par 978. 
+
+- **schéma** : le schéma d'une relation est le regroupement de tous les attributs et de leur domaine respectif. Ici notre schéma serait ```((Code, Entier), (Titre, Chaîne de caractères), (Auteur, Chaîne de caractères), (Éditeur, Chaîne de caractères), (ISBN, Entier))``` 
 
 
 
