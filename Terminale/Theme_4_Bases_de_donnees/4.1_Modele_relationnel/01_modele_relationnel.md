@@ -118,3 +118,114 @@ Une version non-redondante de la relation «Emprunteurs» serait donc celle-ci :
 | 845           | 12/10/2020 | 942  |
 | 125           | 13/10/2020 | 1023 |
 | 125           | 13/10/2020 | 486  |
+
+#### 1.5 Contraintes d'intégrité
+
+##### 1.5.1 Contrainte de domaine
+Tout attribut d'un enregistrement doit respecter le domaine indiqué dans le schéma relationnel.
+
+Attention, certains domaines sont subtils. Par exemple, si une relation possède un attribut "Code Postal", le domaine de cet attribut devra être ```String``` plutôt que ```Entier``` . Dans le cas contraire, un enregistrement possédant le code postal ```03150``` serait converti en ```3150``` (car pour les entiers, 03150 = 3150). Or le code postal ```3150``` n'existe pas.
+
+##### 1.5.2 Contrainte de relation
+La contrainte de relation impose que tout enregistrement soit unique : cette contrainte est réalisée par l'existence obligatoire d'une clé primaire.
+Cette clé primaire est souvent créée de manière artificielle (voir ```id_emprunteurs```  dans la table ci-dessus par exemple).
+
+##### 1.5.3 Contrainte de référence
+La cohérence entre les différentes tables d'une base de données est assurée par les clés étrangères : dans une table, la valeur d'un attribut qui est clé étrangère doit obligatoirement pouvoir être retrouvée dans la table dont cet attribut est clé primaire.
+
+Par exemple, la relation «Emprunts_v2» ci-dessous n'est pas valable :
+**Relation «Emprunts_v2»** 
+| id_emprunteur | date       | code |
+|---------------|------------|------|
+| 845           | 12/10/2020 | 942  |
+| 125           | 13/10/2020 | 1023 |
+| 125           | 13/10/2020 | **511**  |
+
+En effet, le code 511 (clé étrangère de ma table «Emprunts_v2») ne correspond à aucun enregistrement dans la table dont il est clé primaire (la table «Livres») :
+
+![](data/rel_livres.png)
+
+Il n'y a pas de code 511, donc ma relation «Emprunts_v2» ne respecte pas la contrainte de référence, et provoquerait une erreur du SGBD.
+
+
+
+##### 1.6 Représentation usuelles des bases de données en modèle relationnel
+
+Considérons la base de données Tour de France 2020, contenant les relations suivantes :
+(d'après une idée de Didier Boulle, http://webtic.free.fr/sql/mldr.htm)
+
+**relation Équipes**
+| codeEquipe | nomEquipe                      |
+|------|-----------------------------|
+| ALM  |  AG2R La Mondiale           |
+| AST  |  Astana Pro Team            |
+| TBM  |  Bahrain - McLaren          |
+| BOH  |  BORA - hansgrohe           |
+| CCC  |  CCC Team                   |
+| COF  |  Cofidis, Solutions Crédits |
+| DQT  |  Deceuninck - Quick Step    |
+| EF1  |  EF Pro Cycling             |
+| GFC  |  Groupama - FDJ             |
+| LTS  |  Lotto Soudal               |
+| ...  | ...                         |
+
+Le schéma relationnel de cette table s'écrira souvent :
+Equipes ( $ \underline{\text{codeEquipe}}$  ```Int```,  nomEquipe ```String``` ) 
+
+Notez le soulignement sous le mot «codeEquipe», qui signifie que cet attribut est une clé primaire. 
+Les clés étrangères, lorsqu'elles existent, peuvent être signalées par une astérisque *.
+
+
+**relation Coureurs**
+| dossard | nomCoureur  | prénomCoureur | codeEquipe |
+|---------------|-------------|---------------|------------|
+| 141           | LÓPEZ       | Miguel Ángel  | AST        |
+| 142           | FRAILE      | Omar          | AST        |
+| 143           | HOULE       | Hugo          | AST        |
+| 11            | ROGLIČ      | Primož        | TJV        |
+| 12            | BENNETT     | George        | TJV        |
+| 41            | ALAPHILIPPE | Julian        | DQT        |
+| 44            | CAVAGNA     | Rémi          | DQT        |
+| 45            | DECLERCQ    | Tim           | DQT        |
+| 121           | MARTIN      | Guillaume     | COF        |
+| 122           | CONSONNI    | Simone        | COF        |
+| 123           | EDET        | Nicolas       | COF        |
+| …             | …           | …             | …          |
+
+Schéma : 
+Equipes ( $ \underline{\text{dossard}}$  ```Int```,  nomCoureur ```String```,  prénomCoureur ```String```,   codeEquipe* ```String``` ) 
+
+
+
+
+**relation Étapes**
+| numéroEtape | villeDépart | villeArrivée      | km  |
+|-------------|-------------|-------------------|-----|
+| 1           | Nice        | Nice              | 156 |
+| 2           | Nice        | Nice              | 185 |
+| 3           | Nice        | Sisteron          | 198 |
+| 4           | Sisteron    | Orcières-Merlette | 160 |
+| 5           | Gap         | Privas            | 198 |
+| ...         | ...         | ...               | ... |
+
+Schéma : 
+Étapes ( $ \underline{\text{numéroEtape}}$  ```Int```,  villeDépart ```String```,  villeArrivée ```String```,   km ```Int``` ) 
+
+
+
+
+
+**relation Temps**
+| dossard | numéroEtape | tempsRéalisé |
+|:-------------:|:-----------:|:------------:|
+| 41            | 2           | 04:55:27     |
+| 121           | 4           | 04:07:47     |
+| 11            | 5           | 04:21:22     |
+| 122           | 5           | 04:21:22     |
+| ...           | ...         | ...          |
+
+Schéma : 
+Étapes ( $ \underline{\text{numéroCoureur}}$*  ```Int```,  $ \underline{\text{numéroEtape}}$*  ```Int```,  tempsRéalisé ```String```) 
+
+Remarquez que la clé primaire de cette relation est le couple dossard-numéroEtape.
+
