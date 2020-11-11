@@ -231,5 +231,18 @@ Remarquez que la clé primaire de cette relation est le couple dossard-numéroEt
 
 
 **Représentation graphique**
+
 ![](data/schema_tdf.png)
 
+
+---
+## Bibliographie
+- Numérique et Sciences Informatiques, Terminale, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.
+- Prépabac NSI, Terminale, G.CONNAN, V.PETROV, G.ROZSAVOLGYI, L.SIGNAC, éditions HATIER.
+- Cours d'Olivier Lécluse, https://lecluseo.frama.io/leclusemaths/nsi/NSI_T/bdd/modrel/
+- https://www.procyclingstats.com/
+
+
+---
+
+![](data/ccbysa.png "image") G.Lassus, Lycée François Mauriac --  Bordeaux  
