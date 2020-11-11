@@ -119,18 +119,18 @@ Une version non-redondante de la relation «Emprunteurs» serait donc celle-ci :
 | 125           | 13/10/2020 | 1023 |
 | 125           | 13/10/2020 | 486  |
 
-#### 1.5 Contraintes d'intégrité
+### 1.5 Contraintes d'intégrité
 
-##### 1.5.1 Contrainte de domaine
+#### 1.5.1 Contrainte de domaine
 Tout attribut d'un enregistrement doit respecter le domaine indiqué dans le schéma relationnel.
 
 Attention, certains domaines sont subtils. Par exemple, si une relation possède un attribut "Code Postal", le domaine de cet attribut devra être ```String``` plutôt que ```Entier``` . Dans le cas contraire, un enregistrement possédant le code postal ```03150``` serait converti en ```3150``` (car pour les entiers, 03150 = 3150). Or le code postal ```3150``` n'existe pas.
 
-##### 1.5.2 Contrainte de relation
+#### 1.5.2 Contrainte de relation
 La contrainte de relation impose que tout enregistrement soit unique : cette contrainte est réalisée par l'existence obligatoire d'une clé primaire.
 Cette clé primaire est souvent créée de manière artificielle (voir ```id_emprunteurs```  dans la table ci-dessus par exemple).
 
-##### 1.5.3 Contrainte de référence
+#### 1.5.3 Contrainte de référence
 La cohérence entre les différentes tables d'une base de données est assurée par les clés étrangères : dans une table, la valeur d'un attribut qui est clé étrangère doit obligatoirement pouvoir être retrouvée dans la table dont cet attribut est clé primaire.
 
 Par exemple, la relation «Emprunts_v2» ci-dessous n'est pas valable :
@@ -149,7 +149,7 @@ Il n'y a pas de code 511, donc ma relation «Emprunts_v2» ne respecte pas la co
 
 
 
-##### 1.6 Représentation usuelles des bases de données en modèle relationnel
+#### 1.6 Représentation usuelles des bases de données en modèle relationnel
 
 Considérons la base de données Tour de France 2020, contenant les relations suivantes :
 (d'après une idée de Didier Boulle, http://webtic.free.fr/sql/mldr.htm)
@@ -225,9 +225,9 @@ Schéma :
 | ...           | ...         | ...          |
 
 Schéma : 
-Étapes ( <ins>dossard</ins>  ```Int```,  <ins>numéroEtape</ins> *  ```Int```,  tempsRéalisé ```String```) 
+Étapes ( <ins>dossard</ins>*  ```Int```,  <ins>numéroEtape</ins> *  ```Int```,  tempsRéalisé ```String```) 
 
 Remarquez que la clé primaire de cette relation est le couple dossard-numéroEtape.
 
-<ins>text</ins>
+![](data/schema_tdf.png)
 
