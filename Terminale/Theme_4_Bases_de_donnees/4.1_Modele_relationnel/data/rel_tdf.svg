@@ -15,7 +15,122 @@
    inkscape:version="1.0.1 (0767f8302a, 2020-10-17)"
    sodipodi:docname="rel_tdf.svg">
   <defs
-     id="defs2" />
+     id="defs2">
+    <marker
+       style="overflow:visible;"
+       id="marker1666"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.6) rotate(180) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#38525c;stroke-opacity:0.933333;fill:#38525c;fill-opacity:0.933333"
+         id="path1664" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker1608"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.6) rotate(180) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#38525c;stroke-opacity:0.933333;fill:#38525c;fill-opacity:0.933333"
+         id="path1606" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow2Mend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.6) rotate(180) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#38525c;stroke-opacity:0.933333;fill:#38525c;fill-opacity:0.933333"
+         id="path1193" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker1524"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(1.1) rotate(180) translate(1,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#38525c;stroke-opacity:0.933333;fill:#38525c;fill-opacity:0.933333"
+         id="path1522" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="marker1490"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(1.1) rotate(180) translate(1,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#38525c;stroke-opacity:0.933333;fill:#38525c;fill-opacity:0.933333"
+         id="path1488" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow1Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#38525c;stroke-width:1pt;stroke-opacity:0.933333;fill:#38525c;fill-opacity:0.933333"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1169" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow2Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(1.1) rotate(180) translate(1,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#38525c;stroke-opacity:0.933333;fill:#38525c;fill-opacity:0.933333"
+         id="path1187" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#38525c;stroke-width:1pt;stroke-opacity:0.933333;fill:#38525c;fill-opacity:0.933333"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path1166" />
+    </marker>
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -57,7 +172,9 @@
      id="layer1">
     <g
        id="g1158"
-       transform="translate(66.145833,93.927083)">
+       transform="translate(66.145833,93.927083)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          style="opacity:0.931187;fill:#38535c;stroke:#38525c;stroke-width:0.564999;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.933333;paint-order:fill markers stroke"
          id="rect853"
@@ -118,7 +235,9 @@
     </g>
     <g
        id="g1146"
-       transform="translate(-71.437497,63.5)">
+       transform="translate(-71.437497,63.5)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          style="opacity:0.931187;fill:#38535c;stroke:#38525c;stroke-width:0.564999;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.933333;paint-order:fill markers stroke"
          id="rect853-3"
@@ -177,7 +296,9 @@
          id="path871-1-2" />
     </g>
     <g
-       id="g1134">
+       id="g1134"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          style="opacity:0.931187;fill:#38535c;stroke:#38525c;stroke-width:0.564999;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.933333;paint-order:fill markers stroke"
          id="rect853-7"
@@ -239,7 +360,9 @@
     </g>
     <g
        id="g1122"
-       transform="translate(7.9374949,-26.458331)">
+       transform="translate(7.9374949,7.9375025)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <rect
          style="opacity:0.931187;fill:#38535c;stroke:#38525c;stroke-width:0.564999;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.933333;paint-order:fill markers stroke"
          id="rect853-7-7"
@@ -290,8 +413,23 @@
          sodipodi:nodetypes="cc" />
     </g>
     <path
-       style="fill:none;stroke:#38525c;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.933333"
-       d="m 127,92.604166 h 13.22916 V 66.145832 h 15.875"
-       id="path1160" />
+       style="fill:none;stroke:#38525c;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.933333;marker-end:url(#marker1666)"
+       d="m 127,92.604166 h 13.22916 l 1e-5,7.937504 h 15.875"
+       id="path1160"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#38525c;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.933333;marker-end:url(#Arrow2Mend)"
+       d="m 58.208333,92.604166 h 10.583333 v -15.875 h 13.229166"
+       id="path1162"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;stroke:#38525c;stroke-width:0.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.93333334;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#marker1608)"
+       d="M 58.208333,97.895832 H 68.791666 V 121.70833 H 82.020832"
+       id="path1164"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
   </g>
 </svg>

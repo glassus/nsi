@@ -225,9 +225,11 @@ Schéma :
 | ...           | ...         | ...          |
 
 Schéma : 
-Étapes ( <ins>dossard</ins>*  ```Int```,  <ins>numéroEtape</ins> *  ```Int```,  tempsRéalisé ```String```) 
+Temps ( <ins>dossard</ins>*  ```Int```,  <ins>numéroEtape</ins> *  ```Int```,  tempsRéalisé ```String```) 
 
 Remarquez que la clé primaire de cette relation est le couple dossard-numéroEtape.
 
+
+**Représentation graphique**
 ![](data/schema_tdf.png)
 
