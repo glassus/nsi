@@ -170,7 +170,7 @@ Considérons la base de données Tour de France 2020, contenant les relations su
 | ...  | ...                         |
 
 Le schéma relationnel de cette table s'écrira souvent :
-Equipes ( $ \underline{\text{codeEquipe}}$  ```Int```,  nomEquipe ```String``` ) 
+Equipes ( <ins>codeEquipe</ins>  ```Int```,  nomEquipe ```String``` ) 
 
 Notez le soulignement sous le mot «codeEquipe», qui signifie que cet attribut est une clé primaire. 
 Les clés étrangères, lorsqu'elles existent, peuvent être signalées par une astérisque *.
@@ -193,7 +193,7 @@ Les clés étrangères, lorsqu'elles existent, peuvent être signalées par une 
 | …             | …           | …             | …          |
 
 Schéma : 
-Equipes ( $ \underline{\text{dossard}}$  ```Int```,  nomCoureur ```String```,  prénomCoureur ```String```,   codeEquipe* ```String``` ) 
+Equipes ( <ins>dossard</ins>  ```Int```,  nomCoureur ```String```,  prénomCoureur ```String```,   codeEquipe* ```String``` ) 
 
 
 
@@ -209,7 +209,7 @@ Equipes ( $ \underline{\text{dossard}}$  ```Int```,  nomCoureur ```String```,  p
 | ...         | ...         | ...               | ... |
 
 Schéma : 
-Étapes ( $ \underline{\text{numéroEtape}}$  ```Int```,  villeDépart ```String```,  villeArrivée ```String```,   km ```Int``` ) 
+Étapes ( <ins>numéroEtape</ins>  ```Int```,  villeDépart ```String```,  villeArrivée ```String```,   km ```Int``` ) 
 
 
 
@@ -225,7 +225,7 @@ Schéma :
 | ...           | ...         | ...          |
 
 Schéma : 
-Étapes ( $ \underline{\text{numéroCoureur}}$*  ```Int```,  $ \underline{\text{numéroEtape}}$*  ```Int```,  tempsRéalisé ```String```) 
+Étapes ( <ins>dossard</ins>  ```Int```,  <ins>numéroEtape</ins> *  ```Int```,  tempsRéalisé ```String```) 
 
 Remarquez que la clé primaire de cette relation est le couple dossard-numéroEtape.
 
