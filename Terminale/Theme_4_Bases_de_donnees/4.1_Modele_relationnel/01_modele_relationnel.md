@@ -74,8 +74,9 @@ Une clé primaire est un attribut (ou une réunion d'attributs) dont la connaiss
 Alors, quelle clé primaire choisir ? Il faut pour cela réfléchir à ce que deviendrait notre relation si elle contenait 1000 livres au lieu de 10. Il est fort probable que deux livres aient alors le même auteur : l'attribut «Auteur» ne serait donc plus une clé primaire. 
 Il peut arriver aussi que deux livres aient le même titre : l'attribut «Titre» n'est donc pas une bonne clé primaire.
 
-Par définition, l'attribut «ISBN» sera toujours une clé primaire.
-Quant à l'attribut «Code», il s'agit sans doute d'un code «maison» correspondant à une étiquette collée sur la tranche des livres : c'est sans doute aussi une clé primaire.
+Par définition, l'attribut «ISBN» pourrait jouer le rôle de clé primaire.
+Quant à l'attribut «Code», il s'agit sans doute d'une nomenclature «maison» correspondant à une étiquette collée sur la tranche des livres : c'est donc une clé primaire qu'on qualifiera d'«artificielle».  
+Attention, il ne peut pas y avoir deux clés primaires dans une table. La clé primaire choisie ici serait sans aucun doute l'attribut «Code».
 
 #### 1.3 D'autres relations
 
@@ -98,7 +99,8 @@ Ajoutons maintenant les relations ci-dessous :
 L'attribut «id_emprunteur» est une clé primaire de la relation «Emprunteurs».
 
 
-**Notion de clé étrangère**
+**Notion de clé étrangère** 
+
 Y-a-t-il une clé primaire dans la relation «Emprunts» ? 
 «id_emprunteur» est bien une clé primaire (d'«Emprunteurs») mais ne peut pas être une clé primaire d'«Emprunts», car une personne peut prendre plusieurs livres à la fois : on dit que c'est une **clé étrangère**.  
 
