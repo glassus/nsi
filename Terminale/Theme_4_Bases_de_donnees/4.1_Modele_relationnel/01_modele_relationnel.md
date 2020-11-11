@@ -229,3 +229,5 @@ Schéma :
 
 Remarquez que la clé primaire de cette relation est le couple dossard-numéroEtape.
 
+<ins>text</ins>
+
