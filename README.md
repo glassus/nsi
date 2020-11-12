@@ -11,4 +11,4 @@ https://nbviewer.jupyter.org/github/glassus/nsi/tree/master/
 
 L'ensemble des documents disponibles est publié sous licence CC-BY-SA.
 
-![](https://github.com/glassus/nsi/blob/master/Premiere/Theme08_Mini-projets/data/ccbysa.png)
+![](ccbysa.png)
