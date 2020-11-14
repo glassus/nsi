@@ -1,2 +1,0 @@
-jupyter contrib nbextension install --user
-jupyter nbextension enable exercise2/main
