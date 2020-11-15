@@ -10,7 +10,7 @@ Il convient maintenant d'aborder la partie logicielle : les SGBD (Systèmes de G
 [...]
 
 
-## 1. Le langage SQL
+## 1. Introduction au langage SQL
 
 ![](data/extraitBO.png)
 
@@ -28,6 +28,7 @@ Dans toute la suite, nous allons travailler avec la base de données ```livres.d
 #### 1.0.2 Avec un logiciel externe : DB Browser for SQLite
 - Installez ```DB Browser for SQLite```, téléchargeable à l'adresse https://sqlitebrowser.org/
 - Ouvrez le fichier ```livres.db```
+
 ![](data/dbbrowser.png)
 
 #### 1.0.3 Au sein d'un notebook Jupyter
@@ -46,3 +47,19 @@ en ayant bien pris soin de mettre le fichier ```livres.db``` dans le même répe
 
 Ensuite, chaque requête devra être précédée de la ligne ```%% sql```.
  ![](data/jupyter.png)
+
+
+ ### 1.1. Sélection de données : SELECT, FROM, WHERE
+ > Dans toute la suite, les manipulations sont à faire en interrogeant la base de données ```livres.db```, avec l'une des méthodes indiquées ci-dessus.
+ Cette base de données contient les tables suivantes :
+ ![](data/schemaDB.png)
+
+#### 1.1.1 Exemple 1
+- **Commande :** 
+```sql
+SELECT titre FROM livre WHERE annee >= 1990;
+``` 
+- **Traduction :** 
+
+On veut tous les titres de la table «livre» qui sont parus après (ou en ) 1990;
+- **Résultat** 
