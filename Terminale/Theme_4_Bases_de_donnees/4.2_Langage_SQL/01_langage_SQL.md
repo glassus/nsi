@@ -14,10 +14,10 @@ Le langage utilisé pour communiquer avec le SGBD est le langage **SQL**, pour S
 
 Les SGBD les plus utilisés utilisent le modèle relationnel. Parmi eux, citons Oracle, MySQL, Microsoft SQL Server, PostgreSQL, Microsoft Access, SQLite, MariaDB...
 
-Mais de plus en plus de SGBD **non-relationnels** sont utilisés, spécialement adaptés à des données plus diverses et moins structurées. Citons MongoDB, Cassandra (Facebook), BigTable (Google)...
+Mais de plus en plus de SGBD **non-relationnels** sont utilisés, spécialement adaptés à des données plus diverses et moins structurées. On les retrouve sous l'appelation **NoSQL**  (pour *Not only SQL*). Citons parmi eux MongoDB, Cassandra (Facebook), BigTable (Google)...
 
 La quasi-totalité de ces SGBD fonctionnent avec un modèle client-serveur. 
-À l'inverse, SQLite peut lui s'utiliser directement sans démarrer un serveur : la base de données est entièrement représentée dans le logiciel.
+Mais le logiciel SQLite peut lui s'utiliser directement sans démarrer un serveur : la base de données est entièrement représentée dans le logiciel.
 Sa simplicité d'utilisation en fera notre choix pour illustrer cette présentation du langage SQL. 
 
 
