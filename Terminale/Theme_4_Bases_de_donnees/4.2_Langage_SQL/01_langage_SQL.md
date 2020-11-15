@@ -3,7 +3,7 @@
 ## 0. Du modèle relationnel au SGBD
 Les considérations sur le modèle relationnel du [cours précédent](../4.1_Modele_relationnel/01_modele_relationnel.md) traitaient plutôt de la structure mathématique des données. 
 
-Il s'agissait de déterminer de manière la meilleure structure pour représenter les données et les relations qui les lient. 
+Il s'agissait de déterminer la meilleure structure pour représenter les données et les relations qui les lient. 
 
 Il convient maintenant d'aborder la partie logicielle : les SGBD (Systèmes de Gestion de Bases de Données).
 
@@ -14,7 +14,7 @@ Le langage utilisé pour communiquer avec le SGBD est le langage **SQL**, pour S
 
 Les SGBD les plus utilisés utilisent le modèle relationnel. Parmi eux, citons Oracle, MySQL, Microsoft SQL Server, PostgreSQL, Microsoft Access, SQLite, MariaDB...
 
-Mais de plus en plus de SGBD **non-relationnels** sont utilisés, spécialement adaptés à des données plus diverses et moins structurées. Citons MongoD, Cassandra (Facebook), BigTable (Google)...
+Mais de plus en plus de SGBD **non-relationnels** sont utilisés, spécialement adaptés à des données plus diverses et moins structurées. Citons MongoDB, Cassandra (Facebook), BigTable (Google)...
 
 La quasi-totalité de ces SGBD fonctionnent avec un modèle client-serveur. 
 À l'inverse, SQLite peut lui s'utiliser directement sans démarrer un serveur : la base de données est entièrement représentée dans le logiciel.
@@ -289,4 +289,4 @@ Cet exercice en ligne est proposé le Knight Lab de l'université américaine No
 
 ![](data/schemaMM.png)
 
-Rendez-vous sur [cette page](https://mystery.knightlab.com/walkthrough.html), et bonne enquête !
+Rendez-vous sur [cette page](https://mystery.knightlab.com/walkthrough.html), et bonne enquête à coups de requêtes !
