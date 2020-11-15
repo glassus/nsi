@@ -1,13 +1,24 @@
 # Langage SQL
 
 ## 0. Du modèle relationnel au SGBD
-Les considérations sur le modèle relationnel du [cours précédent](../4.1_Modele_relationnel/01_modele_relationnel.md) étaient uniquement théoriques. 
+Les considérations sur le modèle relationnel du [cours précédent](../4.1_Modele_relationnel/01_modele_relationnel.md) traitaient plutôt de la structure mathématique des données. 
 
 Il s'agissait de déterminer de manière la meilleure structure pour représenter les données et les relations qui les lient. 
 
 Il convient maintenant d'aborder la partie logicielle : les SGBD (Systèmes de Gestion de Bases de Données).
 
-[...]
+Les SGBD jouent le rôle d'interface entre l'être humain et la base de données.
+Par l'intermédiaire de **requêtes**, l'utilisateur va consulter ou modifier la base de données. Le SGBD est garant de l'intégrité de cette base, et prévient notamment que les modifications (souvent appelées **transactions**) ne soient pas préjudiciables à la base de données.
+
+Le langage utilisé pour communiquer avec le SGBD est le langage **SQL**, pour Structured  Query Langage (pour *langage de requêtes structurées*).
+
+Les SGBD les plus utilisés utilisent le modèle relationnel. Parmi eux, citons Oracle, MySQL, Microsoft SQL Server, PostgreSQL, Microsoft Access, SQLite, MariaDB...
+
+Mais de plus en plus de SGBD **non-relationnels** sont utilisés, spécialement adaptés à des données plus diverses et moins structurées. Citons MongoD, Cassandra (Facebook), BigTable (Google)...
+
+La quasi-totalité de ces SGBD fonctionnent avec un modèle client-serveur. 
+À l'inverse, SQLite peut lui s'utiliser directement sans démarrer un serveur : la base de données est entièrement représentée dans le logiciel.
+Sa simplicité d'utilisation en fera notre choix pour illustrer cette présentation du langage SQL. 
 
 
 ## 1. Introduction au langage SQL
@@ -251,7 +262,7 @@ Il est donc très important de spécifier ce sur quoi les deux tables vont se re
 
  #### 1.3.2 Exemple 14 : jointure de trois tables 🠖 JOIN
 
-Le résultat précédemment a permis d'améliorer la visibilité de la table «emprunt», mais il reste la colonne «code_barre» qui est peu lisible. Nous pouvons la remplacer par le titre du livre, en faisant une nouvelle jointure.
+Le résultat précédemment a permis d'améliorer la visibilité de la table «emprunt», mais il reste la colonne «code_barre» qui est peu lisible. Nous pouvons la remplacer par le titre du livre, en faisant une nouvelle jointure, en invitant maintenant les deux tables «livre» et «usager».
 
 - **Commande :** 
 ```sql
@@ -271,3 +282,11 @@ Notez ici que des alias sont donnés aux tables (par **AS**) afin de faciliter l
 Cet exercice en ligne est proposé le Knight Lab de l'université américaine Northwerstern University.
 
 ![](data/murdermystery.png)
+
+**Le point de départ de l'histoire** : un meurtre a été commis dans la ville de SQL City le 15 janvier 2018.
+
+À partir de ce point de départ et d'une base de données dont le diagramme est donné ci-dessous, il s'agit de trouver le meurtrier.
+
+![](data/schemaMM.png)
+
+Rendez-vous sur [cette page](https://mystery.knightlab.com/walkthrough.html), et bonne enquête !
