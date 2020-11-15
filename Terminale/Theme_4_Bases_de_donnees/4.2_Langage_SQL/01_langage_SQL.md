@@ -208,7 +208,7 @@ SELECT titre, annee FROM livre
 ``` 
 - **Traduction :** 
 
-On veut afficher tous les albums d'Astérix, er leur année de parution, classés par année décroissante.
+On veut afficher tous les albums d'Astérix, et leur année de parution, classés par année décroissante.
 - **Résultat :**   
 
 ![](data/ex11.png)
@@ -247,7 +247,7 @@ SELECT livre.titre, emprunt.code_barre, emprunt.retour FROM emprunt
          JOIN livre ON emprunt.isbn = livre.isbn;
 ``` 
 - **Traduction :** 
-Comme plusieurs tables sont appelées, nous préfixons chaque colonne avec le numéro de la table. Nous demandons ici l'affichage de la table «emprunt», mais où on aura remplacé l'ISBN (peu lisible) par le titre du livre.
+Comme plusieurs tables sont appelées, nous préfixons chaque colonne avec le nom de la table. Nous demandons ici l'affichage de la table «emprunt», mais où on aura remplacé l'ISBN (peu lisible) par le titre du livre.
 
 L'expression 
 ```sql
