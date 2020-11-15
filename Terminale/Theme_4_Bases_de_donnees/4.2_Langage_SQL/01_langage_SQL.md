@@ -65,7 +65,7 @@ SELECT titre FROM livre WHERE annee >= 1990;
 - **Traduction :** 
 
 On veut les titres de la table «livre» qui sont parus après (ou en ) 1990;
-- **Résultat :** (d'après DB Browser)  
+- **Résultat :**   
 
 ![](data/ex1.png)
 
@@ -79,7 +79,7 @@ SELECT titre FROM livre WHERE   annee >= 1970 AND
 - **Traduction :** 
 
 On veut les titres de la table «livre» qui sont parus entre 1970 et 1980 chez l'éditeur Dargaud;
-- **Résultat :** (d'après DB Browser)  
+- **Résultat :**   
 
 ![](data/ex2.png)
 
@@ -92,7 +92,7 @@ SELECT titre FROM livre WHERE titre LIKE '%Astérix%';
 - **Traduction :** 
 
 On veut les titres de la table «livre» dont le titre contient la chaîne de caractères "Astérix". Le symbole ```%``` est un joker qui peut symboliser n'importe quelle chaîne de caractères. 
-- **Résultat :** (d'après DB Browser)  
+- **Résultat :**   
 
 ![](data/ex3.png)
 
@@ -104,7 +104,7 @@ SELECT titre, isbn FROM livre WHERE annee >= 1990;
 - **Traduction :** 
 
 On veut les titres et les ISBN de la table «livre» qui sont parus après 1990.
-- **Résultat :** (d'après DB Browser)  
+- **Résultat :**   
 
 ![](data/ex4.png)
 
@@ -117,7 +117,7 @@ SELECT * FROM livre WHERE annee >= 1990;
 
 On veut toutes les colonnes disponibles de la table «livre» pour les livres qui sont parus après 1990.
 L'astérisque ```*``` est un joker (*wildcard* en anglais).
-- **Résultat :** (d'après DB Browser)  
+- **Résultat :**   
 
 ![](data/ex5.png)
 
@@ -129,7 +129,7 @@ SELECT titre AS titre_du_livre FROM livre WHERE annee >= 1990;
 - **Traduction :** 
 
 Lors de l'affichage du résulats et dans la suite de la requête (important), la colonne "titre" est renommée "titre_du_livre".
-- **Résultat :** (d'après DB Browser)  
+- **Résultat :**   
 
 ![](data/ex6.png)
 
@@ -144,7 +144,7 @@ SELECT COUNT(*) AS total FROM livre
 - **Traduction :** 
 
 On veut compter le nombre d'enregistrements de la tables livres comportant le mot "Astérix". Le résultat sera le seul élément d'une colonne nommée «total».
-- **Résultat :** (d'après DB Browser)  
+- **Résultat :**   
 
 ![](data/ex7.png)
 
@@ -158,7 +158,7 @@ SELECT SUM(annee) AS somme FROM livre
 
 On veut additionner les années des livres de la tables livres comportant le mot "Astérix". Le résultat sera le seul élément d'une colonne nommée «somme».
 *Attention : dans notre cas précis, ce calcul n'a aucun sens...*
-- **Résultat :** (d'après DB Browser)  
+- **Résultat :**   
 
 ![](data/ex8.png)
 
@@ -171,7 +171,7 @@ SELECT AVG(annee) AS moyenne FROM livre
 - **Traduction :** 
 
 On veut calculer la moyenne des années de parution des livres de la table livres comportant le mot "Astérix". Le résultat sera le seul élément d'une colonne nommée «moyenne».
-- **Résultat :** (d'après DB Browser)  
+- **Résultat :**   
 
 ![](data/ex9.png)
 
@@ -184,7 +184,7 @@ SELECT MIN(annee) AS minimum FROM livre
 - **Traduction :** 
 
 On veut trouver la pus petite valeur de la colonne «annee» parmi les livres de la tables livre comportant le mot "Astérix". Le résultat sera le seul élément d'une colonne nommée minimum. Le fonctionnement est identique avec **MAX** pour la recherche du maximum.
-- **Résultat :** (d'après DB Browser)  
+- **Résultat :**   
 
 ![](data/ex10.png)
 
@@ -198,7 +198,7 @@ SELECT titre, annee FROM livre
 - **Traduction :** 
 
 On veut afficher tous les albums d'Astérix, er leur année de parution, classés par année décroissante.
-- **Résultat :** (d'après DB Browser)  
+- **Résultat :**   
 
 ![](data/ex11.png)
 
@@ -210,7 +210,7 @@ SELECT DISTINCT editeur FROM livre;
 - **Traduction :** 
 
 On veut la liste de tous les éditeurs. Sans le mot-clé ```DISTINCT```, beaucoup de doublons apparaîtraient.
-- **Résultat :** (d'après DB Browser)  
+- **Résultat :**   
 
 ![](data/ex12.png)
 
@@ -236,5 +236,38 @@ SELECT livre.titre, emprunt.code_barre, emprunt.retour FROM emprunt
          JOIN livre ON emprunt.isbn = livre.isbn;
 ``` 
 - **Traduction :** 
-Comme plusieurs tables sont appelées, nous préfixons chaque colonne avec le numéro de la table. Nous demandons ici l'affichage de la table «emprunt», mais où on aura remplacé l'ISBN (peu lisible) par 
-- **Résultat :** (d'après DB Browser)
+Comme plusieurs tables sont appelées, nous préfixons chaque colonne avec le numéro de la table. Nous demandons ici l'affichage de la table «emprunt», mais où on aura remplacé l'ISBN (peu lisible) par le titre du livre.
+
+L'expression 
+```sql
+JOIN livre ON emprunt.isbn = livre.isbn
+``` 
+doit se comprendre comme ceci : on «invite» la table «livres» (dont on va afficher la colonne «titre»). La correspondance entre la table «livres» et la table «emprunt» doit se faire sur l'attribut ISBN, qui est la clé primaire de «livres» et une clé étrangère d'«emprunts».  
+Il est donc très important de spécifier ce sur quoi les deux tables vont se retrouver (ici, l'ISBN) 
+
+- **Résultat :**  
+
+![](data/ex13.png)
+
+ #### 1.3.2 Exemple 14 : jointure de trois tables 🠖 JOIN
+
+Le résultat précédemment a permis d'améliorer la visibilité de la table «emprunt», mais il reste la colonne «code_barre» qui est peu lisible. Nous pouvons la remplacer par le titre du livre, en faisant une nouvelle jointure.
+
+- **Commande :** 
+```sql
+SELECT u.nom, u.prenom, l.titre, e.retour FROM emprunt AS e
+         JOIN livre AS l ON e.isbn = l.isbn
+         JOIN usager AS u ON e.code_barre = u.code_barre;
+``` 
+- **Traduction :** 
+Il faut bien comprendre que la table principale qui nous intéresse ici est «emprunts», mais qu'on modifie les valeurs affichées en allant chercher des correspondances dans deux autres tables. 
+Notez ici que des alias sont donnés aux tables (par **AS**) afin de faciliter l'écriture. 
+
+- **Résultat :**  
+
+![](data/ex13.png)
+
+### 1.4 Exercice d'application : The SQL Murder Mystery 
+Cet exercice en ligne est proposé le Knight Lab de l'université américaine Northwerstern University.
+
+![](data/murdermystery.png)
