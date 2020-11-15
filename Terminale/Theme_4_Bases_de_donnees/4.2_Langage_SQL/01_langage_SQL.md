@@ -100,7 +100,32 @@ SELECT titre, isbn FROM livre WHERE annee >= 1990;
 ``` 
 - **Traduction :** 
 
-On veut les titres et les ISBN de la table «livre» qui sont parus après 1990
+On veut les titres et les ISBN de la table «livre» qui sont parus après 1990.
 - **Résultat :** (d'après DB Browser)  
 
 ![](data/ex4.png)
+
+#### 1.1.5 Exemple 5 : renvoi de toutes les colonnes
+- **Commande :** 
+```sql
+SELECT * FROM livre WHERE annee >= 1990;
+``` 
+- **Traduction :** 
+
+On veut toutes les colonnes disponibles de la table «livre» pour les livres qui sont parus après 1990.
+L'astérisque ```*``` est un joker (*wildcard* en anglais).
+- **Résultat :** (d'après DB Browser)  
+
+![](data/ex5.png)
+
+#### 1.1.6 Exemple 6 : renommer les colonnes 🠖 AS
+- **Commande :** 
+```sql
+SELECT titre AS titre_du_livre FROM livre WHERE annee >= 1990;
+``` 
+- **Traduction :** 
+
+Lors de l'affichage du résulats et dans la suite de la requête (important), la colonne "titre" est renommée "titre_du_livre".
+- **Résultat :** (d'après DB Browser)  
+
+![](data/ex6.png)
