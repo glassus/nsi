@@ -188,7 +188,7 @@ On veut trouver la pus petite valeur de la colonne «annee» parmi les livres de
 
 ![](data/ex10.png)
 
-#### 1.2.5 Exemple 11 : tri de valeurs 🠖 ORDER BY, ASC, DSC
+#### 1.2.5 Exemple 11 : tri de valeurs 🠖 ORDER BY, ASC, DESC
 - **Commande :** 
 ```sql
 SELECT titre, annee FROM livre
@@ -202,3 +202,39 @@ On veut afficher tous les albums d'Astérix, er leur année de parution, classé
 
 ![](data/ex11.png)
 
+#### 1.2.5 Exemple 12 : suppression des doublons 🠖 DISTINCT
+- **Commande :** 
+```sql
+SELECT DISTINCT editeur FROM livre;
+``` 
+- **Traduction :** 
+
+On veut la liste de tous les éditeurs. Sans le mot-clé ```DISTINCT```, beaucoup de doublons apparaîtraient.
+- **Résultat :** (d'après DB Browser)  
+
+![](data/ex12.png)
+
+## 1.3 Des recherches croisées sur les tables : les jointures
+
+Observons le contenu de la table «emprunt» :
+
+```sql
+SELECT * FROM emprunt;
+``` 
+![](data/noex1.png)
+
+Le contenu est peu lisible. Souvenons-nous du diagramme de la base de données.
+
+ ![](data/schemaDB.png)
+
+ Pour que la table «emprunt» soit lisible, il faudrait (dans un premier temps) que l'on affiche à la place de l'ISBN le titre de l'ouvrage. Or ce titre est disponible dans la table «livres».  On va donc procéder à une **jointure** de ces deux tables.
+
+ #### 1.3.1 Exemple 13 : jointure de deux tables 🠖 JOIN
+- **Commande :** 
+```sql
+SELECT livre.titre, emprunt.code_barre, emprunt.retour FROM emprunt
+         JOIN livre ON emprunt.isbn = livre.isbn;
+``` 
+- **Traduction :** 
+Comme plusieurs tables sont appelées, nous préfixons chaque colonne avec le numéro de la table. Nous demandons ici l'affichage de la table «emprunt», mais où on aura remplacé l'ISBN (peu lisible) par 
+- **Résultat :** (d'après DB Browser)
