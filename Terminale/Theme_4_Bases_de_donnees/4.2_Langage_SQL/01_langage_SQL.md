@@ -62,7 +62,8 @@ SELECT titre FROM livre WHERE annee >= 1990;
 - **Traduction :** 
 
 On veut les titres de la table «livre» qui sont parus après (ou en ) 1990;
-- **Résultat :** (d'après DB Browser) 
+- **Résultat :** (d'après DB Browser)  
+
 ![](data/ex1.png)
 
 #### 1.1.2 Exemple 2 : requête basique avec booléens
@@ -75,7 +76,8 @@ SELECT titre FROM livre WHERE   annee >= 1970 AND
 - **Traduction :** 
 
 On veut les titres de la table «livre» qui sont parus entre 1970 et 1980 chez l'éditeur Dargaud;
-- **Résultat :** (d'après DB Browser) 
+- **Résultat :** (d'après DB Browser)  
+
 ![](data/ex2.png)
 
 
@@ -87,7 +89,8 @@ SELECT titre FROM livre WHERE titre LIKE '%Astérix%';
 - **Traduction :** 
 
 On veut les titres de la table «livre» dont le titre contient la chaîne de caractères "Astérix". Le symbole ```%``` est un joker qui peut symboliser n'importe quelle chaîne de caractères. 
-- **Résultat :** (d'après DB Browser) 
+- **Résultat :** (d'après DB Browser)  
+
 ![](data/ex3.png)
 
 #### 1.1.4 Exemple 4 : renvoi de plusieurs colonnes
@@ -98,5 +101,6 @@ SELECT titre, isbn FROM livre WHERE annee >= 1990;
 - **Traduction :** 
 
 On veut les titres et les ISBN de la table «livre» qui sont parus après 1990
-- **Résultat :** (d'après DB Browser) 
+- **Résultat :** (d'après DB Browser)  
+
 ![](data/ex4.png)
