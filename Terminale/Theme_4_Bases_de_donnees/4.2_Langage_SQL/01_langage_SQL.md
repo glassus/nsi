@@ -54,12 +54,49 @@ Ensuite, chaque requête devra être précédée de la ligne ```%% sql```.
  Cette base de données contient les tables suivantes :
  ![](data/schemaDB.png)
 
-#### 1.1.1 Exemple 1
+#### 1.1.1 Exemple 1 : requête basique
 - **Commande :** 
 ```sql
 SELECT titre FROM livre WHERE annee >= 1990;
 ``` 
 - **Traduction :** 
 
-On veut tous les titres de la table «livre» qui sont parus après (ou en ) 1990;
-- **Résultat** 
+On veut les titres de la table «livre» qui sont parus après (ou en ) 1990;
+- **Résultat :** (d'après DB Browser) 
+![](data/ex1.png)
+
+#### 1.1.2 Exemple 2 : requête basique avec booléens
+- **Commande :** 
+```sql
+SELECT titre FROM livre WHERE   annee >= 1970 AND
+                                annee <= 1980 AND
+                                editeur = 'Dargaud';
+``` 
+- **Traduction :** 
+
+On veut les titres de la table «livre» qui sont parus entre 1970 et 1980 chez l'éditeur Dargaud;
+- **Résultat :** (d'après DB Browser) 
+![](data/ex2.png)
+
+
+#### 1.1.3 Exemple 3 : requête approchée LIKE
+- **Commande :** 
+```sql
+SELECT titre FROM livre WHERE titre LIKE '%Astérix%';
+``` 
+- **Traduction :** 
+
+On veut les titres de la table «livre» dont le titre contient la chaîne de caractères "Astérix". Le symbole ```%``` est un joker qui peut symboliser n'importe quelle chaîne de caractères. 
+- **Résultat :** (d'après DB Browser) 
+![](data/ex3.png)
+
+#### 1.1.4 Exemple 4 : renvoi de plusieurs colonnes
+- **Commande :** 
+```sql
+SELECT titre, isbn FROM livre WHERE annee >= 1990;
+``` 
+- **Traduction :** 
+
+On veut les titres et les ISBN de la table «livre» qui sont parus après 1990
+- **Résultat :** (d'après DB Browser) 
+![](data/ex4.png)
