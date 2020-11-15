@@ -48,13 +48,16 @@ en ayant bien pris soin de mettre le fichier ```livres.db``` dans le même répe
 Ensuite, chaque requête devra être précédée de la ligne ```%% sql```.
  ![](data/jupyter.png)
 
+--------
 
- ### 1.1. Sélection de données : SELECT, FROM, WHERE
- > Dans toute la suite, les manipulations sont à faire en interrogeant la base de données ```livres.db```, avec l'une des méthodes indiquées ci-dessus.
+> Dans toute la suite, les manipulations sont à faire en interrogeant la base de données ```livres.db```, avec l'une des méthodes indiquées ci-dessus.
  Cette base de données contient les tables suivantes :
  ![](data/schemaDB.png)
 
-#### 1.1.1 Exemple 1 : requête basique
+ ### 1.1. Sélection de données
+ 
+
+#### 1.1.1 Exemple 1 : requête basique 🠖 SELECT, FROM, WHERE
 - **Commande :** 
 ```sql
 SELECT titre FROM livre WHERE annee >= 1990;
@@ -66,7 +69,7 @@ On veut les titres de la table «livre» qui sont parus après (ou en ) 1990;
 
 ![](data/ex1.png)
 
-#### 1.1.2 Exemple 2 : requête basique avec booléens
+#### 1.1.2 Exemple 2 : requête basique avec booléens 🠖 AND
 - **Commande :** 
 ```sql
 SELECT titre FROM livre WHERE   annee >= 1970 AND
@@ -81,7 +84,7 @@ On veut les titres de la table «livre» qui sont parus entre 1970 et 1980 chez 
 ![](data/ex2.png)
 
 
-#### 1.1.3 Exemple 3 : requête approchée LIKE
+#### 1.1.3 Exemple 3 : requête approchée 🠖 LIKE
 - **Commande :** 
 ```sql
 SELECT titre FROM livre WHERE titre LIKE '%Astérix%';
@@ -105,7 +108,7 @@ On veut les titres et les ISBN de la table «livre» qui sont parus après 1990.
 
 ![](data/ex4.png)
 
-#### 1.1.5 Exemple 5 : renvoi de toutes les colonnes
+#### 1.1.5 Exemple 5 : renvoi de toutes les colonnes 
 - **Commande :** 
 ```sql
 SELECT * FROM livre WHERE annee >= 1990;
@@ -129,3 +132,73 @@ Lors de l'affichage du résulats et dans la suite de la requête (important), la
 - **Résultat :** (d'après DB Browser)  
 
 ![](data/ex6.png)
+
+ ### 1.2. Des opérations sur les données : sélection avec agrégation
+
+#### 1.2.1 Exemple 7 : nombre de résultats 🠖 COUNT
+- **Commande :** 
+```sql
+SELECT COUNT(*) AS total FROM livre
+                             WHERE titre LIKE "%Astérix%";
+``` 
+- **Traduction :** 
+
+On veut compter le nombre d'enregistrements de la tables livres comportant le mot "Astérix". Le résultat sera le seul élément d'une colonne nommée «total».
+- **Résultat :** (d'après DB Browser)  
+
+![](data/ex7.png)
+
+#### 1.2.2 Exemple 8 : somme de valeurs numériques 🠖 SUM
+- **Commande :** 
+```sql
+SELECT SUM(annee) AS somme FROM livre
+                             WHERE titre LIKE "%Astérix%";
+``` 
+- **Traduction :** 
+
+On veut additionner les années des livres de la tables livres comportant le mot "Astérix". Le résultat sera le seul élément d'une colonne nommée «somme».
+*Attention : dans notre cas précis, ce calcul n'a aucun sens...*
+- **Résultat :** (d'après DB Browser)  
+
+![](data/ex8.png)
+
+#### 1.2.3 Exemple 9 : moyenne de valeurs numériques 🠖 AVG
+- **Commande :** 
+```sql
+SELECT AVG(annee) AS moyenne FROM livre
+                             WHERE titre LIKE "%Astérix%";
+``` 
+- **Traduction :** 
+
+On veut calculer la moyenne des années de parution des livres de la table livres comportant le mot "Astérix". Le résultat sera le seul élément d'une colonne nommée «moyenne».
+- **Résultat :** (d'après DB Browser)  
+
+![](data/ex9.png)
+
+ #### 1.2.4 Exemple 10 : minimum ou maximum de valeurs numériques 🠖 MIN, MAX
+- **Commande :** 
+```sql
+SELECT MIN(annee) AS minimum FROM livre
+                             WHERE titre LIKE "%Astérix%";
+``` 
+- **Traduction :** 
+
+On veut trouver la pus petite valeur de la colonne «annee» parmi les livres de la tables livre comportant le mot "Astérix". Le résultat sera le seul élément d'une colonne nommée minimum. Le fonctionnement est identique avec **MAX** pour la recherche du maximum.
+- **Résultat :** (d'après DB Browser)  
+
+![](data/ex10.png)
+
+#### 1.2.5 Exemple 11 : tri de valeurs 🠖 ORDER BY, ASC, DSC
+- **Commande :** 
+```sql
+SELECT titre, annee FROM livre
+                WHERE titre LIKE "%Astérix%"
+                ORDER BY annee DESC;
+``` 
+- **Traduction :** 
+
+On veut afficher tous les albums d'Astérix, er leur année de parution, classés par année décroissante.
+- **Résultat :** (d'après DB Browser)  
+
+![](data/ex11.png)
+
