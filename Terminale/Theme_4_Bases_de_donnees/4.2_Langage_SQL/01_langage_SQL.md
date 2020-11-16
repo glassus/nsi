@@ -276,7 +276,7 @@ Notez ici que des alias sont donnés aux tables (par **AS**) afin de faciliter l
 
 - **Résultat :**  
 
-![](data/ex13.png)
+![](data/ex14.png)
 
 ### 1.4 Exercice d'application : The SQL Murder Mystery 
 Cet exercice en ligne est proposé le Knight Lab de l'université américaine Northwerstern University.
