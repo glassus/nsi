@@ -172,7 +172,7 @@ Considérons la base de données Tour de France 2020, contenant les relations su
 | ...  | ...                         |
 
 Le schéma relationnel de cette table s'écrira souvent :
-Equipes ( <ins>codeEquipe</ins>  ```Int```,  nomEquipe ```String``` ) 
+Equipes ( <ins>codeEquipe</ins>  ```String```,  nomEquipe ```String``` ) 
 
 Notez le soulignement sous le mot «codeEquipe», qui signifie que cet attribut est une clé primaire. 
 Les clés étrangères, lorsqu'elles existent, peuvent être signalées par une astérisque *.
@@ -224,6 +224,7 @@ Schéma :
 | 121           | 4           | 04:07:47     |
 | 11            | 5           | 04:21:22     |
 | 122           | 5           | 04:21:22     |
+| 41           | 4           | 04:08:24     |
 | ...           | ...         | ...          |
 
 Schéma : 
