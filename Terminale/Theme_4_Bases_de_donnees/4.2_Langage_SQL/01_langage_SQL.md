@@ -355,7 +355,7 @@ Il est possible de «déléguer» la gestion des valeurs de la clé primaire ave
 La déclaration de la table et l'insertion des valeurs serait :
 ```sql
 CREATE TABLE Table_notes (
-        Id INTEGER PRIMARY KEY,
+        Id INTEGER PRIMARY KEY AUTOINCREMENT,
         Nom TEXT,
         Maths INTEGER,
         Anglais INTEGER,
