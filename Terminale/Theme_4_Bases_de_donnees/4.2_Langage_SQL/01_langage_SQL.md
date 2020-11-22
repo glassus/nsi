@@ -290,3 +290,85 @@ Cet exercice en ligne est proposé le Knight Lab de l'université américaine No
 ![](data/schemaMM.png)
 
 Rendez-vous sur [cette page](https://mystery.knightlab.com/walkthrough.html), et bonne enquête à coups de requêtes !
+
+## 2. Création et modification d'une base de données
+
+_rappel_ : ![](data/extraitBO.png)
+
+
+L'objectif est de créer la table suivante :
+
+| id | Nom | Maths | Anglais | NSI |
+|:-----:|:-----:|:-------:|:----:|:----:|
+| 1 | Alice | 16 | 11 | 17 |
+| 2 | Bob  | 12 | 15 | 10 |
+| 3 | Charles | 9 | 11 | 18 |
+
+#### 2.1 Exemple 15 : Création d'une table 🠖 CREATE TABLE
+
+- **Commande :** 
+```sql
+CREATE TABLE Table_notes (
+        Id INTEGER PRIMARY KEY,
+        Nom TEXT,
+        Maths INTEGER,
+        Anglais INTEGER,
+        NSI INTEGER
+        );
+``` 
+- **Remarques :** 
+
+C'est l'utilisateur qui spécifie, éventuellement, quel attribut sera une clé primaire.
+
+- **Résultat :**  
+Dans DB Browser, il faut avoir au préalable créé une nouvelle base de données.
+
+![](data/ex15.png)
+
+#### 2.2 Exemple 16 : Insertion de valeurs 🠖 INSERT INTO, VALUES
+
+- **Commande :** 
+```sql
+INSERT INTO Table_notes VALUES  (1, 'Alice', 16, 11, 17),
+		                (2, 'Bob', 12, 15, 10),
+                        (3, 'Charles', 9, 11, 18);
+``` 
+
+- **Résultat :**  
+
+![](data/ex16.png)
+
+#### 2.3 Exemple 17 : Intérêt de la clé primaire
+Essayons d'insérer un 4ème enregistrement ayant le même ```id``` qu'un autre élève. 
+
+- **Commande :** 
+```sql
+INSERT INTO Table_notes VALUES  (3, 'Denis', 18, 10, 12);
+``` 
+
+- **Résultat :**  
+La contrainte de relation est violée : le SGBD «protège» la base de données en n'acceptant pas la proposition d'insertion. La base de données n'est pas modifiée.
+![](data/ex17.png)
+
+- **Remarque :**
+Il est possible de «déléguer» la gestion des valeurs de la clé primaire avec l'instruction ```AUTOINCREMENT```. 
+La déclaration de la table et l'insertion des valeurs serait :
+```sql
+CREATE TABLE Table_notes (
+        Id INTEGER PRIMARY KEY,
+        Nom TEXT,
+        Maths INTEGER,
+        Anglais INTEGER,
+        NSI INTEGER
+        );
+
+INSERT INTO Table_notes (Nom, Maths, Anglais, NSI) VALUES
+	('Alice', 16, 11, 17),
+	('Bob', 12, 15, 10),
+	('Charles', 9, 11, 18);
+``` 
+et le résultat serait :
+![](data/ex17b.png)
+
+L'attribut ```id``` est donc géré automatiquement par le SGBD.
+
