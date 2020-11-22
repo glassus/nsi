@@ -367,8 +367,41 @@ INSERT INTO Table_notes (Nom, Maths, Anglais, NSI) VALUES
 	('Bob', 12, 15, 10),
 	('Charles', 9, 11, 18);
 ``` 
-et le résultat serait :
+et le résultat serait : 
+
 ![](data/ex17b.png)
 
 L'attribut ```id``` est donc géré automatiquement par le SGBD.
 
+
+#### 2.4 Exemple 18 : Modification d'une valeur 🠖 UPDATE, SET
+
+Pour modifier la note de Maths d'Alice :
+
+- **Commande :** 
+```sql
+UPDATE Table_notes SET Maths = 18 WHERE Nom = 'Alice';
+``` 
+
+#### 2.5 Exemple 19 : Suppression d'un enregistrement 🠖 DELETE
+
+Pour supprimer totalement la ligne concernant Charles :
+
+- **Commande :** 
+```sql
+DELETE FROM Table_notes WHERE Nom = 'Charles';
+``` 
+
+Si une autre table contient par exemple l'attribut ```id```  comme clé étrangère, et si l'```id```  de Charles fait partie de cette table, le SGBD refusera de supprimer cette ligne, afin de ne pas violer la contrainte de référence.
+
+
+#### 2.6 Exemple 20 : Suppression totale d'une table 🠖 DROP TABLE
+
+Pour supprimer totalement et défitivement la table :
+
+- **Commande :** 
+```sql
+DROP TABLE Table_notes;
+``` 
+
+Là encore, si une autre table est reliée à ```Table_notes``` par une clé étrangère, la suppression sera bloquée par le SGBD.
