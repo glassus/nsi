@@ -49,3 +49,18 @@ Questions interactives à réaliser sur le site sqlzoo.net
 3. Travail sur JOIN, (base de données Euro2012) [ici](https://sqlzoo.net/wiki/The_JOIN_operation)
 
 
+## Exercice 3
+_basé sur le travail de G.Viateau (Bayonne)_
+
+On considère ci-dessous le schéma de la base de données du stock d'un supermarché :
+
+![](data/exo3_schema.png)
+
+1. Quelle requête SQL donne le prix d'achat du produit dont le ```nom_court``` est «Liq_Vaiss_1L» ?
+2. Quelle requête donne l'adresse, le code postal et la ville du fournisseur dont le nom est «Avenir_confiseur» ?
+3. Quelle requête donne les produits étant en rupture de stock ?
+4. Quelle requête donne la liste de toutes les ampoules vendues en magasin ? On pourra faire l'hypothèse que le nom du produit contient le mot «ampoule»?
+5. Quelle requête permet d'avoir le prix moyen de ces ampoules ?
+6. Quelle requête permet d'identifier le produit le plus cher du magasin ?
+7. Quelle requête renvoie les noms des produits dont la date de péremption est dépassée ? _(on pourra utiliser la fonction SQL ```NOW()``` qui renvoie la date actuelle )_
+
