@@ -67,6 +67,71 @@ Les différentes valeurs sont stockées au préalable dans une liste de tuples.
 #### 1.3 Mini-projet 1
 Créer un programme qui demande à l'utilisateur un nom et une note, en boucle. Les résultats sont stockés au fur et à mesure dans une base de données. Si le nom est égal à «Q» ou «q», le programme s'arrête.
 
+#### 1.4 ☠ Exemple d'injection SQL
+L'injection SQL est une technique consistant à écrire du code SQL à un endroit qui n'est pas censé en recevoir.
+
+![](data/xkcd.png)
+
+https://xkcd.com/327/
+
+- Créez un fichier contenant le code suivant :
+```python
+import sqlite3
+
+#Connexion
+connexion = sqlite3.connect('mabasecobaye.db')
+
+#Récupération d'un curseur
+c = connexion.cursor()
+
+c.execute("""
+    CREATE TABLE IF NOT EXISTS notes(
+    Nom TEXT,
+    Note INT);
+    """)
+
+
+while True :
+    nom = input('Nom ? ')
+    if nom in ['Q','q'] :
+        break
+    note = input('Note ? ')
+    data = (nom, note)
+    p = "INSERT INTO notes VALUES ('" + nom + "','" + note + "')"
+
+    c.executescript(p)
+
+
+#Validation
+connexion.commit()
+
+
+#Déconnexion
+connexion.close()
+
+
+``` 
+
+- Exécutez ce fichier, rentrez quelques valeurs, quittez, et ouvrez dans ```DB Browser``` la table ```notes``` pour bien vérifier que vos valeurs ont bien été stockées.
+- Lancez à nouveau le fichier, en donnant ensuite comme nom la chaîne de caractères suivante : 
+```g','3'); DROP TABLE notes;--``` 
+- Donnez une note quelconque (par exemple 12), quittez le programme... et allez observer l'état de la base de données. La table  ```notes``` n'existe plus !
+
+**Explication** :  
+La requête qui a été formulée est ```INSERT INTO notes VALUES ('g','3'); DROP TABLE notes;--','12')``` 
+
+Dans un premier temps, le couple ```('g','3')``` a été inséré.  
+Puis l'ordre a été donné de détruire la table ```notes```.  
+Le reste du code (qui n'est pas correct) est ignoré car ```--``` est le symbole du commentaire en SQL (l'équivalent du # de Python).  
+
+**Remarques** :  
+Évidemment, ce code a été fait spécifiquement pour être vulnérable à l'injection SQL. Il suffit d'ailleurs de remplacer le ```c.executescript(p)``` par ```c.execute(p)``` pour que le code reste fonctionnel mais refuse l'injection SQL. 
+Ceci dit, de nombreux serveurs sont encore attaqués par cette technique, au prix de manipulations bien sûr plus complexes que celles que nous venons de voir. 
+
+Rappelons enfin que ce genre de pratiques est interdit sur un serveur qui ne vous appartient pas.
+
+
+
 ### 2. Lecture des enregistrements
 ```python
 import sqlite3
