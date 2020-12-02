@@ -115,9 +115,16 @@ WHERE m.specialite = "psychiatrie" AND o.date_ord LIKE "%04/2020%"
 Questions interactives à réaliser sur le site sqlzoo.net
 
 1. Travail sur SELECT, (base de données Nobel) [ici](https://sqlzoo.net/wiki/SELECT_from_Nobel_Tutorial)
+
+Correction : voir [https://github.com/jisaw/sqlzoo-solutions/blob/master/select-from-nobel.sql](https://github.com/jisaw/sqlzoo-solutions/blob/master/select-from-nobel.sql)
+
 2. Travail sur SUM et COUNT, (base de données World) [ici](https://sqlzoo.net/wiki/SUM_and_COUNT)
+
+Correction : voir [https://github.com/jisaw/sqlzoo-solutions/blob/master/sum-and-count.sql](https://github.com/jisaw/sqlzoo-solutions/blob/master/sum-and-count.sql)
+
 3. Travail sur JOIN, (base de données Euro2012) [ici](https://sqlzoo.net/wiki/The_JOIN_operation)
 
+Correction : voir [https://github.com/jisaw/sqlzoo-solutions/blob/master/join.sql](https://github.com/jisaw/sqlzoo-solutions/blob/master/join.sql)
 
 ## Exercice 3
 _basé sur le travail de G.Viateau (Bayonne)_
@@ -127,10 +134,77 @@ On considère ci-dessous le schéma de la base de données du stock d'un superma
 ![](data/exo3_schema.png)
 
 1. Quelle requête SQL donne le prix d'achat du produit dont le ```nom_court``` est «Liq_Vaiss_1L» ?
+
+<details><summary> <em>correction :</em>  </summary>
+<p>
+SELECT adresse, cp, ville FROM Fournisseurs WHERE nom = 'Avenir_confiseur';
+
+</p>
+</details>
+
+
 2. Quelle requête donne l'adresse, le code postal et la ville du fournisseur dont le nom est «Avenir_confiseur» ?
+
+<details><summary> <em>correction :</em>  </summary>
+<p>
+SELECT prix_achat FROM Produits WHERE nom_court = 'Liq_Vaiss_1L' ;
+
+</p>
+</details>
+
+
 3. Quelle requête donne les produits étant en rupture de stock ?
-4. Quelle requête donne la liste de toutes les ampoules vendues en magasin ? On pourra faire l'hypothèse que le nom du produit contient le mot «ampoule»?
+
+<details><summary> <em>correction :</em>  </summary>
+<p>
+SELECT Produits.nom FROM Produits
+<br>
+JOIN Stocks ON Produits.id = Stocks.produit
+<br>
+WHERE Stocks.quantite = 0;
+
+</p>
+</details>
+
+4. Quelle requête donne la liste de toutes les ampoules vendues en magasin ? On pourra faire l'hypothèse que le nom du produit contient le mot «ampoule»
+
+<details><summary> <em>correction :</em>  </summary>
+<p>
+SELECT nom FROM Produits WHERE nom LIKE "%ampoule%";
+</p>
+</details>
+
+
+
+
 5. Quelle requête permet d'avoir le prix moyen de ces ampoules ?
+
+<details><summary> <em>correction :</em>  </summary>
+<p>
+SELECT AVG(prix_vente) FROM Produits WHERE nom LIKE "%ampoule%";
+</p>
+</details>
+
+
+
 6. Quelle requête permet d'identifier le produit le plus cher du magasin ?
+
+<details><summary> <em>correction :</em>  </summary>
+<p>
+SELECT nom_court FROM Produits ORDER BY prix_vente DESC LIMIT 1;
+</p>
+</details>
+
+
+
 7. Quelle requête renvoie les noms des produits dont la date de péremption est dépassée ? _(on pourra utiliser la fonction SQL ```NOW()``` qui renvoie la date actuelle )_
 
+<details><summary> <em>correction :</em>  </summary>
+<p>
+SELECT p.nom FROM Produits AS p
+<br>
+JOIN Stocks AS s ON s.produits = p.id
+<br>
+WHERE s.date_peremption > NOW();
+</p>
+</details>
