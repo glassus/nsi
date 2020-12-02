@@ -160,3 +160,13 @@ Reprendre le mini-projet précédent, en rendant possible à l'utilisateur de re
 *Exemple :*
 
 ![](data/mp2.gif)
+
+
+#### 2.3 Mini-projet 3
+Créer un système d'authenfication par login / mot de passe, dans le but de conserver une phrase secrète.  
+
+Idéalement le mot de passe ne sera pas conservé en clair mais haché.
+
+*Exemple :*
+
+![](data/miniprojet3.gif)
