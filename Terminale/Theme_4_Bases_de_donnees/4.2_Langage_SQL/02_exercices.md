@@ -36,12 +36,21 @@ On suppose que les dates sont données sous la forme ```jj-mm-aaaa```.
 
 <details><summary> <em>correction :</em>  </summary>
 <p>
+
 CREATE TABLE Patients(
     id INTEGER PRIMARY KEY,
     nom TEXT,
     prenom TEXT,
     genre TEXT,
-    annee_naissance INTERGER
+    annee_naissance INTEGER
+);
+
+CREATE TABLE Patients(
+    id INTEGER PRIMARY KEY,
+    nom TEXT,
+    prenom TEXT,
+    genre TEXT,
+    annee_naissance INTEGER
 );
 </p>
 </details>
