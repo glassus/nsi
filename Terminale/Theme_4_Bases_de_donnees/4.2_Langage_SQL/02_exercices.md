@@ -33,7 +33,7 @@ On veut créer une base de données ```baseHopital.db```  qui contiendra les tro
 On suppose que les dates sont données sous la forme ```jj-mm-aaaa```.
 
 1. Donner les commandes SQLite permettant de créer ces tables.
-<details><summary> Proposition de correction </summary>
+<details><summary> Proposition de correction 🔻 </summary>
 <p>
 
 corrigé
