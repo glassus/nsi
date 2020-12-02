@@ -33,6 +33,14 @@ On veut créer une base de données ```baseHopital.db```  qui contiendra les tro
 On suppose que les dates sont données sous la forme ```jj-mm-aaaa```.
 
 1. Donner les commandes SQLite permettant de créer ces tables.
+<details><summary> Proposition de correction </summary>
+<p>
+
+corrigé
+
+
+</p>
+</details>
 
 2. Mme Anne Wizeunid, née en 2000 et demeurant 3 rue des Pignons Verts 12345 Avonelit doit être enregistrée comme patiente. Donner la commande SQLite correspondante.
 3. Le patient numéro 100 a changé de genre et est maintenant une femme. Donner la commande SQLite modifiant en conséquence ses données.
