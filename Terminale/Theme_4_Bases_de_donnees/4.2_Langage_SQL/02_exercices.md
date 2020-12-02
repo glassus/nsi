@@ -100,6 +100,7 @@ DELETE FROM Medecine WHERE specialite = "épidémiologie";
  <details><summary> <em>correction :</em>  </summary>
 <p>
 SELECT p.nom, p.prenom FROM Patients AS p 
+<br>
 JOIN Ordonnances AS o ON p.id = o.id_patient
 JOIN Medecins AS m ON o.matricule_medecin = m.matricule
 WHERE m.specialite = "psychiatrie" AND o.date_ord LIKE "%04/2020%"
