@@ -38,28 +38,74 @@ On suppose que les dates sont données sous la forme ```jj-mm-aaaa```.
 <p>
 
 CREATE TABLE Patients(
-    id INTEGER PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     nom TEXT,
     prenom TEXT,
     genre TEXT,
     annee_naissance INTEGER
 );
 
-CREATE TABLE Patients(
-    id INTEGER PRIMARY KEY,
-    nom TEXT,
-    prenom TEXT,
-    genre TEXT,
-    annee_naissance INTEGER
+CREATE TABLE Ordonnances(
+    code INTEGER INTEGER PRIMARY KEY,
+    id_patient INTEGER,
+    matricule_medecin INTEGER,
+    date_ord TEXT,
+    medicaments INTEGER
 );
+
+CREATE TABLE Medecins(
+    matricule INTEGER  PRIMARY KEY,
+    nom_prenom TEXT,
+    specialite TEXT,
+    telephone TEXT
+);
+
+
 </p>
 </details>
 
 2. Mme Anne Wizeunid, née en 2000 et demeurant 3 rue des Pignons Verts 12345 Avonelit doit être enregistrée comme patiente. Donner la commande SQLite correspondante.
+
+<details><summary> <em>correction :</em>  </summary>
+<p>
+INSERT INTO Patients VALUES (NULL, "Wizeunit", "Anne", "F", 2000)
+
+Commentaire : NULL sert ici à ne rien mettre là où le SGBD gère tout seul la clé primaire en autoincrement. (hors-programme)
+</p>
+</details>
+
 3. Le patient numéro 100 a changé de genre et est maintenant une femme. Donner la commande SQLite modifiant en conséquence ses données.
+
+<details><summary> <em>correction :</em>  </summary>
+<p>
+UPDATE Patients SET genre = 'F' WHERE id = 100 ;
+
+</p>
+</details>
+
+
 4. Par souci d'économie, la direction décide de se passer des médecins spécialisés en épidémiologie. Donner la commande permettant de supprimer leurs fiches.
+
+<details><summary> <em>correction :</em>  </summary>
+<p>
+DELETE FROM Medecine WHERE specialite = "épidémiologie";
+
+</p>
+</details>
+
+
+
 5. Donner la liste des patient(e)s ayant été examiné(e)s par un(e) psychiatre en avril 2020.
  
+ <details><summary> <em>correction :</em>  </summary>
+<p>
+SELECT p.nom, p.prenom FROM Patients AS p 
+JOIN Ordonnances AS o ON p.id = o.id_patient
+JOIN Medecins AS m ON o.matricule_medecin = m.matricule
+WHERE m.specialite = "psychiatrie" AND o.date_ord LIKE "%04/2020%"
+
+</p>
+</details>
 
 ## Exercice 2
 
