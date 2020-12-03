@@ -203,6 +203,6 @@ SELECT p.nom FROM Produits AS p
 <br>
 JOIN Stocks AS s ON s.produits = p.id
 <br>
-WHERE s.date_peremption > NOW();
+WHERE s.date_peremption < NOW();
 </p>
 </details>
