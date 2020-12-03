@@ -190,6 +190,10 @@ SELECT AVG(prix_vente) FROM Produits WHERE nom LIKE "%ampoule%";
 <details><summary> <em>correction :</em>  </summary>
 <p>
 SELECT nom_court FROM Produits ORDER BY prix_vente DESC LIMIT 1;
+<br>
+ou
+<br>
+SELECT nom FROM Produits WHERE prix_vente = (SELECT MAX(prix_vente) FROM Produits);
 </p>
 </details>
 
