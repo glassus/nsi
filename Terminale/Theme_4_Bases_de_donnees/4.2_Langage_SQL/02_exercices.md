@@ -46,7 +46,7 @@ CREATE TABLE Patients(
 );
 
 CREATE TABLE Ordonnances(
-    code INTEGER INTEGER PRIMARY KEY,
+    code INTEGER PRIMARY KEY,
     id_patient INTEGER,
     matricule_medecin INTEGER,
     date_ord TEXT,
@@ -68,7 +68,7 @@ CREATE TABLE Medecins(
 
 <details><summary> <em>correction :</em>  </summary>
 <p>
-INSERT INTO Patients VALUES (NULL, "Wizeunit", "Anne", "F", 2000)
+INSERT INTO Patients VALUES (NULL, "Wizeunit", "Anne", "F", 2000);
 
 Commentaire : NULL sert ici à ne rien mettre là où le SGBD gère tout seul la clé primaire en autoincrement. (hors-programme)
 </p>
@@ -88,7 +88,7 @@ UPDATE Patients SET genre = 'F' WHERE id = 100 ;
 
 <details><summary> <em>correction :</em>  </summary>
 <p>
-DELETE FROM Medecine WHERE specialite = "épidémiologie";
+DELETE FROM Medecins WHERE specialite = "épidémiologie";
 
 </p>
 </details>
@@ -105,7 +105,7 @@ JOIN Ordonnances AS o ON p.id = o.id_patient
 <br>
 JOIN Medecins AS m ON o.matricule_medecin = m.matricule
 <br>
-WHERE m.specialite = "psychiatrie" AND o.date_ord LIKE "%04/2020%"
+WHERE m.specialite = "psychiatrie" AND o.date_ord LIKE "%04-2020%"
 
 </p>
 </details>
@@ -137,8 +137,7 @@ On considère ci-dessous le schéma de la base de données du stock d'un superma
 
 <details><summary> <em>correction :</em>  </summary>
 <p>
-SELECT adresse, cp, ville FROM Fournisseurs WHERE nom = 'Avenir_confiseur';
-
+SELECT prix_achat FROM Produits WHERE nom_court = 'Liq_Vaiss_1L' ;
 </p>
 </details>
 
@@ -147,8 +146,7 @@ SELECT adresse, cp, ville FROM Fournisseurs WHERE nom = 'Avenir_confiseur';
 
 <details><summary> <em>correction :</em>  </summary>
 <p>
-SELECT prix_achat FROM Produits WHERE nom_court = 'Liq_Vaiss_1L' ;
-
+SELECT adresse, cp, ville FROM Fournisseurs WHERE nom = 'Avenir_confiseur';
 </p>
 </details>
 
