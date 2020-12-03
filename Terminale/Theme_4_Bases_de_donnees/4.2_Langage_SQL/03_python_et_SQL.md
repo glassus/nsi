@@ -170,3 +170,5 @@ Idéalement le mot de passe ne sera pas conservé en clair mais haché.
 *Exemple :*
 
 ![](data/miniprojet3.gif)
+
+[lien vers une correction](https://gist.github.com/glassus/446fbe11420536bf79bb30e1098dc1b2)
