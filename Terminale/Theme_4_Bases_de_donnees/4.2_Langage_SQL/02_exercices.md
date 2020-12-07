@@ -219,5 +219,16 @@ WHERE s.date_peremption < NOW();
 _site réalisé par J. Le Coupanec (Académie de Rennes)_
 
 Sur la page [http://nsi.colbert.bzh/sql/](http://nsi.colbert.bzh/sql/), suivez le parcours des deux TPs :
-- TP1 : Gestion d'un réseau d'agences de location de voitures
-- TP2 : TP: Le championnat de France 2015-2016
+- TP1 : Gestion d'un réseau d'agences de location de voitures.
+La base de données [locations.db](data/locations.db) contient les tables ```Agences```,```Locations```, ```Vehicules```.
+![](data/diag_locations.png)
+
+<br>
+<br>
+
+
+- TP2 : Le championnat de France 2015-2016
+La base de données [soccer.db](data/soccer.db) contient les tables ```Team```,```Match```, ```Event```, ```Player```.  
+
+![](data/soccer_diag.png)
+
