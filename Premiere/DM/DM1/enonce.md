@@ -4,9 +4,9 @@ Vous avez trouvé une image bien étrange :
 
 ![](data/mystere.bmp)
 
-Un visage semble se deviner derrière un champ de fleur... mais quel est ce visage ?
+Un visage semble se deviner derrière un champ de fleurs... mais quel est ce visage ?
 
-L'image du champ de fleur ne vous est pas inconnue, en cherchant bien, vous l'avez retrouvée dans vos dossiers :
+L'image du champ de fleurs ne vous est pas inconnue, d'ailleurs en cherchant bien vous l'avez retrouvée dans vos dossiers :
 
 ![](data/mask.jpg)
 
