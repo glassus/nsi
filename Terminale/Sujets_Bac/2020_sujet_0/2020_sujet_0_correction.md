@@ -99,7 +99,7 @@ La somme maximale est donc obtenue par le chemin J, et vaut 16.
 | | | ||
 |---|----|----|----|
 | 4 | 5  | 6  | 9  |
-| 6 | 0  | 8  | 10 |
+| 6 | 6  | 8  | 10 |
 | 9 | 10 | 15 | 16 |
 
 
