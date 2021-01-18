@@ -1,0 +1,74 @@
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 675" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <defs>
+  <linearGradient id="d" gradientTransform="translate(-0.5 -.25991)">
+   <stop offset="0"/>
+  </linearGradient>
+  <linearGradient id="c" gradientTransform="matrix(.96154 0 0 3 -142.7 1298.3)">
+   <stop stop-color="#ff8000" offset="0"/>
+  </linearGradient>
+  <linearGradient id="b">
+   <stop stop-color="#fff65f" offset="0"/>
+  </linearGradient>
+  <linearGradient id="j" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.754 157)">
+   <stop stop-color="#4b4b50" offset="0"/>
+  </linearGradient>
+  <linearGradient id="i" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.754 157)">
+   <stop stop-color="#b92864" offset="0"/>
+  </linearGradient>
+  <linearGradient id="h" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.754 157)">
+   <stop stop-color="#50b4af" offset="0"/>
+  </linearGradient>
+  <linearGradient id="g" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.754 157)">
+   <stop stop-color="#82f0dc" offset="0"/>
+  </linearGradient>
+  <linearGradient id="f" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.754 157)">
+   <stop stop-color="#55b4fa" offset="0"/>
+  </linearGradient>
+  <linearGradient id="e" gradientUnits="userSpaceOnUse" gradientTransform="translate(48.754 157)">
+   <stop stop-color="#8c64c8" offset="0"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(75 -227.36)">
+  <use xlink:href="#a" transform="translate(510 2.3621)" height="100%" width="100%" y="0" x="0"/>
+  <use xlink:href="#a" transform="translate(150 2.3621)" height="100%" width="100%" y="0" x="0"/>
+  <use xlink:href="#a" transform="translate(330 2.3621)" height="100%" width="100%" y="0" x="0"/>
+ </g>
+ <g transform="translate(75 -75)">
+  <rect id="a" height="675" width="90" y="225" x="15" fill="#f0f0f0"/>
+  <use xlink:href="#a" transform="translate(-30 -150)" height="100%" width="100%" y="0" x="0"/>
+ </g>
+ <g stroke-linejoin="round" transform="translate(75 -75)" stroke-linecap="round" fill="none">
+  <g>
+   <path d="m-45 300h120l90 375h450" stroke="url(#d)" stroke-width="20"/>
+   <path d="m-45 300h120l90 375h450" stroke="url(#j)" stroke-width="18"/>
+  </g>
+  <g>
+   <path d="m615 600h-90l-90-75h-480" stroke="#972152" stroke-width="20"/>
+   <path d="m615 600h-90l-90-75h-480" stroke="url(#i)" stroke-width="18"/>
+  </g>
+  <g>
+   <path d="m615 525h-90l-90 75h-360l-90-375h-30" stroke="#7646be" stroke-width="20"/>
+   <path d="m615 525h-90l-90 75h-360l-90-375h-30" stroke="url(#e)" stroke-width="18"/>
+  </g>
+  <g>
+   <path d="m-45 150h210l90 225h90l90 75h180" stroke="#429a96" stroke-width="20"/>
+   <path d="m-45 150h210l90 225h90l90 75h180" stroke="url(#h)" stroke-width="18"/>
+  </g>
+  <g>
+   <path d="m-45 450h390l90-75h180" stroke="#33a5f9" stroke-width="20"/>
+   <path d="m-45 450h390l90-75h180" stroke="url(#f)" stroke-width="18"/>
+  </g>
+  <g>
+   <path d="m-45 600h30l90-375h180l90 75h210 60" stroke="#d86c00" stroke-width="20"/>
+   <path d="m-45 600h30l90-375h180l90 75h210 60" stroke="url(#c)" stroke-width="18"/>
+  </g>
+  <g>
+   <path d="m615 225h-270l-90 75h-90l-90 375h-120" stroke="#43e9cb" stroke-width="20"/>
+   <path d="m615 225h-270l-90 75h-90l-90 375h-120" stroke="url(#g)" stroke-width="18"/>
+  </g>
+  <g>
+   <path d="m615 150h-360l-90 225h-210" stroke="#faec00" stroke-width="20"/>
+   <path d="m615 150h-360l-90 225h-210" stroke="url(#b)" stroke-width="18"/>
+  </g>
+ </g>
+</svg>
