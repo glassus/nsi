@@ -11,7 +11,7 @@ Mais même lorsque le code s'exécute sans erreur, il ne faut pas négliger l'as
 Vous trouverez un excellent résumé de la PEP8 sur le site http://sametmax.com/le-pep8-en-resume/.
 
 ### Les espaces
-Il faut mettre une espace (oui, en typographie, on dit «une» espace et non pas «un» espace) avant et après chaque opérateur ```=, ==, +, >, ...``` 
+▶ Il faut mettre une espace (oui, en typographie, on dit «une» espace et non pas «un» espace) avant et après chaque opérateur ```=, ==, +, >, ...``` 
 
 ```python
 # PAS BIEN 
@@ -31,7 +31,7 @@ if x > 3:
     print("ok")
 ```
 
-Pour les opérateurs mathématiques, on essaie de reconstituer les groupes de priorité (lorsqu'il y en a):
+▶ Pour les opérateurs mathématiques, on essaie de reconstituer les groupes de priorité (lorsqu'il y en a) :
 
 ```python
 # PAS BIEN
@@ -51,6 +51,28 @@ x = 3 * 2 + 5
 x = 3*2 + 5
 ```
 
+▶ On ne met pas d'espace à intérieur des parenthèses, des crochets ou des accolades :
 
-Exception : 
+```python
+# PAS BIEN
+for x in range( 5 ):
+    print( 'bonjour' )
+
+# BIEN
+for x in range(5):
+    print('bonjour')
+```
+
+▶ Pour les virgules, et les deux points : 
+pas d'espace avant mais une espace après.
+
+```python
+# PAS BIEN
+if color == (0,255,0) :
+    print('vert')
+
+# BIEN
+if color == (0, 255, 0):
+    print('vert')
+```
 
