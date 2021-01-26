@@ -85,7 +85,7 @@ if color == (0, 255, 0):
 
 ▶ Les variables à une lettre (comme ```i```, ```j```, ```k``` ) sont réservées aux indices (notamment dans les boucles).
 
-▶ Les autres variables doivent avoir des noms explicites, éventuellement écrits en ```snake_case``` .
+▶ Les autres variables doivent avoir des noms explicites, éventuellement écrits en ```snake_case``` si plusieurs mots doivent être reliés.
 
 ```python
 # PAS BIEN
@@ -99,6 +99,27 @@ if date == 1:
 
 
 Rappel des différents types de casse :
-- ```snake_case``` : les mots sont séparés par des underscores.
-- ```CamelCase``` : les mots sont séparés par des majuscules
-- ```kebab-case``` : les mots sont séparés par des tirets courts.
+- ```snake_case``` : les mots sont séparés par des underscores. Conseillé en Python.
+- ```camelCase``` : les mots sont séparés par des majuscules mais la 1ère lettre est minuscule. Conseillé en Javascript.
+- ```PascalCase``` : les mots sont séparés par des majuscules mais la 1ère lettre est minuscule. Conseillé en C.
+- ```kebab-case``` : les mots sont séparés par des tirets courts. Conseillé en HTML - CSS.
+
+▶ Cas particulier des classes en Programmation Orientée Objet : leur nom doit commencer par une majuscule.
+
+```python
+# PAS BIEN
+class voiture:
+    def __init__(self, annee, marque, modele):
+       #pass
+
+# BIEN
+class Voiture:
+    def __init__(self, annee, marque, modele):
+       #pass
+```
+
+## 2. Commentaires et docstrings
+
+## 3. Les tests
+### 3.1 Assert
+### 3.2 Doctest
