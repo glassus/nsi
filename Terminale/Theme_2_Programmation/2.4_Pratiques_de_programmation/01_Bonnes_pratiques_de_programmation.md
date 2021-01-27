@@ -137,7 +137,7 @@ De fait, les commentaires sont parfois (souvent) superflus :
 <img src="data/cat.png" width=50%/> 
 </p>
 
-Et s'ils sont réellement nécessaires, il faut se poser la question : est-ce que ce code n'aurait pas pu être plus simple ? (attention, la réponse n'étant pas toujours oui)
+Et s'ils sont réellement nécessaires, il faut se poser la question : est-ce que ce code n'aurait pas pu être plus simple ? (attention, la réponse n'est pas toujours oui)
 
 <p align="center">
 <img src="data/smart.jpeg" width=50%/> 
@@ -160,10 +160,83 @@ def capital_apres_n_annees(capital, taux, nombre_annees) :
 ```
 Ce code est plus long, mais assez explicite pour se passer de commentaires.
 
-### 2.2 Le cas particulier des 
+### 2.2 Le cas particulier des ```docstrings```
 
+#### 2.2.1 Que sont les ```docstrings```?
+
+Les ```docstrings``` sont des commentaires *normalisés* pour les fonctions, qui peuvent être consultés en console.
+
+**Exemples :**
+
+Nous connaissons la fonction ```len()``` qui permet par exemple de connaître la longueur d'une liste passée en paramètre.
+
+Si nous tapons en console la commande ```print(len.__doc__)```, nous aurons la description de cette fonction. 
+
+```python
+>>> len.__doc__
+'Return the number of items in a container.'
+```
+Il est aussi possible d'accéder à la docstring d'une fonction ```f```  par la commande ```help(f)``` :
+
+```python
+>>> help(len)
+Help on built-in function len in module builtins:
+
+len(obj, /)
+    Return the number of items in a container.
+
+
+```
+
+
+De même pour la fonction ```range``` :
+```python
+>>> print(range.__doc__)
+range(stop) -> range object
+range(start, stop[, step]) -> range object
+
+Return an object that produces a sequence of integers from start (inclusive)
+to stop (exclusive) by step.  range(i, j) produces i, i+1, i+2, ..., j-1.
+start defaults to 0, and stop is omitted!  range(4) produces 0, 1, 2, 3.
+These are exactly the valid indices for a list of 4 elements.
+When step is given, it specifies the increment (or decrement).
+```
+
+Le résultat de la commande ```help(range)``` est trop long pour être repris ici, mais on y retrouve bien la docstring de la fonction ```range```.
+
+
+#### 2.2.2 Créer ses propres docstrings
+
+Il suffit pour cela de commencer la fonction à documenter par une ou plusieurs phrases entre triples quotes :
+
+```python
+def capital_apres_n_annees(capital, taux, nombre_annees) :
+    """
+    Renvoie le capital après n années.
+    capital : valeur initiale
+    taux : taux d'intérêt exprimé en nombre décimal (ex: 0.02 pour un taux de 2 %)
+    nombre_annees : nombre d'années de placement du capital
+    """
+    return capital*(1+taux)**nombre_annees
+```
+Ainsi, un utilisateur pourra trouver en console le mode d'emploi de notre fonction :
+
+```python
+>>> help(capital_apres_n_annees)
+Help on function capital_apres_n_annees in module __main__:
+
+capital_apres_n_annees(capital, taux, nombre_annees)
+    Renvoie le capital après n années.
+    capital : valeur initiale
+    taux : taux d'intérêt exprimé en nombre décimal (ex: 0.02 pour un taux de 2 %)
+    nombre_annees : nombre d'années de placement du capital
+```
+
+Comme on le voit, tout cela est très «verbeux». Cela peut nous paraître largement superflu puisque nos codes dépassent rarement quelques dizaines de lignes et sont lus par rarement plus de 2 personnes. Mais dans la vraie vie des développeurs, il est primordial qu'un code soit clair et documenté.
 
 ## 3. La programmation défensive : des ```assert``` pour sécuriser le code 
+
+todo
 
 ## 4. Les tests
 ### 4.1 Pourquoi des tests ?
@@ -222,4 +295,8 @@ ok
 
 
 ### 4.2 Revoilà les ```assert```
+
+todo
 ### 4.3 Le module ```doctest```
+
+todo
