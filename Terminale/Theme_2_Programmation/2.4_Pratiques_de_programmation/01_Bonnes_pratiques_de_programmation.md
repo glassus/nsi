@@ -307,7 +307,14 @@ Par exemple, si on vient de construire la fonction ```valeur_absolue(n)```, il e
 ```
 
 - On peut regrouper tous ces tests au sein d'une même fonction ```test_valeur_absolue()```.
-- On peut écrire cette fonction ```test_valeur_absolue()``` avant même de commencer à écrire la fonction ```valeur_absolue(n)```. C'est ce qu'on appelle faire du TDD (Test Driven Developement) : on commence par écrire le test de la fonction avant de commencer à coder celle-ci. 
+- On peut écrire cette fonction ```test_valeur_absolue()``` avant même de commencer à écrire la fonction ```valeur_absolue(n)```.
+
+
+> La méthode de développement logiciel TDD (Test Driven Developement) est basée en partie sur ce principe  : 
+> 1. On commence par écrire le test de la fonction.
+> 2. Le test échoue (forcément, la fonction n'est pas encore codée !)
+ > 3. On écrit le code de la fonction pour que le test soit validé.
+ > 4. On améliore (si possible) ce code tout en vérifiant que le test continue à être valide.
 
 ```python
 def test_valeur_absolue():
@@ -441,6 +448,7 @@ Tout ceci en admettant, bien sûr, que vos tests _eux-mêmes_ ne comportent pas 
 ---
 ## Bibliographie
 - https://www.reddit.com/r/ProgrammerHumor/
+- https://fr.wikipedia.org/wiki/Test_driven_development
 
 ---
 
