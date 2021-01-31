@@ -449,6 +449,8 @@ Tout ceci en admettant, bien sûr, que vos tests _eux-mêmes_ ne comportent pas 
 ## Bibliographie
 - https://www.reddit.com/r/ProgrammerHumor/
 - https://fr.wikipedia.org/wiki/Test_driven_development
+- https://www.fil.univ-lille1.fr/~L1S2API/CoursTP/tp_doctest.html
+- http://sametmax.com/le-pep8-en-resume/
 
 ---
 
