@@ -316,6 +316,14 @@ Par exemple, si on vient de construire la fonction ```valeur_absolue(n)```, il e
  > 3. On écrit le code de la fonction pour que le test soit validé.
  > 4. On améliore (si possible) ce code tout en vérifiant que le test continue à être valide.
 
+
+<p align="center">
+<img src="data/TDD.png" width=30%/> 
+</p>
+
+
+Revenons à nos tests sur la fonction ```valeur_absolue(n)```
+
 ```python
 def test_valeur_absolue():
     if valeur_absolue(-3) == 3 :
