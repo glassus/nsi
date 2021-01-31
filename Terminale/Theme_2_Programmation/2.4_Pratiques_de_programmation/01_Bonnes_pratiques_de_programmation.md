@@ -309,7 +309,7 @@ Par exemple, si on vient de construire la fonction ```valeur_absolue(n)```, il e
 - On peut regrouper tous ces tests au sein d'une même fonction ```test_valeur_absolue()```.
 - On peut écrire cette fonction ```test_valeur_absolue()``` avant même de commencer à écrire la fonction ```valeur_absolue(n)```.
 
-
+> Remarque : 
 > La méthode de développement logiciel TDD (Test Driven Developement) est basée en partie sur ce principe  : 
 > 1. On commence par écrire le test de la fonction.
 > 2. Le test échoue (forcément, la fonction n'est pas encore codée !)
