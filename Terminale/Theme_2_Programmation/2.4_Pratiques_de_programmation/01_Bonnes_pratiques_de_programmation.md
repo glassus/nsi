@@ -24,7 +24,7 @@ En voici quelques extraits :
 <img src="data/standards.jpg" width=30%/> 
 </p>
 
-▶ Il faut mettre une espace (oui, en typographie, on dit «une» espace et non pas «un» espace) avant et après chaque opérateur de comparaison ou d'affectation (```=, ==, +, >, ...``` )
+▶ Il faut mettre une espace (oui, en typographie, on dit «une» espace et non pas «un» espace) avant et après chaque opérateur de comparaison, d'affectation, ou mathématiques  (```=, ==, >, +, *, ...``` )
 
 ```python
 # PAS BIEN 
@@ -310,7 +310,7 @@ Par exemple, si on vient de construire la fonction ```valeur_absolue(n)```, il e
 - On peut écrire cette fonction ```test_valeur_absolue()``` avant même de commencer à écrire la fonction ```valeur_absolue(n)```.
 
 > Remarque : 
-> La méthode de développement logiciel TDD (Test Driven Developement) est basée en partie sur ce principe  : 
+> la méthode de développement logiciel TDD (Test Driven Developement) est basée en partie sur ce principe  : 
 > 1. On commence par écrire le test de la fonction.
 > 2. Le test échoue (forcément, la fonction n'est pas encore codée !)
  > 3. On écrit le code de la fonction pour que le test soit validé.
@@ -371,7 +371,7 @@ Considérons une fonction dont le but est de compter les voyelles du mot passé 
 
 ```python
 def compte_voyelles(mot):
-    '''
+    """
     renvoie le nombre de voyellles du mot donné en paramètre.
     >>> compte_voyelles("python")
     2
@@ -379,7 +379,7 @@ def compte_voyelles(mot):
     0
     >>> compte_voyelles("eau")
     3
-    '''
+    """
     liste_voyelles = "aeiou"
     total = 0
     for lettre in mot:
@@ -431,7 +431,7 @@ Ce qui est beaucoup plus satisfaisant.
 ### 4.3 À propos des tests
 Le comportement face aux tests en programmation doit être le même qu'en mathématiques : _un test qui ne marche pas est plus riche d'enseignements qu'un test qui marche_.
 
-En mathématiques, seule la notion de contre-exemple est fertile : si quelqu'un vous affirme que _«tous les nombres impairs sont premiers»_, il vous suffit d'exhiber le nombre 9 pour achever la discussion et lui prouver qu'il a tort.
+En mathématiques, seule la notion de contre-exemple est fertile : si quelqu'un vous affirme que _«tous les nombres impairs sont premiers»_, il vous suffit d'exhiber le nombre 9 pour lui prouver qu'il a tort et achever la discussion.
 
 Par contre, il aurait pu essayer de vous convaincre avec les nombres 3, 5 et 13, qui sont bien impairs et premiers.
 
