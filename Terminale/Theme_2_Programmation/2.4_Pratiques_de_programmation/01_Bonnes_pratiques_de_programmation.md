@@ -240,7 +240,49 @@ Comme on le voit, tout cela est très «verbeux». Cela peut nous paraître larg
 
 ## 3. La programmation défensive : des ```assert``` pour sécuriser le code 
 
-todo
+La programmation défensive est l'art de prévoir le pire et d'essayer de le détecter avant qu'il ne soit trop tard.  
+De manière bien plus concrète, il est d'usage d'essayer de répérer si des données (souvent des paramètres d'une fonction) sont susceptibles de créer des problèmes, ou sont hors spécification.
+
+**Un exemple :**
+
+La fonction :
+
+```python
+def racine_carree(x):
+    assert x >= 0, 'un nombre positif ou nul est requis'
+    return x ** 0.5
+```
+donnera, lors de l'appel à ```racine_carree(-2)```, le message suivant :
+
+```python
+>>> racine_carree(-2)
+Traceback (most recent call last):
+  File "<pyshell>", line 1, in <module>
+  File "/home/gilles/Bureau/exemples_assert.py", line 2, in racine_carree
+    assert x >= 0, 'un nombre positif ou nul est requis'
+AssertionError: un nombre positif ou nul est requis
+```
+
+**Un autre exemple :**
+
+```python
+def moyenne_trimestrielle(liste_notes):
+    """
+    calcule la moyenne des nombres de la liste liste_notes
+    """
+    assert liste_notes !=[] , 'liste vide'
+    assert max(liste_notes) <= 20, 'au moins une note dépasse 20'
+    assert min(liste_notes) >=0, 'au moins une note est en dessous de 0'
+    
+    return sum(liste_notes) / len(liste_notes)
+```
+
+À ce stade, les ```assert``` sont donc pour nous juste un moyen rapide de remplacer un test ```if ... then ... else``` pour détecter des erreurs potentielles.  
+Ils sont en réalité plus utiles que cela : lors de la conception d'un programme, des ```assert``` sont posés pour vérifier l'intégrité du code, mais peuvent être désactivés à tout moment pour en faire un code optimisé (par la commande ```-O``` à l'exécution). Tout ceci dépasse largement le cadre de notre cours.
+
+Il est à noter aussi que les erreurs peuvent être gérées par le mécanisme ```try ... except```, qui permet de «lever des exceptions». Pour les curieux, plus de renseignements [ici](http://perso.univ-lemans.fr/~berger/CoursPython/co/try_except.html).
+
+
 
 ## 4. Les tests
 ### 4.1 Pourquoi des tests ?
@@ -264,11 +306,8 @@ Par exemple, si on vient de construire la fonction ```valeur_absolue(n)```, il e
 7
 ```
 
-Deux remarques :
-- ces tests sont longs à taper (3 commandes successives, à refaire à chaque test).
-- ces tests correspondent à *ce qu'on veut que la fonction fasse*. On aurait pu d'ailleurs écrire ces tests avant même de commencer à écrire la fonction ```valeur_absolue(n)```.
-
-Pourquoi donc ne pas regrouper tous ces tests au sein d'une même fonction ```test_valeur_absolue()``` ?
+- On peut regrouper tous ces tests au sein d'une même fonction ```test_valeur_absolue()```.
+- On peut écrire cette fonction ```test_valeur_absolue()``` avant même de commencer à écrire la fonction ```valeur_absolue(n)```. C'est ce qu'on appelle faire du TDD (Test Driven Developement) : on commence par écrire le test de la fonction avant de commencer à coder celle-ci. 
 
 ```python
 def test_valeur_absolue():
@@ -300,7 +339,109 @@ ok
 
 ### 4.2 Revoilà les ```assert```
 
-todo
+Utiliser des ```assert``` permet d'écrire très simplement les tests précédents.
+
+Reprenons notre fonction ```valeur_absolue()```. Sa fonction test  ```test_valeur_absolue()``` peut s'écrire :
+
+```python
+def test_valeur_absolue():
+    assert valeur_absolue(-3) == 3
+    assert valeur_absolue(0) == 0
+    assert valeur_absolue(7) == 7
+
+```
+
+**Exercice :**  
+Écrire une fonction ```maxi(liste)``` qui renvoie le plus grand élément de la liste ```liste``` passée en paramètre (de préférence sans utiliser la fonction ```max()``` ...).  
+Vous écrirez **d'abord** une fonction ```test_maxi()``` avant d'écrire la fonction ```maxi(liste)``` 
+
+
 ### 4.3 Le module ```doctest```
 
-todo
+Le module ```doctest```  permet d'écrire les tests **à l'intérieur** de la docstring d'une fonction. 
+
+Considérons une fonction dont le but est de compter les voyelles du mot passé en paramètre.
+
+```python
+def compte_voyelles(mot):
+    '''
+    renvoie le nombre de voyellles du mot donné en paramètre.
+    >>> compte_voyelles("python")
+    2
+    >>> compte_voyelles("HTTP")
+    0
+    >>> compte_voyelles("eau")
+    3
+    '''
+    liste_voyelles = "aeiou"
+    total = 0
+    for lettre in mot:
+        if lettre in liste_voyelles:
+            total += 1
+    return total
+```
+
+Observez bien la docstring : elle contient explicitement ce qu'on veut que renvoie le terminal lorsqu'on appellera la fonction.
+On écrit donc les trois chevrons ```>>>``` suivi de l'appel à la fonction, et à la ligne en dessous ce que nous espérons que la fonction nous renvoie.
+On peut écrire autant de tests que l'on veut.
+
+Ensuite, en console :
+```python
+>>> import doctest
+>>> doctest.testmod()
+```
+Dans notre cas, le retour sera celui-ci :
+
+```python
+>>> import doctest
+>>> doctest.testmod()
+**********************************************************************
+File "voyelles.py", line 4, in __main__.compte_voyelles
+Failed example:
+    compte_voyelles("python")
+Expected:
+    2
+Got:
+    1
+**********************************************************************
+1 items had failures:
+   1 of   3 in __main__.compte_voyelles
+***Test Failed*** 1 failures.
+TestResults(failed=1, attempted=3)
+```
+
+On voit que le test ```compte_voyelles("python")``` a renvoyé la valeur 1 alors qu'on attendait 2. En regardant notre fonction, on s'aperçoit donc qu'on avait oublié le ```y``` dans la liste des voyelles. 
+
+En corrigeant ceci, le test devient :
+```python
+>>> import doctest
+>>> doctest.testmod()
+TestResults(failed=0, attempted=3)
+```
+Ce qui est beaucoup plus satisfaisant.
+
+
+### 4.3 À propos des tests
+Le comportement face aux tests en programmation doit être le même qu'en mathématiques : _un test qui ne marche pas est plus riche d'enseignements qu'un test qui marche_.
+
+En mathématiques, seule la notion de contre-exemple est fertile : si quelqu'un vous affirme que _«tous les nombres impairs sont premiers»_, il vous suffit d'exhiber le nombre 9 pour achever la discussion et lui prouver qu'il a tort.
+
+Par contre, il aurait pu essayer de vous convaincre avec les nombres 3, 5 et 13, qui sont bien impairs et premiers.
+
+De la même manière, voir qu'une fonction passe les tests que vous avez écrits ne vous assurera pas que cette fonction aura _toujours_ le bon comportement souhaité. Elle l'aura pour les valeurs de test, mais pas forcément pour les autres.
+
+En revanche, si une fonction ne passe pas un des tests, vous avez la certitude qu'il y a un problème à régler quelque part.
+
+Tout ceci en admettant, bien sûr, que vos tests _eux-mêmes_ ne comportent pas d'erreurs...
+
+<p align="center">
+<img src="data/bug.jpg" width=50%/> 
+</p>
+
+---
+## Bibliographie
+- https://www.reddit.com/r/ProgrammerHumor/
+
+---
+
+![](../../../ccbysa.png) G.Lassus, Lycée François Mauriac --  Bordeaux  
