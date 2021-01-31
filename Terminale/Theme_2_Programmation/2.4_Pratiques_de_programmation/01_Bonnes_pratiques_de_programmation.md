@@ -7,7 +7,7 @@
 ## 1. Conventions syntaxiques
 La programmation est un art délicat : un simple caractère en trop peut provoquer une erreur pour le code tout entier (penser à un innocent caractère d'espace en début de ligne dans un code Python).
 <p align="center">
-<img src="data/extraspace.jpg" width=40%/> 
+<img src="data/extraspace.jpg" width=30%/> 
 </p>
 
 Mais même lorsqu'un code s'exécute sans erreur, il ne faut pas négliger l'aspect purement «esthétique» de celui-ci : il est nécessaire de respecter autant que possible des conventions typographiques, qui vont standardiser le code et le rendre ainsi plus lisible.
@@ -21,7 +21,7 @@ En voici quelques extraits :
 ### Les espaces
 
 <p align="center">
-<img src="data/standards.jpg" width=40%/> 
+<img src="data/standards.jpg" width=30%/> 
 </p>
 
 ▶ Il faut mettre une espace (oui, en typographie, on dit «une» espace et non pas «un» espace) avant et après chaque opérateur de comparaison ou d'affectation (```=, ==, +, >, ...``` )
@@ -130,7 +130,7 @@ class Voiture:
 
 ### 2.1 Commenter son code ? (ou pas)
 <p align="center">
-<img src="data/comment.jpg" width=40%/> 
+<img src="data/comment.jpg" width=30%/> 
 </p>
 
 La nécessité de commenter son code est assez controversée.  
@@ -138,13 +138,13 @@ Il est d'usage de dire qu'un code doit être assez **explicite** pour que le lec
 
 De fait, les commentaires sont parfois (souvent) superflus :
 <p align="center">
-<img src="data/cat.png" width=40%/> 
+<img src="data/cat.png" width=30%/> 
 </p>
 
 Et s'ils sont réellement nécessaires, il faut se poser la question : est-ce que ce code n'aurait pas pu être plus simple ? (attention, la réponse n'est pas toujours oui)
 
 <p align="center">
-<img src="data/smart.jpeg" width=40%/> 
+<img src="data/smart.jpeg" width=30%/> 
 </p>
 
 **Exemple :**
@@ -289,7 +289,7 @@ Il est à noter aussi que les erreurs peuvent être gérées par le mécanisme `
 
 
 <p align="center">
-<img src="data/tester.jpg" width=40%/> 
+<img src="data/tester.jpg" width=30%/> 
 </p>
 
 
@@ -435,7 +435,7 @@ En revanche, si une fonction ne passe pas un des tests, vous avez la certitude q
 Tout ceci en admettant, bien sûr, que vos tests _eux-mêmes_ ne comportent pas d'erreurs...
 
 <p align="center">
-<img src="data/bug.jpg" width=40%/> 
+<img src="data/bug.jpg" width=30%/> 
 </p>
 
 ---
