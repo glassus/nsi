@@ -153,14 +153,14 @@ Considérons la fonction suivante.
 ```python
 def f(c, t, n):
     # c est le capital de départ, t le taux annuel et n le nombre d'années
-    return c*(1+t)**n  #renvoie le capital après n années
+    return c * (1 + t)**n  #renvoie le capital après n années
 ```
 Elle est bien commentée. Mais si on croise la fonction ```f()``` ailleurs dans le code, se souviendra-t-on de son rôle ?
 
 Il aurait mieux valu écrire :
 ```python
 def capital_apres_n_annees(capital, taux, nombre_annees) :
-    return capital*(1+taux)**nombre_annees
+    return capital * (1 + taux)**nombre_annees
 ```
 Ce code est plus long, mais assez explicite pour se passer de commentaires.
 
@@ -221,7 +221,7 @@ def capital_apres_n_annees(capital, taux, nombre_annees) :
     taux : taux d'intérêt exprimé en nombre décimal (ex: 0.02 pour un taux de 2 %)
     nombre_annees : nombre d'années de placement du capital
     """
-    return capital*(1+taux)**nombre_annees
+    return capital * (1 + taux)**nombre_annees
 ```
 Ainsi, un utilisateur pourra trouver en console le mode d'emploi de notre fonction :
 
@@ -270,7 +270,7 @@ def moyenne_trimestrielle(liste_notes):
     """
     calcule la moyenne des nombres de la liste liste_notes
     """
-    assert liste_notes !=[] , 'liste vide'
+    assert liste_notes != [] , 'liste vide'
     assert max(liste_notes) <= 20, 'au moins une note dépasse 20'
     assert min(liste_notes) >=0, 'au moins une note est en dessous de 0'
     
@@ -380,7 +380,7 @@ Considérons une fonction dont le but est de compter les voyelles du mot passé 
 ```python
 def compte_voyelles(mot):
     """
-    renvoie le nombre de voyellles du mot donné en paramètre.
+    renvoie le nombre de voyelles du mot donné en paramètre.
     >>> compte_voyelles("python")
     2
     >>> compte_voyelles("HTTP")

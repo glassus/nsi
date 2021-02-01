@@ -4,6 +4,8 @@ Ce cours a pour but de présenter la constitution classique d'un réseau, et les
 
 ### 1. Premier réseau local
 
+> [lien](https://www.lernsoftware-filius.de/downloads/Setup/filius_1.9.0_all.deb) de téléchargement de Filius sous Linux
+
 Au sein du logiciel [Filius](https://www.lernsoftware-filius.de/Herunterladen), créons le réseau local ci-dessous :
 
 ![](data/f1.png)
