@@ -388,10 +388,10 @@ def compte_voyelles(mot):
     >>> compte_voyelles("eau")
     3
     """
-    liste_voyelles = "aeiou"
+    voyelles = "aeiou"
     total = 0
     for lettre in mot:
-        if lettre in liste_voyelles:
+        if lettre in voyelles:
             total += 1
     return total
 ```
