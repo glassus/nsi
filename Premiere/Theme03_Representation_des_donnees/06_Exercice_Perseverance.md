@@ -1,12 +1,12 @@
 # Le message secret de Perseverance
 
-Lors de sa descente vers la planète Mars, le rover Perseverance de la Nasa a freiné sa chute grâce à un parachute qui a intrigué quelques internautes du forum Reddit.
+Lors de sa descente vers la planète Mars le 18/02/2021, le rover Perseverance de la Nasa a freiné sa chute grâce à un parachute qui a intrigué quelques internautes du forum Reddit.
 
 ![](data/mars/real.png)
 
 Vidéo du déploiement du parachute : https://youtu.be/N3b-1-yrQYw
 
-Les zones blanches et colorées se décomposent comme ceci :
+Les zones blanches et rouge se décomposent comme ceci :
 
 ![](data/mars/modele.png)
 
