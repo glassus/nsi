@@ -6,7 +6,7 @@ Lors de sa descente vers la planète Mars, le rover Perseverance de la Nasa a fr
 
 Vidéo du déploiement du parachute : https://youtu.be/N3b-1-yrQYw
 
-Les zones blanches et colorées correspondent à des mots en binaire, suivant la décomposition ci-dessous :
+Les zones blanches et colorées se décomposent comme ceci :
 
 ![](data/mars/modele.png)
 
@@ -32,4 +32,5 @@ Un grand bravo aux _redditors_ ```u/rdtwt1``` et ```u/tend0g```/
 #### Sources (attention spoiler):
 - https://www.lemonde.fr/pixels/article/2021/02/23/des-internautes-dechiffrent-un-message-cache-dans-le-parachute-du-rover-de-la-nasa-sur-mars_6070952_4408996.html
 - https://www.reddit.com/r/nasa/comments/lpy2fa/does_the_parachute_for_perseverance_have_some/goedts0/
+- https://twitter.com/steltzner/status/1364076615932645379
 
