@@ -26,7 +26,7 @@ Les zones blanches et colorées se décomposent comme ceci :
 
 
 
-Un grand bravo aux _redditors_ ```u/rdtwt1``` et ```u/tend0g```/
+Un grand bravo aux brillants _redditors_ ```u/rdtwt1``` et ```u/tend0g```.
 
 
 #### Sources (attention spoiler):
