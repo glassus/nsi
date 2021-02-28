@@ -23,5 +23,6 @@ Ces questions trouveront des réponses grâce à **table de routage** du routeur
 
 ## 1. Tables de routage
 
+![](data/tables.png)
 
 
