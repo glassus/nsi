@@ -26,3 +26,26 @@ Ces questions trouveront des réponses grâce à **table de routage** du routeur
 ![](data/tables.png)
 
 
+Les tables de routage sont des informations stockées dans le routeur permettant d'aiguiller intelligemment les données qui lui sont transmises.
+
+Dans le réseau ci-dessus, si l'ordinateur d'adresse ```192.168.0.5``` veut interroger le serveur ```10.7.3.8``` :
+- l'adresse ```10.7.3.8``` n'étant pas dans le sous-réseau F (d'adresse ```192.168.0.0 / 24```), la requête est confiée au routeur via son adresse passerelle dans le réseau F (ici ```192.168.0.254```).
+- le routeur observe si l'IP recherchée appartient à un autre des sous-réseaux auquel il est connecté. Ici, l'IP recherchée ```10.7.3.8``` n'appartient ni au sous-réseau A ou E. 
+- le routeur va donc regarder dans sa table de routage l'adresse passerelle d'un autre routeur vers qui elle doit rediriger les données. Si le sous-réseau C fait partie de sa table de routage, le routeur R1 saura alors que le meilleur chemin est (par exemple) de confier les données au routeur R3.
+- si le sous-réseau C ne fait pas partie de la table de routage, le routeur R1 va alors le rediriger vers une route «par défaut» (que l'on peut assimiler au panneau «toutes directions» sur les panneaux de signalisation).
+
+Par exemple, la table de routage du routeur R1 pourrait être :
+
+| Destination | Passerelle |
+|-|-|
+| 192.168.0.0 /24 | 192.168.0.254 |
+| 172.17.1.0 /24 | 172.17.1.254 |
+| 10.0.5.0 /24 | 10.0.5.152 |
+| 10.5.2.0 /24 | 172.17.1.254 |
+| 10.7.3.0 /24 | 10.0.5.152 |
+
+
+
+#### Comment sont construites les tables de routage ?
+- Soit à la main par l'administrateur réseau, quand le réseau est petit : on parle alors de table **statique**.
+- Soit de manière **dynamique** : les réseaux s'envoient eux-mêmes des informations permettant de mettre à jour leurs tables de routages respectives. Des algorithmes de détermination de meilleur chemin sont alors utilisés : nous allons en découvrir deux, le protocole RIP et le protocole OSPF.
