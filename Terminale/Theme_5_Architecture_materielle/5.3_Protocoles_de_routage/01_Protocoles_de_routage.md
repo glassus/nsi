@@ -156,3 +156,19 @@ Le graphe pondéré est donc :
 
 Le chemin le plus rapide pour aller de l'ordinateur au serveur est donc R1-R2-R4, et non plus R1-R3 comme l'aurait indiqué le protocole RIP.
 
+### 3.3 Trouver le plus court chemin dans un graphe pondéré
+L'exemple précédent était très simple et de solution intuitive. Dans le cas d'un graphe pondéré complexe, existe-t-il un algorithme de détermination du plus court chemin d'un point à un autre ?
+
+La réponse est **oui**, depuis la découverte en 1959 par Edsger Dijkstra de l'algorithme qui porte son nom, **l'algorithme de Dijkstra**.
+
+Pour le comprendre, vous pouvez regarder la vidéo d'un célèbre youtuber :
+
+<p align="center">
+<a href="https://www.youtube.com/watch?v=rI-Rc7eF4iw">
+<img src="data/yt.png" , width=80%/> 
+</a>
+</p>
+
+
+### 3.4 Exemple
+
