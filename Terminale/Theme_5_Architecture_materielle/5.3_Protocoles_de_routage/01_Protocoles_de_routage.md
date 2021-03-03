@@ -200,3 +200,17 @@ On rappelle que le coût d’une liaison est donné par la formule suivante :
 Le routeur A doit transmettre un message au routeur G, en empruntant le chemin dont la sommedes coûts sera la plus petite possible. Déterminer le chemin parcouru. On indiquera le raisonnement utilisé.
 
 _[Correction](data/corr_tab.png) du tableau de l'algorithme de Dijkstra (par Nicolas Reveret)_
+
+
+
+
+---
+## Bibliographie
+- Numérique et Sciences Informatiques, Terminale, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.
+- Prépabac NSI, Terminale, G. CONNAN, V. PETROV, G. ROZSAVOLGYI, L. SIGNAC, éditions HATIER.
+- Site d'Olivier Lécluse https://www.lecluse.fr/nsi/NSI_T/archi/routage/
+
+
+---
+
+![](../../../ccbysa.png) G.Lassus, Lycée François Mauriac --  Bordeaux  
