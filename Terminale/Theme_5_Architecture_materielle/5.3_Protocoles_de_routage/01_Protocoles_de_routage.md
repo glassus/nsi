@@ -105,6 +105,8 @@ Dans une première phase d'initialisation, chaque routeur va acquérir (par succ
 #### 3.1 Les différents types de liaison
 On peut, approximativement, classer les types de liaison suivant ce tableau de débits **théoriques** :
 
+<p align="center">
+
 | Technologie | BP descendante | BP montante |
 |-|-|-|
 | Modem | 56 kbit/s | 48 kbit/s |
@@ -118,6 +120,7 @@ On peut, approximativement, classer les types de liaison suivant ce tableau de d
 | FFTH (fibre) | 10 Gbit/s | 10 Gbit/s |
 | 5G | 20 Gbit/s | 10 Gbit/s |
 
+</p>
 
 L'idée du protocole OSPF est de pondérer chaque trajet entre routeurs (comptant simplement pour «1» dans le protocole RIP) par une valeur de **coût** inversement proportionnelle au débit de transfert.
 
