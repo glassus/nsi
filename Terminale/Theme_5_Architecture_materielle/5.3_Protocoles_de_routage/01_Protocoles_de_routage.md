@@ -146,7 +146,7 @@ et simplifions-le en ne gardant que les liens entre routeurs, en indiquant leur 
 <img src="data/ospf1.png" , width=80%/> 
 </p>
 
-Notre réseau est devenu un **graphe**. Nous allons pondérer ses arêtes avec la fonction coût introduite précédemment. L'unité étant le Mbit/s, l'arête entre R1 et R3 aura un poids de 5.
+Notre réseau est devenu un **graphe**. Nous allons pondérer ses arêtes avec la fonction coût introduite précédemment. L'unité étant le Mbit/s, l'arête entre R1 et R3 aura un poids de 100/20=5.
 
 Le graphe pondéré est donc :
 
@@ -169,6 +169,7 @@ Pour le comprendre, vous pouvez regarder la vidéo d'un célèbre youtuber :
 </a>
 </p>
 
+Cet algorithme, ici exécuté de manière manuelle, est bien sûr programmable. Et c'est donc grâce à lui que chaque routeur calcule la route la plus rapide pour acheminer les données qu'il reçoit.
 
 ### 3.4 Exemple
 
