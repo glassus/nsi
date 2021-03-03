@@ -85,3 +85,54 @@ sauts. Déterminer le trajet parcouru.
 
  Le routeur C tombe en panne. Reconstruire la table de routage du routeur A en suivant le
 protocole RIP.
+
+
+### Exercice 3
+
+On représente ci-dessous un réseau dans lequel R1, R2, R3, R4, R5 et R6 sont des
+routeurs. Le réseau local L1 est relié au routeur R1 et le réseau local L2 au routeur R6.
+
+<p align="center">
+<img src="data/bac1.png" width=70%/> 
+</p>
+
+
+Dans cet exercice, les adresses IP sont composées de 4 octets, soit 32 bits. Elles sont notées X1.X2.X3.X4, où X1, X2, X3 et X4 sont les valeurs des 4 octets, convertis en notation décimale.
+La notation X1.X2.X3.X4/n signifie que les n premiers bits de poids forts de l’adresse IP représentent la partie « réseau », les bits suivants représentent la partie « hôte ».
+Toutes les adresses des hôtes connectés à un réseau local ont la même partie réseau et peuvent donc communiquer irectement. L’adresse IP dont tous les bits de la partie « hôte » sont à 0 est appelée « adresse du réseau ».
+
+On donne également des extraits de la table de routage des routeurs R1 à R5 dans le
+tableau suivant :
+
+<p align="center">
+<img src="data/bac2.png" width=70%/> 
+</p>
+
+1. Un paquet part du réseau local L1 à destination du réseau local L2.
+a. En utilisant l’extrait de la table de routage de R1, vers quel routeur R1 envoie-t-il ce paquet : R2 ou R3 ? Justifier.
+b. A l’aide des extraits de tables de routage ci-dessus, nommer les routeurs traversés par ce paquet, lorsqu’il va du réseau L1 au réseau L2.
+
+2. La liaison entre R1 et R2 est rompue.
+a. Sachant que ce réseau utilise le protocole RIP (distance en nombre de sauts), donner l’un des deux chemins possibles que pourra suivre un paquet allant de L1 vers L2.
+b. Dans les extraits de tables de routage ci-dessus, pour le chemin de la question 2.a, quelle(s) ligne(s) sera (seront) modifiée(s) ?
+
+3. On a rétabli la liaison entre R1 et R2.
+Par ailleurs, pour tenir compte du débit des liaisons, on décide d’utiliser le
+protocole OSPF (distance liée au coût minimal des liaisons) pour effectuer le
+routage. Le coût des liaisons entre les routeurs est donné par le tableau suivant :
+
+<p align="center">
+<img src="data/bac3.png" width=90%/> 
+</p>
+
+a. Le coût _C_ d’une liaison est donné ici par la formule
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=\large C = \frac{10^9}{BP}">
+</p>
+où _BP_ est la bande passante de la connexion en bps (bit par seconde).
+Sachant que la bande passante de la liaison R2-R3 est de 10 Mbps, calculer le coût correspondant.
+
+
+b. Déterminer le chemin parcouru par un paquet partant du réseau L1 et arrivant au réseau L2, en utilisant le protocole OSPF.
+
+c. Indiquer pour quel(s) routeur(s) l’extrait de la table de routage sera modifié pour un paquet à destination de L2, avec la métrique OSPF.
