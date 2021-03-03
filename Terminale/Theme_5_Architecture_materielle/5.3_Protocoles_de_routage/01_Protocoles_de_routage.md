@@ -123,8 +123,8 @@ L'idée du protocole OSPF est de pondérer chaque trajet entre routeurs (comptan
 
 Par exemple, si le débit _d_ est exprimé en bits/s, on peut calculer le coût de chaque liaison par la formule :
 
-<center>
+<p align="center">
 <img src="https://render.githubusercontent.com/render/math?math=\large \text{coût} = \frac{10^8}{d}">
-</center>
+</p>
 
 
