@@ -99,7 +99,7 @@ routeurs. Le réseau local L1 est relié au routeur R1 et le réseau local L2 au
 
 Dans cet exercice, les adresses IP sont composées de 4 octets, soit 32 bits. Elles sont notées X1.X2.X3.X4, où X1, X2, X3 et X4 sont les valeurs des 4 octets, convertis en notation décimale.
 La notation X1.X2.X3.X4/n signifie que les n premiers bits de poids forts de l’adresse IP représentent la partie « réseau », les bits suivants représentent la partie « hôte ».
-Toutes les adresses des hôtes connectés à un réseau local ont la même partie réseau et peuvent donc communiquer irectement. L’adresse IP dont tous les bits de la partie « hôte » sont à 0 est appelée « adresse du réseau ».
+Toutes les adresses des hôtes connectés à un réseau local ont la même partie réseau et peuvent donc communiquer directement. L’adresse IP dont tous les bits de la partie « hôte » sont à 0 est appelée « adresse du réseau ».
 
 On donne également des extraits de la table de routage des routeurs R1 à R5 dans le
 tableau suivant :
@@ -109,11 +109,15 @@ tableau suivant :
 </p>
 
 1. Un paquet part du réseau local L1 à destination du réseau local L2.
+
 a. En utilisant l’extrait de la table de routage de R1, vers quel routeur R1 envoie-t-il ce paquet : R2 ou R3 ? Justifier.
+
 b. A l’aide des extraits de tables de routage ci-dessus, nommer les routeurs traversés par ce paquet, lorsqu’il va du réseau L1 au réseau L2.
 
 2. La liaison entre R1 et R2 est rompue.
+
 a. Sachant que ce réseau utilise le protocole RIP (distance en nombre de sauts), donner l’un des deux chemins possibles que pourra suivre un paquet allant de L1 vers L2.
+
 b. Dans les extraits de tables de routage ci-dessus, pour le chemin de la question 2.a, quelle(s) ligne(s) sera (seront) modifiée(s) ?
 
 3. On a rétabli la liaison entre R1 et R2.
