@@ -133,7 +133,8 @@ a. Le coût _C_ d’une liaison est donné ici par la formule
 <p align="center">
 <img src="https://render.githubusercontent.com/render/math?math=\large C = \frac{10^9}{BP}">
 </p>
-où _BP_ est la bande passante de la connexion en bps (bit par seconde).
+
+où *BP* est la bande passante de la connexion en bps (bits par seconde).
 Sachant que la bande passante de la liaison R2-R3 est de 10 Mbps, calculer le coût correspondant.
 
 
