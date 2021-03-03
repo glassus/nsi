@@ -50,7 +50,7 @@ Par exemple, la table de routage du routeur R1 pourrait être :
 - Soit à la main par l'administrateur réseau, quand le réseau est petit : on parle alors de table **statique**.
 - Soit de manière **dynamique** : les réseaux s'envoient eux-mêmes des informations permettant de mettre à jour leurs tables de routages respectives. Des algorithmes de détermination de meilleur chemin sont alors utilisés : nous allons en découvrir deux, le protocole RIP et le protocole OSPF.
 
-## Le protocole RIP
+## 2. Le protocole RIP
 
 _voir le TP débranché_ : [le jeu dont vous êtes le routeur](https://github.com/glassus/nsi/tree/master/Terminale/Theme_5_Architecture_materielle/5.3_Protocoles_de_routage/TP_protocole_RIP)
 
@@ -76,3 +76,55 @@ Ensuite, chaque routeur reçoit périodiquement la table des réseaux auquel il 
 - Chaque routeur n'a jamais connaissance de la topologie du réseau tout entier : il ne le connaît que par ce que les autres routeurs lui ont raconté. On dit que ce protocole de routage est du _routing by rumor_.
 
 - La _métrique_ utilisée (le nombre de sauts) ne tient pas compte de la qualité de la liaison, contrairement au protocole OSPF.    
+
+
+
+## 3. Le protocole OSPF
+
+Un inconvénient majeur du protocole précédent est la non-prise en compte de la bande passante reliant les routeurs.
+
+En voiture, le chemin le plus rapide n'est pas forcément le plus court.
+
+
+<p align="center">
+<img src="data/maps.png" , width=60%/> 
+</p>
+
+_En gris, le chemin RIP. En bleu, l'OSPF._
+
+
+
+
+
+
+
+Dans le protocole OSPF, les tables de routage vont prendre en considération la vitesse de communication entre les routeurs.
+
+Dans une première phase d'initialisation, chaque routeur va acquérir (par succession de messages envoyés et reçus) la connaissance **totale** du réseau (différence fondamentale avec RIP) et de la qualité technique de la liaison entre chaque routeur.
+
+#### 3.1 Les différents types de liaison
+On peut, approximativement, classer les types de liaison suivant ce tableau de débits **théoriques** :
+
+| Technologie | BP descendante | BP montante |
+|-|-|-|
+| Modem | 56 kbit/s | 48 kbit/s |
+| Bluetooth | 3 Mbit/s | 3 Mbit/s |
+| Ethernet | 10 Mbit/s | 10 Mbit/s |
+| Wi-Fi |  10 Mbit/s ~ 10 Gbits/s | 10 Mbit/s ~ 10 Gbits/s |
+| ADSL | 13 Mbit/s | 1 Mbit/s |
+| 4G | 100 Mbit/s | 50 Mbit/s |
+| Satellite | 50 Mbit/s | 1 Mbit/s |
+| Fast Ethernet | 100 Mbit/s | 100 Mbit/s |
+| FFTH (fibre) | 10 Gbit/s | 10 Gbit/s |
+| 5G | 20 Gbit/s | 10 Gbit/s |
+
+
+L'idée du protocole OSPF est de pondérer chaque trajet entre routeurs (comptant simplement pour «1» dans le protocole RIP) par une valeur de **coût** inversement proportionnelle au débit de transfert.
+
+Par exemple, si le débit _d_ est exprimé en bits/s, on peut calculer le coût de chaque liaison par la formule :
+
+<center>
+<img src="https://render.githubusercontent.com/render/math?math=\large \text{coût} = \frac{10^8}{d}">
+</center>
+
+
