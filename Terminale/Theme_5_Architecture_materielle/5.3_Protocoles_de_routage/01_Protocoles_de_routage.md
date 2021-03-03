@@ -172,4 +172,31 @@ Pour le comprendre, vous pouvez regarder la vidéo d'un célèbre youtuber :
 Cet algorithme, ici exécuté de manière manuelle, est bien sûr programmable. Et c'est donc grâce à lui que chaque routeur calcule la route la plus rapide pour acheminer les données qu'il reçoit.
 
 ### 3.4 Exemple
+_(extrait du sujet 0)_
 
+On considère le réseau suivant :
+
+
+<p align="center">
+<img src="data/ex3.png" width=50%/> 
+</p>
+
+
+
+On rappelle que le coût d’une liaison est donné par la formule suivante :
+
+<p align="center">
+<img src="https://render.githubusercontent.com/render/math?math=\large \text{coût} = \frac{10^8}{d}">
+</p>
+
+**Question 1**
+
+1. Vérifier que le coût de la liaison entre les routeurs A et B est 0,01.
+2. La liaison entre le routeur B et D a un coût de 5. Quel est le débit de cette liaison ?
+
+
+**Question 4**
+
+Le routeur A doit transmettre un message au routeur G, en empruntant le chemin dont la sommedes coûts sera la plus petite possible. Déterminer le chemin parcouru. On indiquera le raisonnement utilisé.
+
+_[Correction](data/corr_tab.png) du tableau de l'algorithme de Dijkstra (par Nicolas Reveret)_

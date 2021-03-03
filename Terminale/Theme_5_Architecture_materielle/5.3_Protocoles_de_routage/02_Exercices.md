@@ -85,31 +85,3 @@ sauts. Déterminer le trajet parcouru.
 
  Le routeur C tombe en panne. Reconstruire la table de routage du routeur A en suivant le
 protocole RIP.
-
-### Exercice 3
-
-On considère le réseau de l'exercice 2.On dispose maintenant de renseignement sur la bande passante entre chaque routeur.
-
-
-<p align="center">
-<img src="data/ex3.png" width=50%/> 
-</p>
-
-
-
-On rappelle que le coût d’une liaison est donné par la formule suivante :
-
-<p align="center">
-<img src="https://render.githubusercontent.com/render/math?math=\large \text{coût} = \frac{10^8}{d}">
-</p>
-
-**Question 1**
-
-1. Vérifier que le coût de la liaison entre les routeurs A et B est 0,01.
-2. La liaison entre le routeur B et D a un coût de 5. Quel est le débit de cette liaison ?
-
-
-**Question 4**
-
- Le routeur A doit transmettre un message au routeur G, en empruntant le chemin dont la sommedes coûts sera la plus petite possible. Déterminer le chemin parcouru. On indiquera le raisonnement
-utilisé.
