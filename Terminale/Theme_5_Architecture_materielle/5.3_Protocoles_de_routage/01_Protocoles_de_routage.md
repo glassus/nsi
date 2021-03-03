@@ -102,7 +102,7 @@ Dans le protocole OSPF, les tables de routage vont prendre en considération la 
 
 Dans une première phase d'initialisation, chaque routeur va acquérir (par succession de messages envoyés et reçus) la connaissance **totale** du réseau (différence fondamentale avec RIP) et de la qualité technique de la liaison entre chaque routeur.
 
-#### 3.1 Les différents types de liaison
+#### 3.1 Les différents types de liaison et leur coût
 On peut, approximativement, classer les types de liaison suivant ce tableau de débits **théoriques** :
 
 <p align="center">
@@ -130,4 +130,29 @@ Par exemple, si le débit _d_ est exprimé en bits/s, on peut calculer le coût 
 <img src="https://render.githubusercontent.com/render/math?math=\large \text{coût} = \frac{10^8}{d}">
 </p>
 
+Avec cette convention, un route entre deux routeurs reliés en Fast Ethernet (100 Mbits/s) aura a un poids de 1, une liaison satellite de 20 Mbits/s aura un poids de 5, etc.
+
+### 3.2 Exemple
+
+Reprenons le réseau suivant :
+
+<p align="center">
+<img src="data/tables.png" , width=80%/> 
+</p>
+
+et simplifions-le en ne gardant que les liens entre routeurs, en indiquant leur débit :
+
+<p align="center">
+<img src="data/ospf1.png" , width=80%/> 
+</p>
+
+Notre réseau est devenu un **graphe**. Nous allons pondérer ses arêtes avec la fonction coût introduite précédemment. L'unité étant le Mbit/s, l'arête entre R1 et R3 aura un poids de 5.
+
+Le graphe pondéré est donc :
+
+<p align="center">
+<img src="data/ospf2.png" , width=80%/> 
+</p>
+
+Le chemin le plus rapide pour aller de l'ordinateur au serveur est donc R1-R2-R4, et non plus R1-R3 comme l'aurait indiqué le protocole RIP.
 
