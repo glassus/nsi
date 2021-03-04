@@ -203,7 +203,7 @@ On rappelle que le coût d’une liaison est donné par la formule suivante :
 2. La liaison entre le routeur B et D a un coût de 5. Quel est le débit de cette liaison ?
 
 
-**Question 4**
+**Question 2**
 
 Le routeur A doit transmettre un message au routeur G, en empruntant le chemin dont la somme des coûts sera la plus petite possible. Déterminer le chemin parcouru. On indiquera le raisonnement utilisé.
 
