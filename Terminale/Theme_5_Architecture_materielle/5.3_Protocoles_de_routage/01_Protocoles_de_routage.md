@@ -161,7 +161,7 @@ L'exemple précédent était très simple et de solution intuitive. Dans le cas 
 
 La réponse est **oui**, depuis la découverte en 1959 par Edsger Dijkstra de l'algorithme qui porte son nom, **l'algorithme de Dijkstra**.
 
-Pour le comprendre, vous pouvez regarder la vidéo d'un célèbre youtuber :
+Pour le comprendre, vous pouvez regarder la vidéo d'un célèbre YouTuber :
 
 <p align="center">
 <a href="https://www.youtube.com/watch?v=rI-Rc7eF4iw">
@@ -171,7 +171,15 @@ Pour le comprendre, vous pouvez regarder la vidéo d'un célèbre youtuber :
 
 Cet algorithme, ici exécuté de manière manuelle, est bien sûr programmable. Et c'est donc grâce à lui que chaque routeur calcule la route la plus rapide pour acheminer les données qu'il reçoit.
 
-### 3.4 Exemple
+**Exemple** d'application de l'algorithme de Dijkstra :
+
+<p align="center">
+<img src="data/graph.png" , width=60%/> 
+</p>
+
+Donner le plus court chemin pour aller de E à F.
+
+### 3.4 Exercice
 _(extrait du sujet 0)_
 
 On considère le réseau suivant :
