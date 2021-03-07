@@ -167,10 +167,10 @@ Toutes les adresses des machines connectées à un réseau local ont la même pa
 L’adresse IP dont tous les bits de la partie « machine » sont à 0 est appelée « adresse du réseau ».
 L’adresse IP dont tous les bits de la partie « machine » sont à 1 est appelée « adresse de diffusion ».
 
-1. a. Quelles sont les adresses des réseaux locaux L1 et L2 ?
-b. Donner la plus petite et la plus grande adresse IP valides pouvant être attribuées à un
-ordinateur portable ou un serveur sur chacun des réseaux L1 et L2 sachant que
-l’adresse du réseau et l’adresse de diffusion ne peuvent pas être attribuées à une
-machine.
+1. 
+a. Quelles sont les adresses des réseaux locaux L1 et L2 ?
+
+b. Donner la plus petite et la plus grande adresse IP valides pouvant être attribuées à un ordinateur portable ou un serveur sur chacun des réseaux L1 et L2 sachant que l’adresse du réseau et l’adresse de diffusion ne peuvent pas être attribuées à une machine.
+
 c. Combien de machines peut-on connecter au maximum à chacun des réseaux locaux L1
 et L2 ? On donne ci-dessous les valeurs de quelques puissances de 2 ?
