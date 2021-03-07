@@ -144,9 +144,33 @@ c. Indiquer pour quel(s) routeur(s) l’extrait de la table de routage sera modi
 
 ### Exercice 3
 
-On rep
-
-
 | ![](data/ex3_1.png) | 
 |:--:| 
 | *Figure 1* |
+
+La figure 1 ci-dessus représente le schéma d’un réseau d’entreprise. Il y figure deux réseaux locaux L1 et L2. Ces deux réseaux locaux sont interconnectés par les routeurs R2, R3, R4 et R5. Le réseau local L1 est constitué des PC portables P1 et P2 connectés à la passerelle R1 par le switch Sw1. Les serveurs S1 et S2 sont connectés à la passerelle R6 par le switch Sw2.
+
+ Le tableau 1 suivant indique les adresses IPv4 des machines constituants le réseau de l’entreprise.
+
+ | <img src="data/ex3_2.png" width=90%/>  | 
+|:--:| 
+| *Tableau 1 : adresses IPv4 des machines* |
+
+**Rappels et notations**
+
+Rappelons qu’une adresse IP est composée de 4 octets, soit 32 bits. Elle est notée
+X1.X2.X3.X4, où X1, X2, X3 et X4 sont les valeurs des 4 octets. Dans le tableau 1, les valeurs des 4 octets ont été converties en notation décimale.
+
+La notation X1.X2.X3.X4/n signifie que les n premiers bits de poids forts de l’adresse IP représentent la partie « réseau », les bits suivants de poids faibles représentent la partie « machine ».
+
+Toutes les adresses des machines connectées à un réseau local ont la même partie réseau.
+L’adresse IP dont tous les bits de la partie « machine » sont à 0 est appelée « adresse du réseau ».
+L’adresse IP dont tous les bits de la partie « machine » sont à 1 est appelée « adresse de diffusion ».
+
+1. a. Quelles sont les adresses des réseaux locaux L1 et L2 ?
+b. Donner la plus petite et la plus grande adresse IP valides pouvant être attribuées à un
+ordinateur portable ou un serveur sur chacun des réseaux L1 et L2 sachant que
+l’adresse du réseau et l’adresse de diffusion ne peuvent pas être attribuées à une
+machine.
+c. Combien de machines peut-on connecter au maximum à chacun des réseaux locaux L1
+et L2 ? On donne ci-dessous les valeurs de quelques puissances de 2 ?
