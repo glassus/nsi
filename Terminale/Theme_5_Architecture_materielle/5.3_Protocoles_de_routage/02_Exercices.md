@@ -115,9 +115,7 @@ a. En utilisant l’extrait de la table de routage de R1, vers quel routeur R1 e
 b. A l’aide des extraits de tables de routage ci-dessus, nommer les routeurs traversés par ce paquet, lorsqu’il va du réseau L1 au réseau L2.
 
 2. La liaison entre R1 et R2 est rompue.
-
 a. Sachant que ce réseau utilise le protocole RIP (distance en nombre de sauts), donner l’un des deux chemins possibles que pourra suivre un paquet allant de L1 vers L2.
-
 b. Dans les extraits de tables de routage ci-dessus, pour le chemin de la question 2.a, quelle(s) ligne(s) sera (seront) modifiée(s) ?
 
 3. On a rétabli la liaison entre R1 et R2.
@@ -141,3 +139,16 @@ Sachant que la bande passante de la liaison R2-R3 est de 10 Mbps, calculer le co
 b. Déterminer le chemin parcouru par un paquet partant du réseau L1 et arrivant au réseau L2, en utilisant le protocole OSPF.
 
 c. Indiquer pour quel(s) routeur(s) l’extrait de la table de routage sera modifié pour un paquet à destination de L2, avec la métrique OSPF.
+
+
+
+### Exercice 3
+
+On rep
+
+<p align="center">
+<figure>
+<img src="data/ex3_1.png" width=90%/> 
+<figcaption>Figure 1</figcaption>
+</figure>
+</p>
