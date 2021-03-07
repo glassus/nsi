@@ -146,9 +146,7 @@ c. Indiquer pour quel(s) routeur(s) l’extrait de la table de routage sera modi
 
 On rep
 
-<p align="center">
-<figure class="image">
-<img src="data/ex3_1.png" width=90%/> 
-<figcaption>Figure 1</figcaption>
-</figure>
-</p>
+
+| ![](data/ex3_1.png) | 
+|:--:| 
+| *Figure 1* |
