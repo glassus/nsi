@@ -173,4 +173,24 @@ a. Quelles sont les adresses des réseaux locaux L1 et L2 ?
 b. Donner la plus petite et la plus grande adresse IP valides pouvant être attribuées à un ordinateur portable ou un serveur sur chacun des réseaux L1 et L2 sachant que l’adresse du réseau et l’adresse de diffusion ne peuvent pas être attribuées à une machine.
 
 c. Combien de machines peut-on connecter au maximum à chacun des réseaux locaux L1
-et L2 ? On donne ci-dessous les valeurs de quelques puissances de 2 ?
+et L2 ? 
+
+2. 
+a. Expliquer l’utilité d’avoir plusieurs chemins possibles reliant les réseaux L1 et L2.
+
+b. Quel est le chemin le plus court en nombre de sauts pour relier R1 et R6 ? Donner le nombre de sauts de ce chemin et préciser les routeurs utilisés.
+
+c. La bande passante d’une liaison Ether (quantité d’information qui peut être transmise en bits/s) est de 10\^7 bits/s et celle d’une liaison FastEther est de 10\^8 bits/s. Le coût d’une liaison est défini par 10^8 / d , où d est sa bande passante en bits/s.
+
+ | <img src="data/ex3_3.png" width=90%/>  | 
+|:--:| 
+| *Tableau 2 : type des liaisons entre les routeurs* |
+
+Quel est le chemin reliant R1 et R6 qui a le plus petit coût ? Donner le coût de ce chemin et préciser les routeurs utilisés.
+
+3. Dans l’annexe A figurent les tables de routages des routeurs R1, R2, R5 et R6 au
+démarrage du réseau. Indiquer sur votre copie ce qui doit figurer dans les lignes laissées vides des tables de routage des routeurs R5 et R6 pour que les échanges entre les ordinateurs des réseaux L1 et L2 se fassent en empruntant le chemin le plus court en nombre de sauts.
+
+<p align="center">
+<img src="data/ex3_4.png" width=90%/> 
+</p>
