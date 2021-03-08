@@ -142,7 +142,7 @@ c. Indiquer pour quel(s) routeur(s) l’extrait de la table de routage sera modi
 
 
 
-### Exercice 3
+### Exercice 4
 
 | ![](data/ex3_1.png) | 
 |:--:| 
