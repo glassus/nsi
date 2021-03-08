@@ -115,7 +115,9 @@ a. En utilisant l’extrait de la table de routage de R1, vers quel routeur R1 e
 b. A l’aide des extraits de tables de routage ci-dessus, nommer les routeurs traversés par ce paquet, lorsqu’il va du réseau L1 au réseau L2.
 
 2. La liaison entre R1 et R2 est rompue.
+
 a. Sachant que ce réseau utilise le protocole RIP (distance en nombre de sauts), donner l’un des deux chemins possibles que pourra suivre un paquet allant de L1 vers L2.
+
 b. Dans les extraits de tables de routage ci-dessus, pour le chemin de la question 2.a, quelle(s) ligne(s) sera (seront) modifiée(s) ?
 
 3. On a rétabli la liaison entre R1 et R2.
