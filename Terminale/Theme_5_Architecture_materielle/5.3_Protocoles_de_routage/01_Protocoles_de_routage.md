@@ -132,6 +132,9 @@ Par exemple, si le débit _d_ est exprimé en bits/s, on peut calculer le coût 
 <img src="https://render.githubusercontent.com/render/math?math=\large \text{coût} = \frac{10^8}{d}">
 </p>
 
+Cette formule de calcul peut être différente suivant les exercices, et sera systématiquement redonnée. Néanmoins la valeur _d_ sera toujours au dénominateur, pour assurer la proportionnalité inverse du débit.
+
+
 Avec cette convention, un route entre deux routeurs reliés en Fast Ethernet (100 Mbits/s) aura a un poids de 1, une liaison satellite de 20 Mbits/s aura un poids de 5, etc.
 
 ### 3.2 Exemple
