@@ -81,6 +81,8 @@ Ensuite, chaque routeur reçoit périodiquement la table des réseaux auquel il 
 
 ## 3. Le protocole OSPF
 
+OSPF : *Open Shortest Path First*
+
 Un inconvénient majeur du protocole précédent est la non-prise en compte de la bande passante reliant les routeurs.
 
 En voiture, le chemin le plus rapide n'est pas forcément le plus court.
