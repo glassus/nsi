@@ -1,5 +1,9 @@
 # Pages web et interactions
 
+<p align="center">
+<img src="data/meme.jpg" , width=80%/> 
+</p>
+
 ### 1. Le cas le plus simple : la même page pour tout le monde
 
 ![](data/stat.png)
@@ -48,8 +52,9 @@ Vous pouvez contempler [ici](https://exemplehtmlpur--g-lassus.repl.co) le rendu 
 
 
 ##### Exercice 1
-- Allez sur https://repl.it/ , identifiez-vous, et créez un nouveau repl<i></i>.it en choisissant HTML,CSS,JS.
+- Créez un dossier contenant un fichier ```mapage.html```.
 - Créez une page contenant une image et un lien vers le site du lycée.
+- Vous pouvez aussi utiliser un éditeur en ligne avec rendu instantané, du type [https://www.w3schools.com/tryit/](https://www.w3schools.com/tryit/)
 
 
 
@@ -57,7 +62,6 @@ Vous pouvez contempler [ici](https://exemplehtmlpur--g-lassus.repl.co) le rendu 
 
 #### 1.2 HTML + CSS
 
-Lors de la création de votre page sur Repl.it, vous avez pu voir dans l'explorateur de fichiers un fichier nommé ```style.css```.
 L'acronyme CSS signifie _Cascading Style Sheets_. L'idée est de regrouper dans un seul fichier toutes les informations relatives à la mise en forme des éléments de la page html. 
 De manière très simplifiée, on peut dire que le fichier ```html``` s'occupe _du fond_ tandis que le fichier ```css``` s'occupe de la _forme_.
 
