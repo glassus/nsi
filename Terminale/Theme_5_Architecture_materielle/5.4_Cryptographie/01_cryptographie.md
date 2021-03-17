@@ -56,7 +56,7 @@ La chiffrement symétrique impose qu'Alice et Bob aient pu se rencontrer physiqu
 #### Un chiffrement symétrique est-il un chiffrement faible ?
 Pas du tout ! S'il est associé naturellement à des chiffrements faibles (style le décalage de César), un chiffrement symétrique peut être très robuste... voire inviolable !
 
-C'est le cas du masque jetable, appelé aussi One Time Pad. Si le masque avec lequel on effectue le XOR sur le message est aussi long que le message, alors il est **impossible** de retrouver le message initial.
+C'est le cas du [masque jetable](https://fr.wikipedia.org/wiki/Masque_jetable), (appelé aussi One Time Pad). Si le masque avec lequel on effectue le XOR sur le message est aussi long que le message, alors il est **impossible** de retrouver le message initial. Pourquoi ?
 
 Imaginons qu'Alice veuille transmettre le message clair "LUNDI".
 Elle le chiffre avec un masque jetable (que connait aussi Bob), et Bob reçoit donc "KHZOK". 
@@ -67,7 +67,7 @@ Cela signifie que Marc verra apparaître, dans sa tentative de déchiffrage, les
 Il n'a aucune possibilité de savoir où est le bon message parmi toutes les propositions (on parle de *sécurité sémantique*).
 
 
-> Principe de Kerckhoffs : la sécurité d'un système de chiffrement ne doit reposer que sur la sécurité de la clé, et non pas sur la connaissance de l'algorithme de chiffrement. Cet algorithme peut même être public.
+> Principe de Kerckhoffs : la sécurité d'un système de chiffrement ne doit reposer que sur la sécurité de la clé, et non pas sur la connaissance de l'algorithme de chiffrement. Cet algorithme peut même être public (ce qui pratiquement toujours le cas).
 
 
 #### Quels sont les chiffrements symétriques modernes ?
