@@ -29,6 +29,12 @@ masque = "CETTEPHRASEESTVRAIMENTTRESTRESLONGUEMAISCESTFAITEXPRES"
 
 > Dans un chiffrement symétrique, c'est **la même clé** qui va servir au chiffrement et au déchiffrement.
 
+
+<p align="center">
+<img src="data/et1.png" /> 
+</p>
+
+
 #### Qu'appelle-t-on une clé ?
 La clé est un renseignement permettant de chiffrer ou déchiffrer un message. Cela peut être :
 - un nombre (dans un simple décalage des lettres de l'alphabet, comme le chiffre de César)
@@ -60,4 +66,12 @@ Ce qui lui donne 26^5 possibilités (plus de 11 millions) pour le masque, et par
 Cela signifie que Marc verra apparaître, dans sa tentative de déchiffrage, les mots "MARDI", "JEUDI", "STYLO", "FSDJK", "LUNDI"... 
 Il n'a aucune possibilité de savoir où est le bon message parmi toutes les propositions (on parle de *sécurité sémantique*).
 
+
+> Principe de Kerckhoffs : la sécurité d'un système de chiffrement ne doit reposer que sur la sécurité de la clé, et non pas sur la connaissance de l'algorithme de chiffrement. Cet algorithme peut même être public.
+
+
 #### Quels sont les chiffrements symétriques modernes ?
+L'algorithme de chiffrement symétrique le plus utilisé actuellement est le chiffrement [AES](https://fr.wikipedia.org/wiki/Advanced_Encryption_Standard), pour Advanced Encryption Standard.
+- chiffrement par bloc de 128 bits, répartis dans une matrice de 16 octets (matrice carrée de taille 4).
+- ces 128 bits sont transformés par des rotations, multiplications, transpositions, [...] de la matrice initiale, en faisant intervenir dans ces transformations une clé de 128, 192 ou 256 bits.
+- pour l'AES-256 (avec une clé de 256 bits), 
