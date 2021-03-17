@@ -31,7 +31,7 @@ masque = "CETTEPHRASEESTVRAIMENTTRESTRESLONGUEMAISCESTFAITEXPRES"
 
 
 <p align="center">
-<img src="data/et1.png" /> 
+<img src="data/et2.png" /> 
 </p>
 
 
