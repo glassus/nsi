@@ -207,6 +207,7 @@ Alice reçoit la valeur 31.
 Il lui suffit alors d'élever 31 à la puissance 7 (sa clé privée), et de calculer le reste modulo 33 :
 
 31**7 = 27512614111
+
 27512614111 ≡ 4 [33]
 
 Elle récupère la valeur 4, qui est bien le message original de Bob.
