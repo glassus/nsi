@@ -153,7 +153,7 @@ Le protocole que nous allons décrire ci-dessous permet :
 
 Lorsqu'en 1976 Diffie et Hellman présentent le concept de chiffrement symétrique (souvent appelé _cryptographie à clés publiques_), ils en proposent uniquement un modèle théorique, n'ayant pas trouvé une réelle implémentation de leur protocole.
 
-Les chercheurs Ron **R**ivest, Adi **S**hamir et Len **A**dleman, se penchent alors sur ce protocole, convaincus qu'il est en effet impossible d'en trouver une implémentation pratique. En 1977, au cours de leurs recherches, ils démontrent en fait l'inverse de ce qu'ils cherchaient : ils créent le premier protocole concret de chiffrement symétrique : le chiffrement **RSA**.
+Trois chercheurs du MIT (Boston), Ron **R**ivest, Adi **S**hamir et Len **A**dleman se penchent alors sur ce protocole, convaincus qu'il est en effet impossible d'en trouver une implémentation pratique. En 1977, au cours de leurs recherches, ils démontrent en fait l'inverse de ce qu'ils cherchaient : ils créent le premier protocole concret de chiffrement symétrique : le chiffrement **RSA**.
 
 <p align="center">
 <img src="data/pic_RSA.jpeg"  width="400"/> 
@@ -175,5 +175,55 @@ Alice multiplie ces deux nombres *p* et *q* et obtient ainsi un nombre *n*.
 C'est sur cette difficulté (appelée difficulté de *factorisation*) que repose la robustesse du système RSA.
 
 ##### Étape 3
-Alice choisit un nombre *e* qui doit être premier avec *(p-1)(q-1)*.  
+Alice choisit un nombre *e* qui doit être premier avec *(p-1)(q-1)*.  On note *φ(n)* le nombre *(p-1)(q-1)*.
+
+Dans notre exemple, *(p-1)(q-1) = 20*, Alice choisit donc *e = 3*. (mais elle aurait pu aussi choisir 7, 9, 13...).
+
+Le couple **(e, n)** sera **la clé publique** d'Alice. Elle la diffuse à qui veut lui écrire.
+
+Dans notre exemple, la clé publique d'Alice est *(3, 33)*.
+
+##### Étape 4
+Alice calcule maintenant sa clé privée : elle doit trouver un nombre *d* qui vérifie l'égalité *e.d ≡ 1 [φ(n)]*.
+
+Dans notre exemple, comme *7 x 3  ≡ 1 [20]*, ce nombre *d* est égal à 7.
+
+En pratique, il existe un algorithme simple (algorithme d'[Euclide étendu](https://fr.wikipedia.org/wiki/Algorithme_d%27Euclide_%C3%A9tendu)) pour trouver cette valeur *d*, appelée *inverse de e*.
+
+Le couple **(d, n)** sera **la clé privée** d'Alice. Elle ne la diffuse à personne.
+
+Dans notre exemple, la clé privée d'Alice est *(7, 33)*.
+
+##### Étape 5
+Supposons que Bob veuille écrire à Alice pour lui envoyer le nombre 4. 
+Il possède la clé publique d'Alice, qui est *(3, 33)*.
+
+Il calcule donc 4**3 modulo 33, qui vaut 31. C'est cette valeur 31 qu'il transmet à Alice.
+
+> Si Marc intercepte cette valeur 31, même en connaissant la clé publique d'Alice (3,33), il ne peut pas résoudre l'équation x**3 ≡ 31 [33] de manière efficace.
+
+##### Étape 6
+Alice reçoit la valeur 31.  
+Il lui suffit alors d'élever 31 à la puissance 7 (sa clé privée), et de calculer le reste modulo 33 :
+
+31**7 = 27512614111
+27512614111 ≡ 4 [33]
+
+Elle récupère la valeur 4, qui est bien le message original de Bob.
+
+> **Comment ça marche ?**
+Grâce au [Petit Théorème de Fermat](https://fr.wikipedia.org/wiki/Petit_th%C3%A9or%C3%A8me_de_Fermat), on démontre (voir [ici](https://fr.wikipedia.org/wiki/Chiffrement_RSA)) assez facilement que M**ed ≡ M [n].
+
+Il faut remarquer que M **ed = M **de. On voit que les rôles de la clé publique et de la clé privée sont symétriques : un message chiffré avec la clé privée se déchiffrera en le chiffrant avec la clé publique.
+
+
+#### RSA, un système inviolable ?
+Le chiffrement RSA a des défauts (notamment une grande consommation des ressources, due à la manipulation de très grands nombres).
+Mais le choix d'une clé publique de grande taille (actuellement 1024 ou 2048 bits) le rend pour l'instant inviolable. 
+
+Actuellement, il n'existe pas d'algorithme efficace pour factoriser un nombre ayant plusieurs centaines de chiffres.
+
+Deux évènements pourraient faire s'écrouler la sécurité du RSA :
+- la découverte d'un algorithme efficace de factorisation, capable de tourner sur les ordinateurs actuels. Cette annonce est régulièrement faite, et tout aussi régulièrement contredite par la communauté scientifique. (voir, le 05/03/2021,  [https://www.schneier.com/blog/archives/2021/03/no-rsa-is-not-broken.html](https://www.schneier.com/blog/archives/2021/03/no-rsa-is-not-broken.html))
+- l'avènement d'[ordinateurs quantiques](https://fr.wikipedia.org/wiki/Calculateur_quantique), dont la vitesse d'exécution permettrait une factorisation rapide. Il est à noter que l'algorithme de factorisation destiné à tourner sur un ordinateur quantique existe déjà : [l'algorithme de Schor](https://fr.wikipedia.org/wiki/Algorithme_de_Shor).
 
