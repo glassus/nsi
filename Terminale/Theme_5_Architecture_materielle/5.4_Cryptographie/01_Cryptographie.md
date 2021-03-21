@@ -1,10 +1,11 @@
 
+<!---
 <p align="center">
 <img src="data/banniere.png" width='100%' />
 
 <img src="data/BO.png" width='80%' />
 </p>
-
+--->
 
 # Cryptographie
 
@@ -143,3 +144,36 @@ Le protocole que nous allons décrire ci-dessous permet :
 <p align="center">
 <img src="data/total_auth.png"  width="600"/> 
 </p>
+
+**En résumé :**
+- Alice est sûre que seul Bob pourra déchiffrer le message qu'elle envoie.
+- Bob est sûr que le message qu'il reçoit vient bien d'Alice.
+
+### 2.3 Un exemple de chiffrement asymétrique : le chiffrement RSA
+
+Lorsqu'en 1976 Diffie et Hellman présentent le concept de chiffrement symétrique (souvent appelé _cryptographie à clés publiques_), ils en proposent uniquement un modèle théorique, n'ayant pas trouvé une réelle implémentation de leur protocole.
+
+Les chercheurs Ron **R**ivest, Adi **S**hamir et Len **A**dleman, se penchent alors sur ce protocole, convaincus qu'il est en effet impossible d'en trouver une implémentation pratique. En 1977, au cours de leurs recherches, ils démontrent en fait l'inverse de ce qu'ils cherchaient : ils créent le premier protocole concret de chiffrement symétrique : le chiffrement **RSA**.
+
+<p align="center">
+<img src="data/pic_RSA.jpeg"  width="400"/> 
+</p>
+
+Le chiffrement RSA est basé sur *l'arithmétique modulaire*. Faire des calculs *modulo* un entier *n*, c'est ne garder que le reste de la division euclidienne par *n*.
+
+Le fait que 15 soit égal à 1 modulo 7 (car 15=2*7+1) s'écrira 15 ≡ 1 [7].
+
+De même, 10 ≡  3 [7], 25 ≡ 4 [7], 32 ≡ 2 [10], etc.
+
+
+##### Étape 1
+Alice choisit 2 grands nombres premiers *p* et *q*. Dans la réalité ces nombres seront vraiment très grands (plus de 100 chiffres). Dans notre exemple, nous prendrons *p = 3* et *q = 11*.
+
+##### Étape 2
+Alice multiplie ces deux nombres *p* et *q* et obtient ainsi un nombre *n*.
+>Il est très facile pour Alice de calculer *n* en connaissant *p* et *q*, mais il  extrêmement difficile pour Marc de faire le travail inverse : trouver *p* et *q* en connaissant *n* prend un temps exponentiel avec la taille de *n*.  
+C'est sur cette difficulté (appelée difficulté de *factorisation*) que repose la robustesse du système RSA.
+
+##### Étape 3
+Alice choisit un nombre *e* qui doit être premier avec *(p-1)(q-1)*.  
+
