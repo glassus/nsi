@@ -80,10 +80,54 @@ L'algorithme de chiffrement symétrique le plus utilisé actuellement est le chi
 
 ## 2. Chiffrement asymétrique
 
-Inventé par Whitfield Diffie et Martin Hellman en 1976, le chiffrement asymétrique vient résoudre l'inconvénient essentiel du chiffrement symétrique : le nécessaire partage d'un secret. 
+Inventé par Whitfield Diffie et Martin Hellman en 1976, le chiffrement asymétrique vient résoudre l'inconvénient essentiel du chiffrement symétrique : le nécessaire partage d'un secret (la clé) avant l'établissement de la communication sécurisée.
+
+### 2.1 Principe du chiffrement asymétrique
 
 Le principe de base est l'existence d'une **clé publique**, appelée à être distribuée largement, et d'une **clé privée**, qui ne quitte jamais son propriétaire. 
 
 <p align="center">
 <img src="data/asym.png"  width="600"/> 
+</p>
+
+
+### 2.2 Le rôle interchangeable des clés publiques et privées
+
+L'illustration précédente associe :
+- une image de cadenas à la clé publique (car on s'en sert pour chiffrer les messages)
+- une image de clé à la clé privée (car on s'en sert pour déchiffrer les messages)
+
+Concrètement, (nous le verrons dans l'applciation par le chiffrement RSA), la clé privée et la clé publique sont **deux nombres** aux rôles identiques. Appelons-les A et B :
+- il est impossible de trouver A en fonction de B. Réciproquement, si on connaît A, il est impossible d'en déduire B.
+- si on chiffre un message avec A, on peut le déchiffrer avec B. Réciproquement, si on chiffre avec B, on peut déchiffrer le message grâce à A.
+- on peut donc chiffrer avec une clé publique et déchiffrer avec la clé privée associée (ce qui est fait dans l'exemple précédent). Mais on peut aussi chiffrer avec la clé privée, et déchiffrer avec la clé publique associée.
+
+A et B ont donc des rôles interchangeables (chacun peut être un cadenas, chacun peut être une clé), et ce n'est qu'en connaissant A **et** B qu'on peut déchiffrer le message.
+
+Nous allons donc maintenant adopter une nouvelle convention infographique :
+
+- Considérons ce message :
+<p align="center">
+<img src="data/a1.png"  width="80"/> 
+</p>
+
+- Si ce message est chiffré avec la clé publique d'Alice, le message sera :
+<p align="center">
+<img src="data/a2.png"  width="80"/> 
+</p>
+
+- Si on déchiffre ce message avec la clé privée d'Alice, il deviendra
+<p align="center">
+<img src="data/a3.png"  width="80"/> 
+</p>
+et donc
+<p align="center">
+<img src="data/a1.png"  width="80"/> 
+</p>
+
+puisque l'application de la clé privée sur la clé publique, ou bien de la clé publique sur la clé privée, permet de retrouver le message en clair.
+
+De manière graphique, la connaissance des deux moitiés du disque qui s'assemblent permet de les faire disparaitre.
+<p align="center">
+<img src="data/gif_auth.webp"  width="80"/> 
 </p>
