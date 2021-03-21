@@ -127,7 +127,19 @@ et donc
 
 puisque l'application de la clé privée sur la clé publique, ou bien de la clé publique sur la clé privée, permet de retrouver le message en clair.
 
-De manière graphique, la connaissance des deux moitiés du disque qui s'assemblent permet de les faire disparaitre.
+De manière graphique, la connaissance des deux moitiés du disque qui s'assemblent permet de les faire disparaitre, qu'importe qu'on ait commencé par chiffrer avec la clé publique ou avec la clé privée.
 <p align="center">
 <img src="data/gif_auth.webp"  width="80"/> 
+</p>
+
+### 2.3 Communication authentifiée.
+
+Dans la situation du 2.1, Alice (qui a distribué largement sa clé publique) ne peut pas s'assurer que le message vient bien de Bob. Il peut avoir été créé par Marc, qui signe «Bob» et usurpe ainsi son identité. 
+
+Le protocole que nous allons décrire ci-dessous permet :
+- d'empêcher qu'un message intercepté soit déchiffré (comme dans le 2.1)
+- mais aussi de s'assurer que chaque personne est bien celle qu'elle prétend être : on résoud le **problème d'authentification**.
+
+<p align="center">
+<img src="data/total_auth.png"  width="600"/> 
 </p>
