@@ -137,8 +137,8 @@ De manière graphique, la connaissance des deux moitiés du disque qui s'assembl
 Dans la situation du 2.1, Alice (qui a distribué largement sa clé publique) ne peut pas s'assurer que le message vient bien de Bob. Il peut avoir été créé par Marc, qui signe «Bob» et usurpe ainsi son identité. 
 
 Le protocole que nous allons décrire ci-dessous permet :
-- d'empêcher qu'un message intercepté soit déchiffré (comme dans le 2.1)
-- mais aussi de s'assurer que chaque personne est bien celle qu'elle prétend être : on résoud le **problème d'authentification**.
+- d'empêcher qu'un message intercepté soit déchiffré (ce qui était déjà le cas dans le 2.1)
+- mais aussi de s'assurer que chaque personne est bien celle qu'elle prétend être : on résout le **problème d'authentification**.
 
 <p align="center">
 <img src="data/total_auth.png"  width="600"/> 
