@@ -153,7 +153,7 @@ Le protocole que nous allons décrire ci-dessous permet :
 
 Lorsqu'en 1976 Diffie et Hellman présentent le concept de chiffrement symétrique (souvent appelé _cryptographie à clés publiques_), ils en proposent uniquement un modèle théorique, n'ayant pas trouvé une réelle implémentation de leur protocole.
 
-Trois chercheurs du MIT (Boston), Ron **R**ivest, Adi **S**hamir et Len **A**dleman se penchent alors sur ce protocole, convaincus qu'il est en effet impossible d'en trouver une implémentation pratique. En 1977, au cours de leurs recherches, ils démontrent en fait l'inverse de ce qu'ils cherchaient : ils créent le premier protocole concret de chiffrement symétrique : le chiffrement **RSA**.
+Trois chercheurs du MIT (Boston), Ron **R**ivest, Adi **S**hamir et Len **A**dleman se penchent alors sur ce protocole, convaincus qu'il est en effet impossible d'en trouver une implémentation pratique. En 1977, au cours de leurs recherches, ils démontrent en fait l'inverse de ce qu'ils cherchaient : ils créent le premier protocole concret de chiffrement asymétrique : le chiffrement **RSA**.
 
 <p align="center">
 <img src="data/pic_RSA.jpeg"  width="400"/> 
