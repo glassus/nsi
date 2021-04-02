@@ -26,7 +26,7 @@ Il a été inventé en 1992 par [Tim Berners-Lee](https://fr.wikipedia.org/wiki/
 <!DOCTYPE html>
 <html lang='fr'>
     <head>
-        <metacharset="utf-8">
+        <meta charset="utf-8">
         <title>Un titre très original</title>
     </head>
 
