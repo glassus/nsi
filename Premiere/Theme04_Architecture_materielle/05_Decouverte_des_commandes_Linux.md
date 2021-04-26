@@ -22,4 +22,5 @@ Laissez-vous guider par le jeu, mais attention !
 </p>
 
 
-
+## Correction
+Voici [un corrigé](data/Terminus-corrige.pdf) établi par Charles Poulmaire, de l'académie de Versailles.
