@@ -261,3 +261,27 @@ Le protocole ```https``` est la réunion de deux protocoles :
 <p align="center">
 <img src="data/tls.png" , width=100%/> 
 </p>
+
+- **étape 1** : le «client Hello». Le client envoie sa version de TLS utilisée. 
+
+- **étape 2** : le «server Hello». Le serveur répond en renvoyant son certificat prouvant son identité, ainsi que sa clé publique.
+
+- **étape 3** : le client interroge l'authorité de certification pour valider le fait que le certificat est bien valide et que le serveur est bien celui qu'il prétend être. Cette vérification est faite grâce à un mécanisme de chiffrement asymétrique.
+
+- **étape 4** : une fois vérifiée l'authenfication du serveur et que son certificat est valide, le client calcule ce qui sera la future clé de chiffrement symétrique (appelée «clé AES» dans l'infographie). Cette clé est chiffrée avec la clé publique du server (transmise à l'étape 1), ce qui assure la sécurité de son transfert. Le serveur déchiffre cette clé grâce à sa clé privée, et dispose ainsi lui aussi de la clé. 
+
+Le transmission par protocole ```http``` de données chiffrées au préalable avec la clé AES peut commencer. 
+
+>Remarque : en réalité, ce n'est pas la clé AES qui est transmise à l'étape 4, mais un nombre choisi par le client, qui permettra, avec deux autres nombres choisis par le client (étape 1) et le serveur (étape 2) de reconstituer la clé AES, qui sera donc identique côté client et côté serveur.
+
+
+---
+## Bibliographie
+- Numérique et Sciences Informatiques, Terminale, T. BALABONSKI, S. CONCHON, J.-C. FILLIATRE, K. NGUYEN, éditions ELLIPSES.
+- Prépabac NSI, Terminale, G. CONNAN, V. PETROV, G. ROZSAVOLGYI, L. SIGNAC, éditions HATIER.
+- https://www.cloudflare.com/fr-fr/learning/ssl/what-happens-in-a-tls-handshake/
+
+
+---
+
+![](../../../ccbysa.png) G.Lassus, Lycée François Mauriac --  Bordeaux  
