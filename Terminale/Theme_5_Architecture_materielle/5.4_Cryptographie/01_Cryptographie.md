@@ -218,14 +218,8 @@ Grâce au [Petit Théorème de Fermat](https://fr.wikipedia.org/wiki/Petit_th%C3
 Il faut remarquer que M **ed = M **de. On voit que les rôles de la clé publique et de la clé privée sont symétriques : un message chiffré avec la clé publique se déchiffrera en le chiffrant avec la clé privée, tout comme un message chiffré avec la clé privée se déchiffrera en le chiffrant avec la clé publique.
 
 **Animation interactive**
-*issue du de la page [https://interstices.info/nombres-premiers-et-cryptologie-lalgorithme-rsa/](https://interstices.info/nombres-premiers-et-cryptologie-lalgorithme-rsa/)*
+voir https://animations.interstices.info/interstices-rsa/rsa.html
 
-<iframe src="https://animations.interstices.info/interstices-rsa/rsa.html"
-        frameborder="0"
-        allowfullscreen
-        width="100%"
-        height="420px">
-</iframe> 
 
 
 
