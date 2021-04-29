@@ -238,9 +238,20 @@ Deux évènements pourraient faire s'écrouler la sécurité du RSA :
  ### 3.1 Principe général
 Aujourd'hui, plus de 90 % du trafic sur internet est chiffré : les données ne transitent plus en clair (protocole ```http```) mais de manière chiffrée (protocole ```https```), ce qui empêche la lecture de paquets éventuellements interceptés.
 
+
+
+
+
 Le protocole ```https``` est la réunion de deux protocoles :
 -  le protocole ```TLS``` (Transport Layer Security, qui a succédé au SSL) : ce protocole, basé sur du **chiffrement asymétrique**, va conduire à la génération d'une clé identique chez le client et chez le serveur.
 - le (bon vieux) protocole  ```http```, mais qui convoiera maintenant des données chiffrées avec la clé générée à l'étape précédente. Les données peuvent toujours être interceptées, mais sont illisibles. Le **chiffrement symétrique** utilisé est actuellement le chiffrement AES.
+
+**Pourquoi ne pas utiliser que le chiffrement asymétrique, RSA par exemple ?**
+Car il est très gourmand en ressources ! Le chiffrement/déchiffrement doit être rapide pour ne pas ralentir les communications ou l'exploitation des données.
+Le chiffrement asymétrique est donc réservé à l'échange de clés (au début de la communication).
+Le chiffrement symétrique, bien plus rapide, prend ensuite le relais pour l'ensemble de la communication.
+
+
 
 
 <p align="center">
