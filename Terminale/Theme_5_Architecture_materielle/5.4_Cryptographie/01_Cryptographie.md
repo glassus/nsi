@@ -254,4 +254,10 @@ Le protocole ```https``` est la réunion de deux protocoles :
 </p>
 
 
- ### 3.2 Fonctionnement du TLS
+ ### 3.2 Fonctionnement du TLS : explication du *handshake*.
+
+ Observons en détail le fonctionnement du protocole ```TLS```, dont le rôle est de générer de manière sécurisée une clé dont disposeront à la fois le client et le serveur, leur permettant ainsi d'appliquer un chiffrement symétrique à leurs échanges.
+
+<p align="center">
+<img src="data/tls.png" , width=100%/> 
+</p>
