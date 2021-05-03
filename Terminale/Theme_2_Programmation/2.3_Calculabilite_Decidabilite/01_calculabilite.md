@@ -58,11 +58,11 @@ Et donc :
 <img src="data/m3.png" , width=30%/> 
 </p>
 
-Il n'y a donc aucune difficulté à considérer une programme comme une simple donnée pouvant être reçue en paramètre par un autre programme.
+Il n'y a donc aucune difficulté à considérer une programme comme une simple donnée, pouvant être reçue en paramètre par un autre programme.
 
 > À titre anecdotique, on pourra exécuter avec intérêt cette instruction Python :
 > ```a='a=%r;print(a%%a)';print(a%a)``` 
-> Ce type de code (magique !) existe dans tous les langages et s'appelle une [quine](https://fr.wikipedia.org/wiki/Quine_(informatique))
+> Ce type de code (magique !) existe dans tous les langages et s'appelle une [quine](https://fr.wikipedia.org/wiki/Quine_(informatique)).
 
 
 
