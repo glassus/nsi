@@ -1,11 +1,9 @@
 
-<!---
-<p align="center">
-<img src="data/banniere.png" width='100%' />
 
+<p align="center">
 <img src="data/BO.png" width='80%' />
 </p>
---->
+
 
 # Cryptographie
 
@@ -259,7 +257,7 @@ Le chiffrement symétrique, bien plus rapide, prend ensuite le relais pour l'ens
 </p>
 
 
- ### 3.2 Fonctionnement du TLS : explication du *handshake*
+ ### 3.2 (HP) Fonctionnement du TLS : explication du *handshake*
 
  Observons en détail le fonctionnement du protocole ```TLS```, dont le rôle est de générer de manière sécurisée une clé dont disposeront à la fois le client et le serveur, leur permettant ainsi d'appliquer un chiffrement symétrique à leurs échanges.
 
