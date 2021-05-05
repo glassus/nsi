@@ -173,7 +173,7 @@ Deux cas peuvent se présenter, suivant si ```halt(sym, sym)``` renvoie ```True`
 
 Nous venons de prouver que notre programme ```halt```, censé prédire si un programme ```prog``` peut s'arrêter sur une entrée ```x```, **NE PEUT PAS EXISTER**.
 
-Ce résultat théorique, d'une important cruciale, s'appelle **le théorème de l'arrêt**.
+Ce résultat théorique, d'une importance cruciale, s'appelle **le théorème de l'arrêt**.
 
 <p align="center">
 <img src="data/turing16.jpg" , width=40%/> 
