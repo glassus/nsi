@@ -61,7 +61,7 @@ Et donc :
 
 Conclusion :
 
-**Il n'y a donc aucun obstacle à considérer une programme comme une simple donnée, pouvant être reçue en paramètre par un autre programme.**
+**Il n'y a donc aucun obstacle à considérer une programme comme une simple donnée, pouvant être reçue en paramètre par un autre programme.** (voire par lui-même !)
 
 > À titre anecdotique, on pourra exécuter avec intérêt cette instruction Python :
 > ```a='a=%r;print(a%%a)';print(a%a)``` 
