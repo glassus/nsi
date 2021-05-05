@@ -191,14 +191,14 @@ Pour sa démonstration, il présente un modèle théorique de machine capable d'
 
 À la même époque, le mathématicien [Alonzo Church](https://fr.wikipedia.org/wiki/Alonzo_Church) démontre lui aussi ce théorème de l'arrêt, mais par un moyen totalement différent, en inventant le [lambda-calcul](https://fr.wikipedia.org/wiki/Lambda-calcul).
 
-Tous deux mettent ainsi un terme au rêve du mathématicien allemand [David Hilbert](https://fr.wikipedia.org/wiki/David_Hilbert), qui avait en 1928 posé la question de l'existence d'un théorème capable de répondre «oui» ou «non» à n'importe quel énoncé mathématique posé sous forme décisionnelle («ce triangle est-il rectangle ?», «existe-t-il un nombre premier pair ?»)
+Tous deux mettent ainsi un terme au rêve du mathématicien allemand [David Hilbert](https://fr.wikipedia.org/wiki/David_Hilbert), qui avait en 1928 posé la question de l'existence d'un algorithme capable de répondre «oui» ou «non» à n'importe quel énoncé mathématique posé sous forme décisionnelle («un triangle rectangle peut-il être isocèle ?», «existe-t-il un nombre premier pair ?»)
 
-Cette question, appelée «problème de la décision», ou *Entscheidungsproblem* en allemand, est résolue par le problème de l'arrêt : un tel théorème ne peut pas exister, puisque par exemple, aucun algorithme ne peut répondre «oui» ou «non» à la question "ce programme va-t-il s'arrêter ?».
+Cette question, appelée «problème de la décision», ou *Entscheidungsproblem* en allemand, est définitivement tranchée par le problème de l'arrêt : un tel théorème ne peut pas exister, puisque par exemple, aucun algorithme ne peut répondre «oui» ou «non» à la question «ce programme va-t-il s'arrêter ?».
 
 
-Concernant le théorème de l'arrêt, il est intéressant de remarquer que ce résultat sera étendu plus tard par [le théorème de Rice](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Rice).
+Le théorème de l'arrêt sera étendu plus tard par [le théorème de Rice](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Rice).
 
-Ce résultat démontre que toutes les questions sémantiques (non évidentes) d'un programme sont indécidables :
+Ce résultat démontre que toutes les questions sémantiques (non évidentes) au sujet d'un programme sont indécidables :
 - «ce programme va-t-il s'arrêter ?» (on vient de le démontrer)
 - «ce programme va renvoyer la valeur 12 ?» 
 - «ce programme va-t-il un jour renvoyer un message d'erreur ?» 
