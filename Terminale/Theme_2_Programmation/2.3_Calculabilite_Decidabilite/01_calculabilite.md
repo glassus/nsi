@@ -58,7 +58,10 @@ Et donc :
 <img src="data/m3.png" , width=30%/> 
 </p>
 
-Il n'y a donc aucune difficulté à considérer une programme comme une simple donnée, pouvant être reçue en paramètre par un autre programme.
+
+Conclusion :
+
+**Il n'y a donc aucun obstacle à considérer une programme comme une simple donnée, pouvant être reçue en paramètre par un autre programme.**
 
 > À titre anecdotique, on pourra exécuter avec intérêt cette instruction Python :
 > ```a='a=%r;print(a%%a)';print(a%a)``` 
@@ -67,6 +70,8 @@ Il n'y a donc aucune difficulté à considérer une programme comme une simple d
 
 
 ## 2. Mon programme va-t-il s'arrêter ?
+
+### 2.1 Un exemple
 
 Considérons le programme suivant :
 
@@ -77,3 +82,47 @@ def countdown(n):
         n = n - 1
     print("fini")
 ```
+
+En l'observant attentivement, je peux prévoir que ```countdown(10)``` affichera les nombres de 10 à 1 avant d'écrire "fini". Puis le programme s'arrêtera.
+
+Mais que va provoquer ```countdown(10.8)``` ?
+
+Comme la variable ```n``` ne sera jamais égale à 0, le programme va rentrer dans une boucle infinie, il ne s'arrêtera jamais. Mauvaise nouvelle. 
+J'ai pu prévoir ceci en regardant attentivement le code de mon programme. J'ai «remarqué» qu'une variable ```n``` non entière provoquerait une boucle infinie.
+
+**Question :**
+Est-ce qu'un programme d'_analyse de programmes_ aurait pu faire cela à ma place ?
+
+
+### 2.2 Une machine pour prédire l'arrêt ou non d'un programme.
+Après tout, un programme est une suite d'instructions (un code source), et peut donc être, comme on l'a vu, le paramètre d'entrée d'un programme qui l'analyserait. 
+Un tel programme (appelons-le ```halt```) prendrait en entrées :
+- un paramètre ```prog``` (le code-source du programme)
+- un paramètre  ```x```, qui serait le paramètre d'entrée de ```prog```.
+
+ L'instruction ```halt(prog, x)``` renverrait ```True``` si ```prog(x)``` s'arrête, et ```False``` si ```prog(x)``` ne s'arrête pas.
+ 
+
+<p align="center">
+<img src="data/halt1.png" , width=30%/> 
+</p>
+
+
+
+**Exemple** : 
+- ```halt(countdown, 10)``` renverrait ```True```.
+- ```halt(countdown, 10.8)``` renverrait ```False```. 
+
+<p align="center">
+<img src="data/halt2.png" , width=60%/> 
+</p>
+
+
+
+
+
+
+
+
+
+
