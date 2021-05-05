@@ -95,7 +95,7 @@ Est-ce qu'un programme d'_analyse de programmes_ aurait pu faire cela à ma plac
 
 
 ### 2.2 Une machine pour prédire l'arrêt ou non d'un programme.
-Après tout, un programme est une suite d'instructions (un code source), et peut donc être, comme on l'a vu, le paramètre d'entrée d'un programme qui l'analyserait. 
+Après tout, un programme est une suite d'instructions (le code-source), et peut donc être, comme on l'a vu, le paramètre d'entrée d'un autre programme qui l'analyserait. 
 Un tel programme (appelons-le ```halt```) prendrait en entrées :
 - un paramètre ```prog``` (le code-source du programme)
 - un paramètre  ```x```, qui serait le paramètre d'entrée de ```prog```.
@@ -118,7 +118,36 @@ Un tel programme (appelons-le ```halt```) prendrait en entrées :
 </p>
 
 
+**Tentative d'écriture de ```halt``` en Python :**
 
+```python
+def halt(prog, x):
+    if "prog(x) s'arrête" :   # ce code n'est pas encore abouti ...
+        return True
+    else :
+        return False
+```
+
+Nous en resterons là pour l'instant dans l'écriture de ce programme. Nous allons nous en servir pour construire d'autres programmes.
+
+### 2.3 Amusons-nous avec ce programme ```halt```.
+
+Considérons le programme :
+
+```python
+def sym(prog):
+    if halt(prog, prog) == True :
+        while True :
+            pass
+    else :
+        return 1
+```
+
+On peut remarquer que le programme ```halt``` est appelé avec comme paramètres ```prog, prog```, ce qui signifie que ```prog``` se prend lui-même en paramètre. On rappelle que ce n'est pas choquant, un code-source étant une donnée comme une autre.
+
+<p align="center">
+<img src="data/halt3.png" , width=40%/> 
+</p>
 
 
 
