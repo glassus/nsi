@@ -149,7 +149,62 @@ On peut remarquer que le programme ```halt``` est appelé avec comme paramètres
 <img src="data/halt3.png" , width=40%/> 
 </p>
 
+Ce programme ```sym``` reçoit donc en paramètre un programme ```prog```, et :
+- va rentrer dans une boucle infinie si ```prog(prog)``` s'arrête.
+- va renvoyer 1 si  ```prog(prog)``` ne s'arrête pas.
 
+### 2.4 Un léger problème ...
+
+Puisqu'un programme peut prendre en paramètre son propre code-source, que donnerait l'appel à ```sym(sym)``` ?
+
+Deux cas peuvent se présenter, suivant si ```halt(sym, sym)``` renvoie ```True``` ou ```False```.
+
+<p align="center">
+<img src="data/halt4.png" , width=80%/> 
+</p>
+
+* **cas n°1** : ```halt(sym, sym)``` renvoie ```True```, ce qui signifie que ```sym(sym)```  devrait s'arrêter. Mais dans ce cas-là, l'exécution de ```sym(sym)``` rentre dans une boucle infinie. C'est une contradiction.
+
+
+* **cas n°2** : ```halt(sym, sym)``` renvoie ```False```, ce qui signifie que ```sym(sym)```  rentre dans une boucle infinie. Mais dans ce cas-là, l'exécution de ```sym(sym)``` se termine correctement et renvoie la valeur 1. C'est une contradiction.
+
+
+### 2.5 Conclusion
+
+Nous venons de prouver que notre programme ```halt```, censé prédire si un programme ```prog``` peut s'arrêter sur une entrée ```x```, **NE PEUT PAS EXISTER**.
+
+Ce résultat théorique, d'une important cruciale, s'appelle **le théorème de l'arrêt**.
+
+<p align="center">
+<img src="data/turing16.jpg" , width=40%/> 
+</p>
+
+
+Ce résultat a été démontré par [Alan Turing](https://fr.wikipedia.org/wiki/Alan_Turing) en 1936, dans un article intitulé *«On computable numbers, with an application to the Entscheidungsproblem»*.
+
+<p align="center">
+<img src="data/turing.png" , width=100%/> 
+</p>
+
+
+Pour sa démonstration, il présente un modèle théorique de machine capable d'exécuter des instructions basiques sur un ruban infini, les [machines de Turing](https://fr.wikipedia.org/wiki/Machine_de_Turing).
+
+À la même époque, le mathématicien [Alonzo Church](https://fr.wikipedia.org/wiki/Alonzo_Church) démontre lui aussi ce théorème de l'arrêt, mais par un moyen totalement différent, en inventant le [lambda-calcul](https://fr.wikipedia.org/wiki/Lambda-calcul).
+
+Tous deux mettent ainsi un terme au rêve du mathématicien allemand [David Hilbert](https://fr.wikipedia.org/wiki/David_Hilbert), qui avait en 1928 posé la question de l'existence d'un théorème capable de répondre «oui» ou «non» à n'importe quel énoncé mathématique posé sous forme décisionnelle («ce triangle est-il rectangle ?», «existe-t-il un nombre premier pair ?»)
+
+Cette question, appelée «problème de la décision», ou *Entscheidungsproblem* en allemand, est résolue par le problème de l'arrêt : un tel théorème ne peut pas exister, puisque qu'aucune algorithme ne peut répondre «oui» ou «non» à la question "ce programme va-t-il s'arrêter ?».
+
+
+Concernant le théorème de l'arrêt, il est intéressant de remarquer que ce résultat sera étendu plus tard par [le théorème de Rice](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Rice).
+
+Ce résultat démontre que toutes les propriétés sémantiques (non évidentes) d'un programme sont indécidables :
+- «ce programme va-t-il s'arrêter» (on vient de le démontrer)
+- «ce programme va renvoyer la valeur 12» 
+- «ce programme ne renverra jamais un message d'erreur» 
+- ...
+
+Pour démontrer ceci, [Rice](https://en.wikipedia.org/wiki/Henry_Gordon_Rice) ramène toutes ces questions à celle du théorème de l'arrêt.
 
 
 
