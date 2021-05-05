@@ -199,7 +199,7 @@ Cette question, appelée «problème de la décision», ou *Entscheidungsproblem
 Le théorème de l'arrêt sera étendu plus tard par [le théorème de Rice](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Rice).
 
 Ce résultat démontre que toutes les questions sémantiques (non évidentes) au sujet d'un programme sont indécidables :
-- «ce programme va-t-il s'arrêter ?» (on vient de le démontrer)
+- «ce programme va-t-il s'arrêter ?» (le théorème de l'arrêt)
 - «ce programme va renvoyer la valeur 12 ?» 
 - «ce programme va-t-il un jour renvoyer un message d'erreur ?» 
 - ...
