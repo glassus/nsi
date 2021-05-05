@@ -66,3 +66,14 @@ Il n'y a donc aucune difficulté à considérer une programme comme une simple d
 
 
 
+## 2. Mon programme va-t-il s'arrêter ?
+
+Considérons le programme suivant :
+
+```python
+def countdown(n):
+    while n != 0 :
+        print(n)
+        n = n - 1
+    print("fini")
+```
