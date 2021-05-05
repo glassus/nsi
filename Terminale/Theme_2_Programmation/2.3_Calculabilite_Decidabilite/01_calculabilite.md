@@ -198,10 +198,10 @@ Cette question, appelée «problème de la décision», ou *Entscheidungsproblem
 
 Concernant le théorème de l'arrêt, il est intéressant de remarquer que ce résultat sera étendu plus tard par [le théorème de Rice](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_de_Rice).
 
-Ce résultat démontre que toutes les propriétés sémantiques (non évidentes) d'un programme sont indécidables :
-- «ce programme va-t-il s'arrêter» (on vient de le démontrer)
-- «ce programme va renvoyer la valeur 12» 
-- «ce programme ne renverra jamais un message d'erreur» 
+Ce résultat démontre que toutes les questions sémantiques (non évidentes) d'un programme sont indécidables :
+- «ce programme va-t-il s'arrêter ?» (on vient de le démontrer)
+- «ce programme va renvoyer la valeur 12 ?» 
+- «ce programme va-t-il un jour renvoyer un message d'erreur ?» 
 - ...
 
 Pour démontrer ceci, [Rice](https://en.wikipedia.org/wiki/Henry_Gordon_Rice) ramène toutes ces questions à celle du théorème de l'arrêt.
