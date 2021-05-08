@@ -244,7 +244,7 @@ Alice va attendre ce ACK contenant le même bit que son dernier FLAG envoyé :
 - dès qu'elle l'a reçu, elle peut envoyer un nouveau sous-message en **inversant** («alternant») **le bit de son dernier FLAG** (d'où le nom de ce protocole).
 
 
-Bob, de son côté, va contrôler la validité de ce qu'il reçoit : il ne gardera que **les sous-messages dont le FLAG est égal à son dernier ACK**. C'est cette méthode qui lui permettra d'écarter les doublons.
+Bob, de son côté, va contrôler la validité de ce qu'il reçoit : il ne gardera que **les sous-messages dont le FLAG est égal à l'inverse de son dernier ACK**. C'est cette méthode qui lui permettra d'écarter les doublons.
 
 Observons ce protocole dans plusieurs cas :
 
