@@ -208,7 +208,7 @@ Ce résultat démontre que toutes les questions sémantiques (non évidentes) au
 
 ## 2. Calculabilité
 
-Le problème de l'arrêt est dit **indécidable** car le programme qui le résout (notre brave programme ```halt```) n'est pas **calculable**. 
+Le problème de l'arrêt est dit **indécidable** car la fonction qui le résout (notre brave programme ```halt```) n'est pas **calculable**. 
 
 ### 2.1 Notion de calculabilité
 Qu'y a-t-il derrière cette notion de calculabilité ?
@@ -246,7 +246,7 @@ Que retrouve-t-on dans la classe P ? Tous les problèmes dont la solution est un
 
 Pour le résumer très grossièrement, un problème de classe P est un problème que l'on sait résoudre en temps raisonnable (même grand). 
 - le problème du tri d'une liste est dans P.
-- le problème de la factorisation d'un grand nombre (sur lequel repose la sécurité du RSA) n'est **pas** dans P.
+- le problème de la factorisation d'un grand nombre (sur lequel repose la sécurité du RSA) n'est actuellement **pas** dans P.
 - le problème de la primalité («ce nombre est-il premier ?») a longtemps été considéré comme n'étant pas dans P... jusqu'en 2002, où a été découvert le [test de primalité AKS](https://fr.wikipedia.org/wiki/Test_de_primalit%C3%A9_AKS), de complexité polynomiale (d'ordre 6). Ce test est donc maintenant dans P.
 
 
