@@ -61,11 +61,11 @@ Et donc :
 
 Conclusion :
 
-**Il n'y a donc aucun obstacle à considérer une programme comme une simple donnée, pouvant être reçue en paramètre par un autre programme.** (voire par lui-même !)
+**Il n'y a donc aucun obstacle à considérer un programme comme une simple donnée, pouvant être reçue en paramètre par un autre programme.** (voire par lui-même !)
 
 > À titre anecdotique, on pourra exécuter avec intérêt cette instruction Python :
 > ```a='a=%r;print(a%%a)';print(a%a)``` 
-> Ce type de code (magique !) existe dans tous les langages et s'appelle une [quine](https://fr.wikipedia.org/wiki/Quine_(informatique)).
+> Ce type de code (magique !) existe dans tous les langages et s'appelle un [quine](https://fr.wikipedia.org/wiki/Quine_(informatique)).
 
 
 
@@ -222,7 +222,7 @@ Cette machine (théorique) permet de simuler tout ce qu'un programme informatiqu
 Dès lors, on pourra considérer un algorithme comme une fonction.
 
  
-Turing a démontré que l'ensemble fonctions calculables, au sens de Church, était équivalent à l'ensemble des fonctions programmables sur sa machine.
+Turing a démontré que l'ensemble des fonctions calculables, au sens de Church, était équivalent à l'ensemble des fonctions programmables sur sa machine.
 Certaines fonctions peuvent être calculables, *ou ne pas l'être* : c'est notamment le cas de notre fonction du problème de l'arrêt. 
 
 ### 2.2 Langages Turing-complets
