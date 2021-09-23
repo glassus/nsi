@@ -3,10 +3,15 @@ gilles.lassus [at] ac-bordeaux.fr
 
 Lycée François Mauriac / Bordeaux  
 
+**Attention**
+
+Ce dépôt de cours n'est plus mis à jour. Les données sont peu à peu transférées vers les sites :
+
+- [https://glassus.github.io/premiere_nsi/](https://glassus.github.io/premiere_nsi/
+)
+- [https://glassus.github.io/terminale_nsi/](https://glassus.github.io/terminale_nsi/)
 
 
-Pour la consultation simple des fichiers Jupyter Notebook de ce dépôt, il est préférable de passer par :
-https://nbviewer.jupyter.org/github/glassus/nsi/tree/master/
 
 
 L'ensemble des documents disponibles est publié sous licence CC-BY-SA.
